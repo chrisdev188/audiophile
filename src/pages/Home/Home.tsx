@@ -1,9 +1,13 @@
-import * as React from "react";
+import Hero from "./Hero";
 
 interface HomeProps {}
 
 const Home: React.FunctionComponent<HomeProps> = (props) => {
-  return <div></div>;
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
 };
 
 export default Home;

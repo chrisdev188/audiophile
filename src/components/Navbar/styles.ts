@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-interface NavbarProps {}
-
 export const StyledNavbar = styled.nav`
   background-color: ${({ theme }) => theme.colors.main};
   color: white;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 999;
   @media (min-width: 768px) {
@@ -17,7 +16,7 @@ export const StyledNavbar = styled.nav`
 export const InnerBox = styled.div`
   max-width: 1140px;
   height: 5.5rem;
-  padding-inline: 1rem; // 375px up
+  padding-inline: 1rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -27,7 +26,7 @@ export const InnerBox = styled.div`
     gap: 2rem;
   }
   @media (min-width: 768px) {
-    padding-inline: 0; // 768px up
+    padding-inline: 0;
     justify-content: space-between;
   }
 `;
@@ -49,16 +48,6 @@ export const MenuList = styled.ul`
   }
 `;
 export const CartButton = styled.button`
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  transition: all 300ms ease;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.accent};
-  }
   @media (min-width: 450px) {
     margin-left: auto;
   }
@@ -67,16 +56,6 @@ export const CartButton = styled.button`
   }
 `;
 export const ToggleMenuButton = styled.button`
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  transition: all 300ms ease;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.accent};
-  }
   @media (min-width: 768px) {
     display: none;
   }
