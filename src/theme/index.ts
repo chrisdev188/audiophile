@@ -7,9 +7,6 @@ const theme = {
     card: "hsl(0,0%,95%)",
     divider: "hsla(0,0%,59%,.2)",
   },
-  fonts: {
-    main: "Manrope",
-  },
 } as const;
 
 export default theme;

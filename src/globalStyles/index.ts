@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
   }
   body{
+    font-family: "Manrope", sans-serif;
     min-height: 100vh;
     line-height:normal;
     overflow:hidden;

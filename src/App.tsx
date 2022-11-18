@@ -2,15 +2,35 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
 import theme from "./theme";
+import { Navbar } from "./components";
+import { Route, Routes } from "react-router-dom";
+import { Home, Headphones, Speakers, Earphones } from "./pages";
+
+type MenuList = Array<{
+  id: number;
+  path: string;
+  name: string;
+}>;
+
+const menuList: MenuList = [
+  { id: 1, path: "/", name: "home" },
+  { id: 2, path: "/headphones", name: "headphones" },
+  { id: 3, path: "/speakers", name: "speakers" },
+  { id: 4, path: "/earphones", name: "earphones" },
+];
 
 function App() {
-  const [title, setTitle] = useState<string | null>(null);
-  const [count, setCount] = useState<number>(0);
-
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <Navbar menuList={menuList} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/headphones" element={<Headphones />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/earphones" element={<Earphones />} />
+        </Routes>
       </ThemeProvider>
     </div>
   );
