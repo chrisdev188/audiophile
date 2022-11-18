@@ -29,20 +29,24 @@ const ImageContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  max-width: 1140px;
   width: 100%;
   height: 100%;
-  margin: auto;
   grid-column: 1;
   grid-row: 2 / span 1;
-  padding-inline: 1rem;
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+`;
+const ContentWrapper = styled.div`
+  max-width: 1140px;
+  margin: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
     justify-content: start;
     align-items: center;
-    padding-inline: 2.5rem;
   }
 `;
 const Content = styled.div`
@@ -51,11 +55,12 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+  padding-inline: 1rem;
   gap: 1.5rem;
   @media (min-width: 768px) {
     align-items: start;
     text-align: left;
+    padding-inline: 0;
   }
 `;
 const Heading = styled(HeadingOne)`
@@ -83,15 +88,17 @@ const Hero: React.FunctionComponent<HeroProps> = (props) => {
         </picture>
       </ImageContainer>
       <ContentContainer>
-        <Content>
-          <HeroOverline>new product</HeroOverline>
-          <Heading>XX99 Mark II HeadphoneS</Heading>
-          <HeroParagraph>
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </HeroParagraph>
-          <Button variant="filled">see product</Button>
-        </Content>
+        <ContentWrapper>
+          <Content>
+            <HeroOverline>new product</HeroOverline>
+            <Heading>XX99 Mark II HeadphoneS</Heading>
+            <HeroParagraph>
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </HeroParagraph>
+            <Button variant="filled">see product</Button>
+          </Content>
+        </ContentWrapper>
       </ContentContainer>
     </StyledHero>
   );
