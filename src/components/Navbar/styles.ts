@@ -1,32 +1,26 @@
 import styled from "styled-components";
+import { Container, MaxWidthContainer } from "../../globalStyles";
 
-export const StyledNavbar = styled.nav`
-  background-color: ${({ theme }) => theme.colors.main};
+export const StyledNavbar = styled(Container)`
+  background-color: transparent;
   color: white;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   z-index: 999;
-  @media (min-width: 768px) {
-    padding-inline: 2.5rem; // 768px up
-  }
 `;
-export const InnerBox = styled.div`
-  max-width: 1140px;
+export const InnerBox = styled(MaxWidthContainer)`
   height: 5.5rem;
-  padding-inline: 1rem;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
   @media (min-width: 450px) {
     justify-content: start;
     gap: 2rem;
   }
   @media (min-width: 768px) {
-    padding-inline: 0;
     justify-content: space-between;
   }
 `;

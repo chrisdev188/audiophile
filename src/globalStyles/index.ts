@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Manrope", sans-serif;
     min-height: 100vh;
     line-height:normal;
-    overflow:hidden;
   }
   ul{ 
     list-style:none;
@@ -91,6 +90,28 @@ export const Paragraph = styled.p`
   font-size: 0.9375rem;
   line-height: 1.7;
   font-weight: 500;
+`;
+export const Container = styled.div`
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+`;
+export const MaxWidthContainer = styled.div`
+  max-width: 1140px;
+  margin: auto;
+  padding-inline: 1rem;
+  @media (min-width: 768px) {
+    padding-inline: 0;
+  }
+`;
+export const TwelveColumnsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2rem;
+  }
 `;
 
 export default GlobalStyle;

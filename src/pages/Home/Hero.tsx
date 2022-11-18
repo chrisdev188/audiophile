@@ -3,7 +3,13 @@ import homeHeroMobile from "../../assets/home/mobile/image-header.jpg";
 import homeHeroTablet from "../../assets/home/tablet/image-header.jpg";
 import homeHeroDesktop from "../../assets/home/desktop/image-hero.jpg";
 import { Button } from "../../components";
-import { HeadingOne, Overline, Paragraph } from "../../globalStyles";
+import {
+  Container,
+  HeadingOne,
+  MaxWidthContainer,
+  Overline,
+  Paragraph,
+} from "../../globalStyles";
 
 const StyledHero = styled.div`
   height: 85vh;
@@ -28,18 +34,13 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled(Container)`
   width: 100%;
   height: 100%;
   grid-column: 1;
   grid-row: 2 / span 1;
-  @media (min-width: 768px) {
-    padding-inline: 2.5rem;
-  }
 `;
-const ContentWrapper = styled.div`
-  max-width: 1140px;
-  margin: auto;
+const ContentWrapper = styled(MaxWidthContainer)`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -55,12 +56,10 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-inline: 1rem;
   gap: 1.5rem;
   @media (min-width: 768px) {
     align-items: start;
     text-align: left;
-    padding-inline: 0;
   }
 `;
 const Heading = styled(HeadingOne)`

@@ -23,7 +23,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
   return (
-    <StyledNavbar>
+    <StyledNavbar as="nav">
       <InnerBox>
         <ToggleMenuButton aria-label="toggle menu">
           <img src={hamburger} alt="" aria-hidden />
