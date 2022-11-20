@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
 import theme from "./theme";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones } from "./pages";
 
@@ -30,6 +30,7 @@ function App() {
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/earphones" element={<Earphones />} />
         </Routes>
+        <Footer />
       </ThemeProvider>
     </div>
   );
