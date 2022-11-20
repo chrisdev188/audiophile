@@ -10,6 +10,10 @@ const StyledButtonText = styled.button`
   font-weight: bold;
   letter-spacing: 1px;
   color: hsla(0, 0%, 0%, 0.5);
+  transition: all 300ms ease;
+  &:hover {
+    color: ${({ theme }) => theme.colors.accent};
+  }
 `;
 
 interface ButtonTextProps {
