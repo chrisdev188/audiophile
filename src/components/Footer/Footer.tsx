@@ -1,35 +1,41 @@
+import { MaxWidthContainer } from "../../globalStyles";
 import {
-  MaxWidthContainer,
-  Paragraph,
-  TwelveColumnsGrid,
-} from "../../globalStyles";
-import { FooterNav, StyledFooter } from "./styles";
-import logo from "../../assets/shared/desktop/logo.svg";
+  FooterNav,
+  StyledFooter,
+  FooterGrid,
+  FooterDescription,
+  CopyrightText,
+  CopyrightContainer,
+} from "./styles";
+import Logo from "../Logo/Logo";
+import { MenuListType } from "../../globalTypes";
+import MenuList from "./MenuList";
+import SocialList from "./SocialList";
 
-interface FooterProps {}
+interface FooterProps {
+  menuList: MenuListType;
+}
 
-const Footer: React.FunctionComponent<FooterProps> = (props) => {
+const Footer: React.FunctionComponent<FooterProps> = ({ menuList }) => {
   return (
     <StyledFooter as="footer">
       <MaxWidthContainer>
-        <TwelveColumnsGrid>
+        <FooterGrid>
           <FooterNav>
-            <div className="logo">
-              <img src={logo} alt="Audiophile" />
-            </div>
-            <ul>menulist</ul>
+            <Logo />
+            <MenuList menuList={menuList} />
           </FooterNav>
-          <Paragraph>
+          <FooterDescription>
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
             our demo facility - we’re open 7 days a week.
-          </Paragraph>
-          <div className="flex">
-            <small>Copyright 2021. All Rights Reserved</small>
-            <ul>sosialist</ul>
-          </div>
-        </TwelveColumnsGrid>
+          </FooterDescription>
+          <CopyrightContainer>
+            <CopyrightText>Copyright 2021. All Rights Reserved</CopyrightText>
+            <SocialList />
+          </CopyrightContainer>
+        </FooterGrid>
       </MaxWidthContainer>
     </StyledFooter>
   );

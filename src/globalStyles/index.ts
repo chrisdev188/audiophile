@@ -99,7 +99,7 @@ export const Container = styled.div`
 export const MaxWidthContainer = styled.div`
   max-width: 1140px;
   margin: auto;
-  padding-inline: 1rem;
+  padding-inline: 1.5rem;
   @media (min-width: 768px) {
     padding-inline: 0;
   }

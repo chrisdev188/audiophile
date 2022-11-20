@@ -24,7 +24,7 @@ export const InnerBox = styled(MaxWidthContainer)`
     justify-content: space-between;
   }
 `;
-export const MenuList = styled.ul`
+export const StyledMenuList = styled.ul`
   display: none;
   a {
     letter-spacing: 2px;

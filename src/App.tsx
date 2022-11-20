@@ -25,7 +25,7 @@ function App() {
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/earphones" element={<Earphones />} />
         </Routes>
-        <Footer />
+        <Footer menuList={menuList} />
       </ThemeProvider>
     </div>
   );
