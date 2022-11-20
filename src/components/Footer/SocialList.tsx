@@ -1,20 +1,25 @@
-import facebookIcon from "../../assets/shared/desktop/icon-facebook.svg";
-import twitterIcon from "../../assets/shared/desktop/icon-twitter.svg";
-import instagramIcon from "../../assets/shared/desktop/icon-instagram.svg";
+import { ReactComponent as FacebookLogo } from "../../assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as TwitterLogo } from "../../assets/shared/desktop/icon-twitter.svg";
+import { ReactComponent as InstagramLogo } from "../../assets/shared/desktop/icon-instagram.svg";
 import { StyledSocialList } from "./styles";
 
 const socials = [
   {
     id: 1,
     name: "Facebook",
-    icon: facebookIcon,
+    icon: <FacebookLogo />,
     url: "https://www.facebook.com",
   },
-  { id: 2, name: "Twitter", icon: twitterIcon, url: "https://www.twitter.com" },
+  {
+    id: 2,
+    name: "Twitter",
+    icon: <TwitterLogo />,
+    url: "https://www.twitter.com",
+  },
   {
     id: 3,
     name: "Instagram",
-    icon: instagramIcon,
+    icon: <InstagramLogo />,
     url: "https://www.instagram.com",
   },
 ];
@@ -27,7 +32,7 @@ const SocialList: React.FunctionComponent<SocialListProps> = (props) => {
       {socials.map((s) => (
         <li key={s.id}>
           <a href={s.url} target="_blank">
-            <img src={s.icon} alt={s.name} />
+            {s.icon}
           </a>
         </li>
       ))}

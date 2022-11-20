@@ -35,6 +35,10 @@ export const StyledMenuList = styled.ul`
     font-size: 13px;
     letter-spacing: 1px;
     font-weight: bold;
+    transition: all 0.3s ease;
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
   }
   @media (min-width: 768px) {
     flex-direction: row;
@@ -76,6 +80,16 @@ export const StyledSocialList = styled.ul`
   display: flex;
   gap: 1rem;
   align-items: center;
+  a {
+    svg > path {
+      transition: all 300ms ease;
+    }
+    &:hover {
+      svg > path {
+        fill: ${({ theme }) => theme.colors.accent};
+      }
+    }
+  }
   @media (min-width: 1140px) {
     position: absolute;
     top: -5rem;
