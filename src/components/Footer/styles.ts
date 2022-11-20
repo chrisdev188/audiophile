@@ -16,6 +16,11 @@ export const FooterNav = styled.nav`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  @media (min-width: 768px) {
+    grid-column: span 12;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const StyledMenuList = styled.ul`
@@ -31,15 +36,22 @@ export const StyledMenuList = styled.ul`
     letter-spacing: 1px;
     font-weight: bold;
   }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
 `;
 
 export const FooterDescription = styled(Paragraph)`
   color: ${({ theme }) => theme.colors.textAlt};
   text-align: center;
-`;
-
-export const CopyrightText = styled.small`
-  color: ${({ theme }) => theme.colors.textAlt};
+  @media (min-width: 768px) {
+    grid-column: span 12;
+    text-align: left;
+  }
+  @media (min-width: 1140px) {
+    grid-column: 1 / span 7;
+  }
 `;
 
 export const CopyrightContainer = styled.div`
@@ -48,10 +60,25 @@ export const CopyrightContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
+  @media (min-width: 768px) {
+    grid-column: span 12;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+`;
+
+export const CopyrightText = styled.small`
+  color: ${({ theme }) => theme.colors.textAlt};
 `;
 
 export const StyledSocialList = styled.ul`
   display: flex;
   gap: 1rem;
   align-items: center;
+  @media (min-width: 1140px) {
+    position: absolute;
+    top: -5rem;
+    right: 0;
+  }
 `;
