@@ -1,4 +1,4 @@
-import { ProductCategoryList } from "../../components";
+import { About, ProductCategoryList } from "../../components";
 import Hero from "./Hero";
 import HomeProductGallery from "./HomeProductGallery";
 
@@ -10,6 +10,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
       <Hero />
       <ProductCategoryList />
       <HomeProductGallery />
+      <About />
     </div>
   );
 };
