@@ -24,7 +24,6 @@ export const InnerBox = styled(MaxWidthContainer)`
     justify-content: space-between;
   }
 `;
-export const Logo = styled.div``;
 export const MenuList = styled.ul`
   display: none;
   a {

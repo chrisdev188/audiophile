@@ -4,14 +4,9 @@ import theme from "./theme";
 import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones } from "./pages";
+import { MenuListType } from "./globalTypes";
 
-type MenuList = Array<{
-  id: number;
-  path: string;
-  name: string;
-}>;
-
-const menuList: MenuList = [
+const menuList: MenuListType = [
   { id: 1, path: "/", name: "home" },
   { id: 2, path: "/headphones", name: "headphones" },
   { id: 3, path: "/speakers", name: "speakers" },

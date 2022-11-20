@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {
   StyledNavbar,
-  Logo,
   InnerBox,
   MenuList,
   CartButton,
@@ -10,15 +9,11 @@ import {
 import logo from "../../assets/shared/desktop/logo.svg";
 import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import cart from "../../assets/shared/desktop/icon-cart.svg";
-
-type MenuList = Array<{
-  id: number;
-  path: string;
-  name: string;
-}>;
+import { MenuListType } from "../../globalTypes";
+import { Logo } from "../../components";
 
 interface NavbarProps {
-  menuList: MenuList;
+  menuList: MenuListType;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
@@ -28,9 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
         <ToggleMenuButton aria-label="toggle menu">
           <img src={hamburger} alt="" aria-hidden />
         </ToggleMenuButton>
-        <Logo>
-          <img src={logo} alt="Audiophile" />
-        </Logo>
+        <Logo />
         <MenuList>
           {menuList.map((item) => (
             <li key={item.id}>
