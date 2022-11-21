@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, MaxWidthContainer } from "../../globalStyles";
+import { Container, MaxWidthContainer } from "../../styles";
 
 export const StyledNavbar = styled(Container)`
   background-color: transparent;

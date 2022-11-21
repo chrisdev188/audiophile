@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeadingOne, Paragraph, Container } from "../../globalStyles";
+import { HeadingOne, Paragraph, Container } from "../../styles";
 import circlePatterns from "../../assets/home/desktop/pattern-circles.svg";
 
 export const StyledHomeProductGallery = styled(Container)`

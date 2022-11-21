@@ -3,7 +3,7 @@ import {
   HeadingFour,
   MaxWidthContainer,
   TwelveColumnsGrid,
-} from "../../globalStyles";
+} from "../../styles";
 import zx9SpeakerMobile from "../../assets/home/mobile/image-speaker-zx9.png";
 import zx9SpeakerTablet from "../../assets/home/tablet/image-speaker-zx9.png";
 import zx9SpeakerDesktop from "../../assets/home/desktop/image-speaker-zx9.png";

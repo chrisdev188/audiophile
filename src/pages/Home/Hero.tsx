@@ -9,7 +9,7 @@ import {
   MaxWidthContainer,
   Overline,
   Paragraph,
-} from "../../globalStyles";
+} from "../../styles";
 
 const StyledHero = styled.div`
   height: 85vh;

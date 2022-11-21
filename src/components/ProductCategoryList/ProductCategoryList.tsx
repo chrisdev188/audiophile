@@ -1,4 +1,4 @@
-import { MaxWidthContainer } from "../../globalStyles";
+import { MaxWidthContainer } from "../../styles";
 import {
   StyledProducCategoryContainer,
   StyledProductCategoryList,

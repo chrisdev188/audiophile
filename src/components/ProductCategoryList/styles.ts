@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, TwelveColumnsGrid, HeadingSix } from "../../globalStyles";
+import { Container, TwelveColumnsGrid, HeadingSix } from "../../styles";
 
 export const StyledProducCategoryContainer = styled(Container)`
   margin-block: 10rem;
