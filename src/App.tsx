@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles";
 import theme from "./theme";
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar, ScrollToTop } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones } from "./pages";
 import { MenuListType } from "./types";
@@ -20,6 +20,7 @@ function App() {
     console.log(myData);
   }, []);
 
+  // sort new products to top of the page
   const headphonesList = myData
     .filter((item) => item.category === "headphones")
     .sort((a, b) => Number(b.new) - Number(a.new));
@@ -33,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+        <ScrollToTop />
         <GlobalStyle />
         <Navbar menuList={menuList} />
         <Routes>
