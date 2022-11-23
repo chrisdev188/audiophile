@@ -10,6 +10,7 @@ import headphoneImg from "../../assets/shared/desktop/image-category-thumbnail-h
 import speakerImg from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphoneImg from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import ButtonText from "../UI/Button/ButtonText";
+import { Link } from "react-router-dom";
 
 const categoryList = [
   { id: 1, name: "headphones", path: "/headphones", imgSrc: headphoneImg },
@@ -30,7 +31,9 @@ const ProductCategoryList: React.FunctionComponent<ProductCategoryListProps> = (
             <CategoryItem key={category.id}>
               <ProductThumbnail src={category.imgSrc} alt={category.name} />
               <ProductName as="h3">{category.name}</ProductName>
-              <ButtonText>shop now</ButtonText>
+              <Link to={category.path}>
+                <ButtonText>shop now</ButtonText>
+              </Link>
             </CategoryItem>
           ))}
         </StyledProductCategoryList>
