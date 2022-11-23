@@ -3,7 +3,7 @@ import GlobalStyle from "./styles";
 import theme from "./theme";
 import { Footer, Navbar, ScrollToTop } from "./components";
 import { Route, Routes } from "react-router-dom";
-import { Home, Headphones, Speakers, Earphones } from "./pages";
+import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
 import { MenuListType } from "./types";
 import myData from "./data.json";
 import { useEffect } from "react";
@@ -44,12 +44,24 @@ function App() {
             element={<Headphones headphonesList={headphonesList} />}
           />
           <Route
+            path="/headphones/:productSlug"
+            element={<ProductDetails productList={headphonesList} />}
+          />
+          <Route
             path="/speakers"
             element={<Speakers speakersList={speakersList} />}
           />
           <Route
+            path="/speakers/:productSlug"
+            element={<ProductDetails productList={speakersList} />}
+          />
+          <Route
             path="/earphones"
             element={<Earphones earphonesList={earphonesList} />}
+          />
+          <Route
+            path="/earphones/:productSlug"
+            element={<ProductDetails productList={earphonesList} />}
           />
         </Routes>
         <Footer menuList={menuList} />

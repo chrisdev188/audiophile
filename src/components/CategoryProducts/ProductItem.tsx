@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { HeadingFour, Overline, Paragraph } from "../../styles";
 import { ProductType } from "../../types";
 import Button from "../UI/Button/Button";
@@ -39,7 +40,9 @@ const ProductItem: React.FunctionComponent<ProductItemProps> = ({
         {product.new && <StyledOverline>new product</StyledOverline>}
         <HeadingFour>{product.name}</HeadingFour>
         <StyledDescription>{product.description}</StyledDescription>
-        <Button variant="filled">see product</Button>
+        <Link to={`/${product.category}/${product.slug}`}>
+          <Button variant="filled">see product</Button>
+        </Link>
       </div>
     </StyledProductItem>
   );
