@@ -5,3 +5,4 @@ export { default as ProductCategoryList } from "./ProductCategoryList/ProductCat
 export { default as About } from "./About/About";
 export { default as Footer } from "./Footer/Footer";
 export { default as Logo } from "./Logo/Logo";
+export { default as CategoryProducts } from "./CategoryProducts/CategoryProducts";

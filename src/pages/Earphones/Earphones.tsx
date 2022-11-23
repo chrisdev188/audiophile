@@ -1,9 +1,18 @@
-import * as React from "react";
+import { CategoryProducts } from "../../components";
+import { ProductListType } from "../../types";
 
-interface EarphonesProps {}
+interface EarphonesProps {
+  earphonesList: ProductListType;
+}
 
-const Earphones: React.FunctionComponent<EarphonesProps> = (props) => {
-  return <div></div>;
+const Earphones: React.FunctionComponent<EarphonesProps> = ({
+  earphonesList,
+}) => {
+  return (
+    <div>
+      <CategoryProducts list={earphonesList} categoryName="earphones" />
+    </div>
+  );
 };
 
 export default Earphones;
