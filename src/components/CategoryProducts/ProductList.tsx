@@ -17,7 +17,7 @@ const ProductList: React.FunctionComponent<ProductListProps> = ({ list }) => {
             <li key={product.id}>
               <ProductItem
                 product={product}
-                left={index % 2 === 1 ? true : false}
+                left={index % 2 === 1 ? true : false} // odd indexs will have different styles
               />
             </li>
           ))}

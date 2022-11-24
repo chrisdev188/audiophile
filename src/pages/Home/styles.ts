@@ -121,7 +121,7 @@ export const ZX9Content = styled.div`
       width: 25rem;
       margin-bottom: 0;
       position: absolute;
-      left: 117px;
+      left: 100px;
       bottom: -1.5rem;
     }
   }

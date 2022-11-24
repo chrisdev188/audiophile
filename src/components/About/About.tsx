@@ -9,6 +9,7 @@ import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
 import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
 import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";
 import { AboutImage, AboutText } from "./styles";
+import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
 
 interface AboutProps {}
 
@@ -18,11 +19,12 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
       <MaxWidthContainer>
         <TwelveColumnsGrid>
           <AboutImage>
-            <picture>
-              <source srcSet={bestGearDesktop} media="(min-width:1140px)" />
-              <source srcSet={bestGearTablet} media="(min-width:768px)" />
-              <img src={bestGearMobile} alt="A man a the headphone" />
-            </picture>
+            <ResponsiveImage
+              name="A man a the headphone"
+              mobileSrc={bestGearMobile}
+              tabletSrc={bestGearTablet}
+              desktopSrc={bestGearDesktop}
+            />
           </AboutImage>
           <AboutText>
             <HeadingXL as="h3">

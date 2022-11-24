@@ -3,7 +3,7 @@ import { ButtonProps } from "./types";
 import { getStylesBasedOnVariant } from "./helpers";
 
 export const StyledButton = styled.button<ButtonProps>`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   padding: 1rem 2rem;
   text-transform: uppercase;

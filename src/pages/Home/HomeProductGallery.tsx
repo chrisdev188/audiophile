@@ -1,4 +1,4 @@
-import { Button } from "../../components";
+import { Button, ResponsiveImage } from "../../components";
 import {
   Container,
   HeadingMD,
@@ -36,11 +36,12 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
         <TwelveColumnsGrid>
           <ZX9Speaker>
             <ZX9Content>
-              <picture>
-                <source srcSet={zx9SpeakerDesktop} media="(min-width:1140px)" />
-                <source srcSet={zx9SpeakerTablet} media="(min-width:768px)" />
-                <img src={zx9SpeakerMobile} alt="ZX9 speaker" />
-              </picture>
+              <ResponsiveImage
+                name="ZX9 Speaker"
+                mobileSrc={zx9SpeakerMobile}
+                tabletSrc={zx9SpeakerTablet}
+                desktopSrc={zx9SpeakerDesktop}
+              />
               <ZX9Heading as="h3">ZX9 SPEAKER</ZX9Heading>
               <ZX9Paragraph>
                 Upgrade to premium speakers that are phenomenally built to
@@ -53,7 +54,7 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
           </ZX9Speaker>
           <ZX7Speaker>
             <picture>
-              <source srcSet={zx7SpeakerDesktop} media="(min-width:900px)" />
+              <source srcSet={zx7SpeakerDesktop} media="(min-width:1140px)" />
               <source srcSet={zx7SpeakerTablet} media="(min-width:768px)" />
               <img src={zx7SpeakerMobile} alt="ZX9 speaker" />
             </picture>
