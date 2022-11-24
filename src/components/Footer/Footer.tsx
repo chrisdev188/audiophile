@@ -5,7 +5,7 @@ import {
   FooterGrid,
   FooterDescription,
   CopyrightText,
-  CopyrightContainer,
+  FooterCopyright,
 } from "./styles";
 import Logo from "../Logo/Logo";
 import { MenuListType } from "../../types";
@@ -31,10 +31,10 @@ const Footer: React.FunctionComponent<FooterProps> = ({ menuList }) => {
             to helping you get the most out of personal audio. Come and visit
             our demo facility - we’re open 7 days a week.
           </FooterDescription>
-          <CopyrightContainer>
+          <FooterCopyright>
             <CopyrightText>Copyright 2021. All Rights Reserved</CopyrightText>
             <SocialList />
-          </CopyrightContainer>
+          </FooterCopyright>
         </FooterGrid>
       </MaxWidthContainer>
     </StyledFooter>

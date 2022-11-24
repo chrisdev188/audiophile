@@ -1,10 +1,6 @@
 import styled from "styled-components";
-import { Container, TwelveColumnsGrid, HeadingSix } from "../../styles";
-
-export const StyledProducCategoryContainer = styled(Container)`
-  margin-block: 10rem;
-`;
-export const StyledProductCategoryList = styled(TwelveColumnsGrid)`
+import { TwelveColumnsGrid } from "../../styles";
+export const CategoryList = styled(TwelveColumnsGrid)`
   gap: 7rem;
   @media (min-width: 768px) {
     gap: 2rem;
@@ -31,4 +27,3 @@ export const ProductThumbnail = styled.img`
   transform: translate(-50%, -50%);
   max-width: 10rem;
 `;
-export const ProductName = styled(HeadingSix)``;

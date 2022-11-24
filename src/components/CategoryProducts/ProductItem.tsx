@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { HeadingFour, Overline, Paragraph } from "../../styles";
+import { HeadingMD } from "../../styles";
 import { ProductType } from "../../types";
 import Button from "../UI/Button/Button";
 import { StyledDescription, StyledOverline, StyledProductItem } from "./styles";
@@ -19,7 +19,7 @@ const ProductItem: React.FunctionComponent<ProductItemProps> = ({
   left,
 }) => {
   return (
-    <StyledProductItem as="li">
+    <StyledProductItem as="article">
       <div className={`img-container ${left ? "odds" : ""}`}>
         <picture>
           <source
@@ -38,7 +38,7 @@ const ProductItem: React.FunctionComponent<ProductItemProps> = ({
       </div>
       <div className={`text ${left ? "odds" : ""}`}>
         {product.new && <StyledOverline>new product</StyledOverline>}
-        <HeadingFour>{product.name}</HeadingFour>
+        <HeadingMD>{product.name}</HeadingMD>
         <StyledDescription>{product.description}</StyledDescription>
         <Link to={`/${product.category}/${product.slug}`}>
           <Button variant="filled">see product</Button>

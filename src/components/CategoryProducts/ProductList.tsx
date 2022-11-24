@@ -10,19 +10,20 @@ interface ProductListProps {
 
 const ProductList: React.FunctionComponent<ProductListProps> = ({ list }) => {
   return (
-    <Container>
+    <StyledProductList as="section">
       <MaxWidthContainer>
-        <StyledProductList as="ul">
+        <ul>
           {list.map((product, index) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              left={index % 2 === 1 ? true : false}
-            />
+            <li key={product.id}>
+              <ProductItem
+                product={product}
+                left={index % 2 === 1 ? true : false}
+              />
+            </li>
           ))}
-        </StyledProductList>
+        </ul>
       </MaxWidthContainer>
-    </Container>
+    </StyledProductList>
   );
 };
 

@@ -1,6 +1,6 @@
-import { StyledAbout, ImageContainer, Content } from "./styles";
 import {
-  HeadingTwo,
+  Container,
+  HeadingXL,
   MaxWidthContainer,
   Paragraph,
   TwelveColumnsGrid,
@@ -8,25 +8,26 @@ import {
 import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
 import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
 import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";
+import { AboutImage, AboutText } from "./styles";
 
 interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = (props) => {
   return (
-    <StyledAbout>
+    <Container as="section">
       <MaxWidthContainer>
         <TwelveColumnsGrid>
-          <ImageContainer>
+          <AboutImage>
             <picture>
               <source srcSet={bestGearDesktop} media="(min-width:1140px)" />
               <source srcSet={bestGearTablet} media="(min-width:768px)" />
               <img src={bestGearMobile} alt="A man a the headphone" />
             </picture>
-          </ImageContainer>
-          <Content>
-            <HeadingTwo as="h3">
+          </AboutImage>
+          <AboutText>
+            <HeadingXL as="h3">
               Bringing you the <span>best</span> audio gear
-            </HeadingTwo>
+            </HeadingXL>
             <Paragraph>
               Located at the heart of New York City, Audiophile is the premier
               store for high end headphones, earphones, speakers, and audio
@@ -36,10 +37,10 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
               people who make Audiophile the best place to buy your portable
               audio equipment.
             </Paragraph>
-          </Content>
+          </AboutText>
         </TwelveColumnsGrid>
       </MaxWidthContainer>
-    </StyledAbout>
+    </Container>
   );
 };
 

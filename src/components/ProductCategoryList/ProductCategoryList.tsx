@@ -1,11 +1,5 @@
-import { MaxWidthContainer } from "../../styles";
-import {
-  StyledProducCategoryContainer,
-  StyledProductCategoryList,
-  CategoryItem,
-  ProductThumbnail,
-  ProductName,
-} from "./styles";
+import { Container, HeadingXS, MaxWidthContainer } from "../../styles";
+import { CategoryList, CategoryItem, ProductThumbnail } from "./styles";
 import headphoneImg from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakerImg from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphoneImg from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
@@ -24,21 +18,21 @@ const ProductCategoryList: React.FunctionComponent<ProductCategoryListProps> = (
   props
 ) => {
   return (
-    <StyledProducCategoryContainer>
+    <Container as="section">
       <MaxWidthContainer>
-        <StyledProductCategoryList as="ul">
+        <CategoryList as="ul">
           {categoryList.map((category) => (
             <CategoryItem key={category.id}>
               <ProductThumbnail src={category.imgSrc} alt={category.name} />
-              <ProductName as="h3">{category.name}</ProductName>
+              <HeadingXS as="h3">{category.name}</HeadingXS>
               <Link to={category.path}>
                 <ButtonText>shop now</ButtonText>
               </Link>
             </CategoryItem>
           ))}
-        </StyledProductCategoryList>
+        </CategoryList>
       </MaxWidthContainer>
-    </StyledProducCategoryContainer>
+    </Container>
   );
 };
 

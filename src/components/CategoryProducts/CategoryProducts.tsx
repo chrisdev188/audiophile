@@ -1,3 +1,4 @@
+import { Main } from "../../styles";
 import { ProductListType } from "../../types";
 import About from "../About/About";
 import ProductCategoryList from "../ProductCategoryList/ProductCategoryList";
@@ -14,12 +15,14 @@ const CategoryProducts: React.FunctionComponent<CategoryProductsProps> = ({
   categoryName,
 }) => {
   return (
-    <div>
+    <>
       <Header categoryName={categoryName} />
-      <ProductList list={list} />
-      <ProductCategoryList />
-      <About />
-    </div>
+      <Main>
+        <ProductList list={list} />
+        <ProductCategoryList />
+        <About />
+      </Main>
+    </>
   );
 };
 

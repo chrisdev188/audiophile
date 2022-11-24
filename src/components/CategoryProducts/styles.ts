@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   Container,
+  HeadingXL,
   Overline,
   Paragraph,
   TwelveColumnsGrid,
@@ -10,18 +11,19 @@ export const StyledHeader = styled(Container)`
   background-color: ${({ theme }) => theme.colors.main};
   padding-top: 5.5rem;
   color: white;
-  .content {
-    display: grid;
-    place-items: center;
-    padding-block: 5rem;
-  }
 `;
 
-export const StyledProductList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 7rem;
-  margin-block: 10rem;
+export const HeaderText = styled(HeadingXL)`
+  padding-block: 5rem;
+  text-align: center;
+`;
+
+export const StyledProductList = styled(Container)`
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
 `;
 
 export const StyledProductItem = styled(TwelveColumnsGrid)`

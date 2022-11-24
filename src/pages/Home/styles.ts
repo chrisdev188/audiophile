@@ -1,9 +1,74 @@
 import styled from "styled-components";
-import { HeadingOne, Paragraph, Container } from "../../styles";
+import {
+  HeadingXXL,
+  Paragraph,
+  Container,
+  MaxWidthContainer,
+  Overline,
+} from "../../styles";
 import circlePatterns from "../../assets/home/desktop/pattern-circles.svg";
 
-export const StyledHomeProductGallery = styled(Container)`
-  margin-block: 10rem;
+export const StyledHero = styled.div`
+  height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5.5rem 1fr;
+  @media (min-width: 450px) {
+    height: 90vh;
+  }
+  @media (min-width: 768px) {
+    height: 95vh;
+  }
+`;
+
+export const HeroImageContainer = styled.div`
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const HeroContentContainer = styled(Container)`
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 2 / span 1;
+`;
+export const HeroContentWrapper = styled(MaxWidthContainer)`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    justify-content: start;
+    align-items: center;
+  }
+`;
+export const HeroText = styled.div`
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  @media (min-width: 768px) {
+    align-items: start;
+    text-align: left;
+  }
+`;
+export const HeroHeading = styled(HeadingXXL)`
+  color: white;
+`;
+export const HeroParagraph = styled(Paragraph)`
+  color: ${({ theme }) => theme.colors.textAlt};
+  margin-bottom: 1rem;
+  max-width: 22rem;
+`;
+export const HeroOverline = styled(Overline)`
+  color: ${({ theme }) => theme.colors.textAlt};
 `;
 
 export const ZX9Speaker = styled.div`
@@ -52,7 +117,6 @@ export const ZX9Content = styled.div`
   @media (min-width: 1140px) {
     align-items: start;
     text-align: left;
-    gap: 2.5rem;
     img {
       width: 25rem;
       margin-bottom: 0;
@@ -125,7 +189,7 @@ export const YX1Earphone = styled.div`
   }
 `;
 
-export const ZX9Heading = styled(HeadingOne)`
+export const ZX9Heading = styled(HeadingXXL)`
   color: white;
 `;
 export const ZX9Paragraph = styled(Paragraph)`

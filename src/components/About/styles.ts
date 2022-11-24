@@ -1,29 +1,7 @@
 import styled from "styled-components";
-import { Container, MaxWidthContainer } from "../../styles";
+import { Container } from "../../styles";
 
-export const StyledAbout = styled(Container)`
-  margin-block: 10rem;
-`;
-
-export const ImageContainer = styled.div`
-  grid-column: span 1;
-  grid-row: span 1;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  @media (min-width: 768px) {
-    grid-column: span 12;
-  }
-  @media (min-width: 1140px) {
-    grid-column: 7 / span 6;
-    grid-row: 1;
-  }
-`;
-
-export const Content = styled.div`
+export const AboutText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,5 +23,23 @@ export const Content = styled.div`
     grid-column: 1 / span 5;
     align-self: center;
     text-align: left;
+  }
+`;
+
+export const AboutImage = styled.div`
+  grid-column: span 1;
+  grid-row: span 1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  @media (min-width: 768px) {
+    grid-column: span 12;
+  }
+  @media (min-width: 1140px) {
+    grid-column: 7 / span 6;
+    grid-row: 1;
   }
 `;

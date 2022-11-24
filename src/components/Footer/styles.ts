@@ -58,7 +58,7 @@ export const FooterDescription = styled(Paragraph)`
   }
 `;
 
-export const CopyrightContainer = styled.div`
+export const FooterCopyright = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

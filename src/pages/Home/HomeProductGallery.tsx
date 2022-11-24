@@ -1,6 +1,7 @@
 import { Button } from "../../components";
 import {
-  HeadingFour,
+  Container,
+  HeadingMD,
   MaxWidthContainer,
   TwelveColumnsGrid,
 } from "../../styles";
@@ -22,7 +23,6 @@ import {
   YX1Earphone,
   ZX9Heading,
   ZX9Paragraph,
-  StyledHomeProductGallery,
 } from "./styles";
 
 interface HomeProductGalleryProps {}
@@ -31,7 +31,7 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
   props
 ) => {
   return (
-    <StyledHomeProductGallery>
+    <Container as="section">
       <MaxWidthContainer>
         <TwelveColumnsGrid>
           <ZX9Speaker>
@@ -58,7 +58,7 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
               <img src={zx7SpeakerMobile} alt="ZX9 speaker" />
             </picture>
             <div className="content">
-              <HeadingFour as="h3">ZX7 SPEAKER</HeadingFour>
+              <HeadingMD as="h3">ZX7 SPEAKER</HeadingMD>
               <Button variant="outlined" inverted>
                 see product
               </Button>
@@ -72,14 +72,14 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
             </picture>
           </YX1EarphoneImg>
           <YX1Earphone>
-            <HeadingFour as="h3">YX1 Earphones</HeadingFour>
+            <HeadingMD as="h3">YX1 Earphones</HeadingMD>
             <Button variant="outlined" inverted>
               see product
             </Button>
           </YX1Earphone>
         </TwelveColumnsGrid>
       </MaxWidthContainer>
-    </StyledHomeProductGallery>
+    </Container>
   );
 };
 

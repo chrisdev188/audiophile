@@ -1,5 +1,5 @@
-import { HeadingTwo, MaxWidthContainer } from "../../styles";
-import { StyledHeader } from "./styles";
+import { MaxWidthContainer } from "../../styles";
+import { HeaderText, StyledHeader } from "./styles";
 
 interface HeaderProps {
   categoryName: "headphones" | "speakers" | "earphones";
@@ -7,11 +7,9 @@ interface HeaderProps {
 
 const Header: React.FunctionComponent<HeaderProps> = ({ categoryName }) => {
   return (
-    <StyledHeader>
+    <StyledHeader as="header">
       <MaxWidthContainer>
-        <div className="content">
-          <HeadingTwo>{categoryName}</HeadingTwo>
-        </div>
+        <HeaderText as="h2">{categoryName}</HeaderText>
       </MaxWidthContainer>
     </StyledHeader>
   );
