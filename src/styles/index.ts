@@ -124,6 +124,7 @@ export const TwelveColumnsGrid = styled.div`
 
 export const Main = styled(Container)`
   padding-block: 10rem;
+  padding-inline: 0;
   & > * + * {
     margin-top: 10rem;
   }

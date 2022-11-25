@@ -1,13 +1,14 @@
-import { ProductType } from "../../types";
+import { MaxWidthContainer } from "../../styles";
+import { StyledProductPreview } from "./styles";
 
-interface ProductPreviewProps {
-  product: ProductType;
-}
+interface ProductPreviewProps {}
 
-const ProductPreview: React.FunctionComponent<ProductPreviewProps> = ({
-  product,
-}) => {
-  return <div></div>;
+const ProductPreview: React.FunctionComponent<ProductPreviewProps> = ({}) => {
+  return (
+    <StyledProductPreview as="section">
+      <MaxWidthContainer>product preview</MaxWidthContainer>
+    </StyledProductPreview>
+  );
 };
 
 export default ProductPreview;

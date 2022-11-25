@@ -4,7 +4,7 @@ import theme from "./theme";
 import { Footer, Navbar, ScrollToTop } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
-import { MenuListType } from "./types";
+import { MenuListType, ProductListType } from "./types";
 import myData from "./data.json";
 import { useEffect } from "react";
 
@@ -15,19 +15,21 @@ const menuList: MenuListType = [
   { id: 4, path: "/earphones", name: "earphones" },
 ];
 
+const productList = myData as ProductListType;
+
 function App() {
   useEffect(() => {
-    console.log(myData);
+    console.log(productList);
   }, []);
 
   // sort new products to top of the page
-  const headphonesList = myData
+  const headphonesList = productList
     .filter((item) => item.category === "headphones")
     .sort((a, b) => Number(b.new) - Number(a.new));
-  const speakersList = myData
+  const speakersList = productList
     .filter((item) => item.category === "speakers")
     .sort((a, b) => Number(b.new) - Number(a.new));
-  const earphonesList = myData
+  const earphonesList = productList
     .filter((item) => item.category === "earphones")
     .sort((a, b) => Number(b.new) - Number(a.new));
 
@@ -45,7 +47,7 @@ function App() {
           />
           <Route
             path="/headphones/:productSlug"
-            element={<ProductDetails productList={headphonesList} />}
+            element={<ProductDetails productList={productList} />}
           />
           <Route
             path="/speakers"
@@ -53,7 +55,7 @@ function App() {
           />
           <Route
             path="/speakers/:productSlug"
-            element={<ProductDetails productList={speakersList} />}
+            element={<ProductDetails productList={productList} />}
           />
           <Route
             path="/earphones"
@@ -61,7 +63,7 @@ function App() {
           />
           <Route
             path="/earphones/:productSlug"
-            element={<ProductDetails productList={earphonesList} />}
+            element={<ProductDetails productList={productList} />}
           />
         </Routes>
         <Footer menuList={menuList} />

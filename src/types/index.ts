@@ -3,28 +3,30 @@ export type MenuListType = Array<{
   path: string;
   name: string;
 }>;
-type _ResponsiveImage = {
+export type ResponsiveImageType = {
   mobile: string;
   tablet: string;
   desktop: string;
 };
+export type CategoryType = "headphones" | "speakers" | "earphones";
 export type ProductType = {
   id: number;
   slug: string;
   name: string;
-  image: _ResponsiveImage;
-  category: string;
-  categoryImage: _ResponsiveImage;
+  image: ResponsiveImageType;
+  category: CategoryType;
+  categoryImage: ResponsiveImageType;
   description: string;
   features: string;
   gallery: {
-    first: _ResponsiveImage;
-    second: _ResponsiveImage;
-    third: _ResponsiveImage;
+    first: ResponsiveImageType;
+    second: ResponsiveImageType;
+    third: ResponsiveImageType;
   };
   new: boolean;
   includes: Array<{ quantity: number; item: string }>;
-  others: Array<{ slug: string; name: string; image: _ResponsiveImage }>;
+  others: Array<{ slug: string; name: string; image: ResponsiveImageType }>;
   price: number;
 };
+
 export type ProductListType = Array<ProductType>;

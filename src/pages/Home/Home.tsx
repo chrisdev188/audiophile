@@ -10,7 +10,6 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
     <>
       <Hero />
       <Main>
-        <Counter />
         <ProductCategoryList />
         <HomeProductGallery />
         <About />
