@@ -1,10 +1,13 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
-import { HeadingMD } from "../../styles";
-import { ProductType } from "../../types";
-import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
-import Button from "../UI/Button/Button";
-import { StyledDescription, StyledOverline, StyledProductItem } from "./styles";
+import { HeadingMD } from "../../../styles";
+import { ProductType } from "../../../types";
+import ResponsiveImage from "../../ResponsiveImage";
+import Button from "../../UI/Button/Button";
+import {
+  StyledDescription,
+  StyledOverline,
+  StyledProductItem,
+} from "../styles";
 
 interface ProductItemProps {
   product: ProductType;
@@ -12,7 +15,7 @@ interface ProductItemProps {
 }
 
 const getImageUrl = (path: string) => {
-  return new URL(`../../${path}`, import.meta.url).href;
+  return new URL(`../../../${path}`, import.meta.url).href;
 };
 
 const ProductItem: React.FunctionComponent<ProductItemProps> = ({

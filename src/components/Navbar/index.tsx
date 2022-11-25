@@ -2,7 +2,7 @@ import { StyledNavbar, InnerBox, CartButton, ToggleMenuButton } from "./styles";
 import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import cart from "../../assets/shared/desktop/icon-cart.svg";
 import MenuList from "./MenuList";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 import { NavbarProps } from "./types";
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef } from "react";

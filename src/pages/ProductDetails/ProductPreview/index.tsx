@@ -1,5 +1,5 @@
-import { MaxWidthContainer } from "../../styles";
-import { StyledProductPreview } from "./styles";
+import { MaxWidthContainer } from "../../../styles";
+import { StyledProductPreview } from "../styles";
 
 interface ProductPreviewProps {}
 

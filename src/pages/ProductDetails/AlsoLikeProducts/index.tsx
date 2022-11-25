@@ -1,18 +1,22 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Button, ResponsiveImage } from "../../components";
+import { Button, ResponsiveImage } from "../../../components";
 import {
   Container,
   HeadingLG,
   HeadingSM,
   MaxWidthContainer,
-} from "../../styles";
-import { ProductListType, ProductType, ResponsiveImageType } from "../../types";
+} from "../../../styles";
+import {
+  ProductListType,
+  ProductType,
+  ResponsiveImageType,
+} from "../../../types";
 import {
   AlsoLikeCard,
   AlsoLikeHeading,
   StyledAlsoLikeProducts,
-} from "./styles";
+} from "../styles";
 
 interface AlsoLikeProductsProps {
   productList: ProductListType;
@@ -20,7 +24,7 @@ interface AlsoLikeProductsProps {
 }
 
 const getImageUrl = (path: string) => {
-  return new URL(`../../${path}`, import.meta.url).href;
+  return new URL(`../../../${path}`, import.meta.url).href;
 };
 
 const AlsoLikeProducts: React.FunctionComponent<AlsoLikeProductsProps> = ({
@@ -28,7 +32,7 @@ const AlsoLikeProducts: React.FunctionComponent<AlsoLikeProductsProps> = ({
   others,
 }) => {
   return (
-    <Container>
+    <Container theme={{ mb: "14rem" }}>
       <MaxWidthContainer>
         <AlsoLikeHeading as="h3">you may also like</AlsoLikeHeading>
         <StyledAlsoLikeProducts as="ul">

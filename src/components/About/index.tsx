@@ -9,7 +9,7 @@ import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
 import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
 import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";
 import { AboutImage, AboutText } from "./styles";
-import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
+import ResponsiveImage from "../ResponsiveImage";
 
 interface AboutProps {}
 

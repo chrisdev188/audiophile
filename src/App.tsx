@@ -6,7 +6,6 @@ import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
 import { MenuListType, ProductListType } from "./types";
 import myData from "./data.json";
-import { useEffect } from "react";
 
 const menuList: MenuListType = [
   { id: 1, path: "/", name: "home" },
@@ -18,9 +17,9 @@ const menuList: MenuListType = [
 const productList = myData as ProductListType;
 
 function App() {
-  useEffect(() => {
-    console.log(productList);
-  }, []);
+  // useEffect(() => {
+  //   console.log(productList);
+  // }, []);
 
   // sort new products to top of the page
   const headphonesList = productList

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { CategoryProducts } from "../../components";
 import { ProductListType } from "../../types";
 

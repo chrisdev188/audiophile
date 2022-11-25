@@ -1,15 +1,15 @@
 import * as React from "react";
-import { ResponsiveImage } from "../../components";
-import { Container, MaxWidthContainer } from "../../styles";
-import { ProductType } from "../../types";
-import { StyledProductGallery } from "./styles";
+import { ResponsiveImage } from "../../../components";
+import { Container, MaxWidthContainer } from "../../../styles";
+import { ProductType } from "../../../types";
+import { StyledProductGallery } from "../styles";
 
 interface ProductImageGalleryProps {
   product: ProductType;
 }
 
 const getImageUrl = (path: string) => {
-  return new URL(`../../${path}`, import.meta.url).href;
+  return new URL(`../../../${path}`, import.meta.url).href;
 };
 
 const ProductImageGallery: React.FunctionComponent<

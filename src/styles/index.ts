@@ -100,6 +100,7 @@ export const Paragraph = styled.p`
   font-weight: 500;
 `;
 export const Container = styled.div`
+  margin-bottom: ${(props) => props.theme.mb};
   @media (min-width: 768px) {
     padding-inline: 2.5rem;
   }

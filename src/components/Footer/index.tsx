@@ -7,7 +7,7 @@ import {
   CopyrightText,
   FooterCopyright,
 } from "./styles";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 import { MenuListType } from "../../types";
 import MenuList from "./MenuList";
 import SocialList from "./SocialList";

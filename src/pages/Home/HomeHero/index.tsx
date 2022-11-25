@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import homeHeroMobile from "../../assets/home/mobile/image-header.jpg";
-import homeHeroTablet from "../../assets/home/tablet/image-header.jpg";
-import homeHeroDesktop from "../../assets/home/desktop/image-hero.jpg";
-import { Button } from "../../components";
+import homeHeroMobile from "../../../assets/home/mobile/image-header.jpg";
+import homeHeroTablet from "../../../assets/home/tablet/image-header.jpg";
+import homeHeroDesktop from "../../../assets/home/desktop/image-hero.jpg";
+import { Button } from "../../../components";
 import {
   HeroContentContainer,
   HeroContentWrapper,
@@ -12,7 +12,7 @@ import {
   HeroParagraph,
   HeroText,
   StyledHero,
-} from "./styles";
+} from "../styles";
 
 interface HeroProps {}
 

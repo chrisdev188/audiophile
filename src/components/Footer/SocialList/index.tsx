@@ -1,7 +1,7 @@
-import { ReactComponent as FacebookLogo } from "../../assets/shared/desktop/icon-facebook.svg";
-import { ReactComponent as TwitterLogo } from "../../assets/shared/desktop/icon-twitter.svg";
-import { ReactComponent as InstagramLogo } from "../../assets/shared/desktop/icon-instagram.svg";
-import { StyledSocialList } from "./styles";
+import { ReactComponent as FacebookLogo } from "../../../assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as TwitterLogo } from "../../../assets/shared/desktop/icon-twitter.svg";
+import { ReactComponent as InstagramLogo } from "../../../assets/shared/desktop/icon-instagram.svg";
+import { StyledSocialList } from "../styles";
 
 const socials = [
   {

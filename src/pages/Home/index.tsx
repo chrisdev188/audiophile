@@ -1,6 +1,6 @@
 import { About, Counter, ProductCategoryList } from "../../components";
 import { Main } from "../../styles";
-import Hero from "./Hero";
+import Hero from "./HomeHero";
 import HomeProductGallery from "./HomeProductGallery";
 
 interface HomeProps {}

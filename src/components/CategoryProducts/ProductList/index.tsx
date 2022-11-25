@@ -1,8 +1,7 @@
-import * as React from "react";
-import { Container, MaxWidthContainer } from "../../styles";
-import { ProductListType } from "../../types";
+import { MaxWidthContainer } from "../../../styles";
+import { ProductListType } from "../../../types";
 import ProductItem from "./ProductItem";
-import { StyledProductList } from "./styles";
+import { StyledProductList } from "../styles";
 
 interface ProductListProps {
   list: ProductListType;

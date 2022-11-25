@@ -1,19 +1,19 @@
-import { Button, ResponsiveImage } from "../../components";
+import { Button, ResponsiveImage } from "../../../components";
 import {
   Container,
   HeadingMD,
   MaxWidthContainer,
   TwelveColumnsGrid,
-} from "../../styles";
-import zx9SpeakerMobile from "../../assets/home/mobile/image-speaker-zx9.png";
-import zx9SpeakerTablet from "../../assets/home/tablet/image-speaker-zx9.png";
-import zx9SpeakerDesktop from "../../assets/home/desktop/image-speaker-zx9.png";
-import zx7SpeakerMobile from "../../assets/home/mobile/image-speaker-zx7.jpg";
-import zx7SpeakerTablet from "../../assets/home/tablet/image-speaker-zx7.jpg";
-import zx7SpeakerDesktop from "../../assets/home/desktop/image-speaker-zx7.jpg";
-import YX1Mobile from "../../assets/home/mobile/image-earphones-yx1.jpg";
-import YX1Tablet from "../../assets/home/tablet/image-earphones-yx1.jpg";
-import YX1Desktop from "../../assets/home/desktop/image-earphones-yx1.jpg";
+} from "../../../styles";
+import zx9SpeakerMobile from "../../../assets/home/mobile/image-speaker-zx9.png";
+import zx9SpeakerTablet from "../../../assets/home/tablet/image-speaker-zx9.png";
+import zx9SpeakerDesktop from "../../../assets/home/desktop/image-speaker-zx9.png";
+import zx7SpeakerMobile from "../../../assets/home/mobile/image-speaker-zx7.jpg";
+import zx7SpeakerTablet from "../../../assets/home/tablet/image-speaker-zx7.jpg";
+import zx7SpeakerDesktop from "../../../assets/home/desktop/image-speaker-zx7.jpg";
+import YX1Mobile from "../../../assets/home/mobile/image-earphones-yx1.jpg";
+import YX1Tablet from "../../../assets/home/tablet/image-earphones-yx1.jpg";
+import YX1Desktop from "../../../assets/home/desktop/image-earphones-yx1.jpg";
 
 import {
   ZX9Speaker,
@@ -23,7 +23,7 @@ import {
   YX1Earphone,
   ZX9Heading,
   ZX9Paragraph,
-} from "./styles";
+} from "../styles";
 
 interface HomeProductGalleryProps {}
 

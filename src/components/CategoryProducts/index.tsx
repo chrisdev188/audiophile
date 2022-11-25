@@ -1,14 +1,10 @@
 import { Main } from "../../styles";
 import { ProductListType } from "../../types";
-import About from "../About/About";
-import ProductCategoryList from "../ProductCategoryList/ProductCategoryList";
+import About from "../About";
+import ProductCategoryList from "../ProductCategoryList";
 import Header from "./Header";
 import ProductList from "./ProductList";
-
-interface CategoryProductsProps {
-  list: ProductListType;
-  categoryName: "headphones" | "speakers" | "earphones";
-}
+import { CategoryProductsProps } from "./types";
 
 const CategoryProducts: React.FunctionComponent<CategoryProductsProps> = ({
   list,
