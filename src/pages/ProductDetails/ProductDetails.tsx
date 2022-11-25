@@ -19,7 +19,7 @@ const ProductDetails: React.FunctionComponent<ProductDetailsProps> = ({
     <>
       <ProductDetailsMain>
         <ProductPreview />
-        <ProductFeatures />
+        <ProductFeatures product={product} />
         <ProductImageGallery product={product} />
         <AlsoLikeProducts productList={productList} others={product.others} />
         <ProductCategoryList />
