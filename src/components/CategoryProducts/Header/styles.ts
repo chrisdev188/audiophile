@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, HeadingXL } from "../../../styles";
+import { Container, HeadingXL } from "../../../globalStyles";
 
 export const StyledHeader = styled(Container)`
   background-color: ${({ theme }) => theme.colors.main};

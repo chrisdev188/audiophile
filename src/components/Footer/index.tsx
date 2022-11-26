@@ -1,4 +1,4 @@
-import { MaxWidthContainer } from "../../styles";
+import { MaxWidthContainer } from "../../globalStyles";
 import {
   FooterNav,
   StyledFooter,
@@ -8,7 +8,7 @@ import {
   FooterCopyright,
 } from "./styles";
 import Logo from "../Logo";
-import { MenuListType } from "../../types";
+import { MenuListType } from "../../globalTypes";
 import MenuList from "./MenuList";
 import SocialList from "./SocialList";
 

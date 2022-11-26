@@ -1,4 +1,4 @@
-import { MaxWidthContainer } from "../../../styles";
+import { MaxWidthContainer } from "../../../globalStyles";
 import { HeaderText, StyledHeader } from "./styles";
 
 interface HeaderProps {

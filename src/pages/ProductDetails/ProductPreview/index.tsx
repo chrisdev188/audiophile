@@ -5,9 +5,9 @@ import {
   HeadingXS,
   MaxWidthContainer,
   Paragraph,
-} from "../../../styles";
-import { ProductType } from "../../../types";
-import { PreviewOverline, StyledProductPreview } from "../styles";
+} from "../../../globalStyles";
+import { ProductType } from "../../../globalTypes";
+import { PreviewOverline, StyledProductPreview } from "./styles";
 
 interface ProductPreviewProps {
   product: ProductType;

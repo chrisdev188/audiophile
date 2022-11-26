@@ -1,22 +1,17 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { Button, ResponsiveImage } from "../../../components";
-import {
-  Container,
-  HeadingLG,
-  HeadingSM,
-  MaxWidthContainer,
-} from "../../../styles";
+import { Container, HeadingSM, MaxWidthContainer } from "../../../globalStyles";
 import {
   ProductListType,
   ProductType,
   ResponsiveImageType,
-} from "../../../types";
+} from "../../../globalTypes";
 import {
   AlsoLikeCard,
   AlsoLikeHeading,
   StyledAlsoLikeProducts,
-} from "../styles";
+} from "./styles";
 
 interface AlsoLikeProductsProps {
   productList: ProductListType;

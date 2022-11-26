@@ -1,5 +1,5 @@
-import { MaxWidthContainer } from "../../../styles";
-import { ProductListType } from "../../../types";
+import { MaxWidthContainer } from "../../../globalStyles";
+import { ProductListType } from "../../../globalTypes";
 import ProductItem from "./ProductItem";
 import { StyledProductList } from "./styles";
 

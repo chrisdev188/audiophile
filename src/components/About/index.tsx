@@ -4,7 +4,7 @@ import {
   MaxWidthContainer,
   Paragraph,
   TwelveColumnsGrid,
-} from "../../styles";
+} from "../../globalStyles";
 import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
 import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
 import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";

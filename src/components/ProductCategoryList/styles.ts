@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TwelveColumnsGrid } from "../../styles";
+import { TwelveColumnsGrid } from "../../globalStyles";
 export const CategoryList = styled(TwelveColumnsGrid)`
   gap: 7rem;
   @media (min-width: 768px) {

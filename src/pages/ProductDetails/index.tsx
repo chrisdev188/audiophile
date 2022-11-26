@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { About, ProductCategoryList } from "../../components";
-import { ProductType } from "../../types";
+import { ProductType } from "../../globalTypes";
 import AlsoLikeProducts from "./AlsoLikeProducts";
 import ProductFeatures from "./ProductFeatures";
 import ProductImageGallery from "./ProductImageGallery";
@@ -12,9 +12,11 @@ const ProductDetails: React.FunctionComponent<ProductDetailsProps> = ({
   productList,
 }) => {
   const { productSlug } = useParams();
+
   const product = productList.find(
     (product) => product.slug === productSlug
   ) as ProductType;
+
   return (
     <>
       <ProductDetailsMain>

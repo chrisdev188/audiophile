@@ -4,9 +4,9 @@ import {
   HeadingMD,
   MaxWidthContainer,
   Paragraph,
-} from "../../../styles";
-import { ProductType } from "../../../types";
-import { StyledProductFeatures } from "../styles";
+} from "../../../globalStyles";
+import { ProductType } from "../../../globalTypes";
+import { StyledProductFeatures } from "./styles";
 
 interface ProductFeaturesProps {
   product: ProductType;

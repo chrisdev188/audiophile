@@ -1,4 +1,4 @@
-import { CategoryType, ProductListType } from "../../types";
+import { CategoryType, ProductListType } from "../../globalTypes";
 
 export interface CategoryProductsProps {
   list: ProductListType;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { HeadingMD } from "../../../styles";
-import { ProductType } from "../../../types";
+import { HeadingMD } from "../../../globalStyles";
+import { ProductType } from "../../../globalTypes";
 import ResponsiveImage from "../../ResponsiveImage";
 import Button from "../../UI/Button/Button";
 import { StyledDescription, StyledOverline, StyledProductItem } from "./styles";

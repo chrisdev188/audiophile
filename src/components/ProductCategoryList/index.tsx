@@ -1,4 +1,4 @@
-import { Container, HeadingXS, MaxWidthContainer } from "../../styles";
+import { Container, HeadingXS, MaxWidthContainer } from "../../globalStyles";
 import { CategoryList, CategoryItem, ProductThumbnail } from "./styles";
 import headphoneImg from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakerImg from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";

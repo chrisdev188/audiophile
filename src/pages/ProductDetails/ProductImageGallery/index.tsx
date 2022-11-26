@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ResponsiveImage } from "../../../components";
-import { Container, MaxWidthContainer } from "../../../styles";
-import { ProductType } from "../../../types";
-import { StyledProductGallery } from "../styles";
+import { Container, MaxWidthContainer } from "../../../globalStyles";
+import { ProductType } from "../../../globalTypes";
+import { StyledProductGallery } from "./styles";
 
 interface ProductImageGalleryProps {
   product: ProductType;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MenuListType } from "../../../types";
+import { MenuListType } from "../../../globalTypes";
 import { StyledMenuList } from "./styles";
 
 interface MenuListProps {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Paragraph, TwelveColumnsGrid } from "../../styles";
+import { Container, Paragraph, TwelveColumnsGrid } from "../../globalStyles";
 
 export const StyledFooter = styled(Container)`
   background-color: ${({ theme }) => theme.colors.main};

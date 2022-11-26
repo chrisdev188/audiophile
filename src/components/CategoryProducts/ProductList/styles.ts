@@ -4,7 +4,7 @@ import {
   Overline,
   Paragraph,
   TwelveColumnsGrid,
-} from "../../../styles";
+} from "../../../globalStyles";
 
 export const StyledProductList = styled(Container)`
   ul {

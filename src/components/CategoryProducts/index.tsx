@@ -1,5 +1,5 @@
-import { Main } from "../../styles";
-import { ProductListType } from "../../types";
+import { Main } from "../../globalStyles";
+import { ProductListType } from "../../globalTypes";
 import About from "../About";
 import ProductCategoryList from "../ProductCategoryList";
 import Header from "./Header";

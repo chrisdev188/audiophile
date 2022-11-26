@@ -12,7 +12,7 @@ import {
   HeroParagraph,
   HeroText,
   StyledHero,
-} from "../styles";
+} from "./styles";
 
 interface HeroProps {}
 

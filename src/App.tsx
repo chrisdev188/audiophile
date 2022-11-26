@@ -1,10 +1,10 @@
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./styles";
+import { Route, Routes } from "react-router-dom";
+import GlobalStyle from "./globalStyles";
 import theme from "./theme";
 import { Footer, Navbar, ScrollToTop } from "./components";
-import { Route, Routes } from "react-router-dom";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
-import { MenuListType, ProductListType } from "./types";
+import { MenuListType, ProductListType } from "./globalTypes";
 import myData from "./data.json";
 
 const menuList: MenuListType = [

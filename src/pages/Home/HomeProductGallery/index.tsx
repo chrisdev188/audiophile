@@ -4,7 +4,7 @@ import {
   HeadingMD,
   MaxWidthContainer,
   TwelveColumnsGrid,
-} from "../../../styles";
+} from "../../../globalStyles";
 import zx9SpeakerMobile from "../../../assets/home/mobile/image-speaker-zx9.png";
 import zx9SpeakerTablet from "../../../assets/home/tablet/image-speaker-zx9.png";
 import zx9SpeakerDesktop from "../../../assets/home/desktop/image-speaker-zx9.png";
@@ -23,7 +23,7 @@ import {
   YX1Earphone,
   ZX9Heading,
   ZX9Paragraph,
-} from "../styles";
+} from "./styles";
 
 interface HomeProductGalleryProps {}
 

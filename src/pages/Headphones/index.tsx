@@ -1,5 +1,5 @@
 import { CategoryProducts } from "../../components";
-import { ProductListType } from "../../types";
+import { ProductListType } from "../../globalTypes";
 
 interface HeadphonesProps {
   headphonesList: ProductListType;

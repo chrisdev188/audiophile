@@ -1,6 +1,6 @@
-import { About, Counter, ProductCategoryList } from "../../components";
-import { Main } from "../../styles";
-import Hero from "./HomeHero";
+import { About, ProductCategoryList } from "../../components";
+import { Main } from "../../globalStyles";
+import HomeHero from "./HomeHero";
 import HomeProductGallery from "./HomeProductGallery";
 
 interface HomeProps {}
@@ -8,7 +8,7 @@ interface HomeProps {}
 const Home: React.FunctionComponent<HomeProps> = (props) => {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <Main>
         <ProductCategoryList />
         <HomeProductGallery />
