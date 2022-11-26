@@ -33,13 +33,9 @@ const ProductPreview: React.FunctionComponent<ProductPreviewProps> = ({
             />
           </div>
           <div className="content">
-            <PreviewOverline>NEW PRODUCT</PreviewOverline>
-            <HeadingLG>XX99 Mark II Headphones</HeadingLG>
-            <Paragraph>
-              The new XX99 Mark II headphones is the pinnacle of pristine audio.
-              It redefines your premium headphone experience by reproducing the
-              balanced depth and precision of studio-quality sound.
-            </Paragraph>
+            <PreviewOverline>new product</PreviewOverline>
+            <HeadingLG>{product.name}</HeadingLG>
+            <Paragraph>{product.description}</Paragraph>
             <HeadingXS>${product.price}</HeadingXS>
             <div className="actions">
               <Counter />

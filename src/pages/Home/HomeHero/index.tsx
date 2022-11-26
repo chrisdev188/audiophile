@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import homeHeroMobile from "../../../assets/home/mobile/image-header.jpg";
 import homeHeroTablet from "../../../assets/home/tablet/image-header.jpg";
 import homeHeroDesktop from "../../../assets/home/desktop/image-hero.jpg";
@@ -13,6 +12,7 @@ import {
   HeroText,
   StyledHero,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 interface HeroProps {}
 
@@ -35,7 +35,9 @@ const Hero: React.FunctionComponent<HeroProps> = (props) => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </HeroParagraph>
-            <Button variant="filled">see product</Button>
+            <Link to="/headphones/xx99-mark-two-headphones">
+              <Button variant="filled">see product</Button>
+            </Link>
           </HeroText>
         </HeroContentWrapper>
       </HeroContentContainer>

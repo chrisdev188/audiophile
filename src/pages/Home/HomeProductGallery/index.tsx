@@ -24,6 +24,7 @@ import {
   ZX9Heading,
   ZX9Paragraph,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 interface HomeProductGalleryProps {}
 
@@ -47,22 +48,26 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </ZX9Paragraph>
-              <Button variant="filled" inverted>
-                see product
-              </Button>
+              <Link to="/speakers/zx9-speaker">
+                <Button variant="filled" inverted>
+                  see product
+                </Button>
+              </Link>
             </ZX9Content>
           </ZX9Speaker>
           <ZX7Speaker>
             <picture>
               <source srcSet={zx7SpeakerDesktop} media="(min-width:1140px)" />
               <source srcSet={zx7SpeakerTablet} media="(min-width:768px)" />
-              <img src={zx7SpeakerMobile} alt="ZX9 speaker" />
+              <img src={zx7SpeakerMobile} alt="ZX7 speaker" />
             </picture>
             <div className="content">
               <HeadingMD as="h3">ZX7 SPEAKER</HeadingMD>
-              <Button variant="outlined" inverted>
-                see product
-              </Button>
+              <Link to="/speakers/zx7-speaker">
+                <Button variant="outlined" inverted>
+                  see product
+                </Button>
+              </Link>
             </div>
           </ZX7Speaker>
           <YX1EarphoneImg>
@@ -74,9 +79,11 @@ const HomeProductGallery: React.FunctionComponent<HomeProductGalleryProps> = (
           </YX1EarphoneImg>
           <YX1Earphone>
             <HeadingMD as="h3">YX1 Earphones</HeadingMD>
-            <Button variant="outlined" inverted>
-              see product
-            </Button>
+            <Link to="/earphones/yx1-earphones">
+              <Button variant="outlined" inverted>
+                see product
+              </Button>
+            </Link>
           </YX1Earphone>
         </TwelveColumnsGrid>
       </MaxWidthContainer>
