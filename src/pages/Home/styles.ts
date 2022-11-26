@@ -20,7 +20,6 @@ export const StyledHero = styled.div`
     height: 95vh;
   }
 `;
-
 export const HeroImageContainer = styled.div`
   grid-column: 1;
   grid-row: 1 / span 2;
@@ -30,7 +29,6 @@ export const HeroImageContainer = styled.div`
     object-fit: cover;
   }
 `;
-
 export const HeroContentContainer = styled(Container)`
   width: 100%;
   height: 100%;
@@ -70,7 +68,6 @@ export const HeroParagraph = styled(Paragraph)`
 export const HeroOverline = styled(Overline)`
   color: ${({ theme }) => theme.colors.textAlt};
 `;
-
 export const ZX9Speaker = styled.div`
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.accent};
@@ -188,7 +185,6 @@ export const YX1Earphone = styled.div`
     padding: 4rem;
   }
 `;
-
 export const ZX9Heading = styled(HeadingXXL)`
   color: white;
 `;

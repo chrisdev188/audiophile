@@ -1,6 +1,6 @@
-import { StyledMenuList } from "../styles";
-import { MenuListType } from "../../../types";
+import { StyledMenuList } from "./styles";
 import { NavLink } from "react-router-dom";
+import { MenuListType } from "../../../types";
 
 interface MenuListProps {
   menuList: MenuListType;

@@ -1,11 +1,4 @@
-import * as React from "react";
-
-interface ResponsiveImageProps {
-  name: string;
-  mobileSrc: string;
-  tabletSrc: string;
-  desktopSrc: string;
-}
+import { ResponsiveImageProps } from "./types";
 
 const ResponsiveImage: React.FunctionComponent<ResponsiveImageProps> = ({
   name,

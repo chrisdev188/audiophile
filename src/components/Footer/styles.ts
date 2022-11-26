@@ -23,29 +23,6 @@ export const FooterNav = styled.nav`
   }
 `;
 
-export const StyledMenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  li {
-    text-align: center;
-  }
-  a {
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    &:hover {
-      color: ${({ theme }) => theme.colors.accent};
-    }
-  }
-  @media (min-width: 768px) {
-    flex-direction: row;
-    gap: 1.5rem;
-  }
-`;
-
 export const FooterDescription = styled(Paragraph)`
   color: ${({ theme }) => theme.colors.textAlt};
   text-align: center;
@@ -74,25 +51,4 @@ export const FooterCopyright = styled.div`
 
 export const CopyrightText = styled.small`
   color: ${({ theme }) => theme.colors.textAlt};
-`;
-
-export const StyledSocialList = styled.ul`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  a {
-    svg > path {
-      transition: all 300ms ease;
-    }
-    &:hover {
-      svg > path {
-        fill: ${({ theme }) => theme.colors.accent};
-      }
-    }
-  }
-  @media (min-width: 1140px) {
-    position: absolute;
-    top: -5rem;
-    right: 0;
-  }
 `;

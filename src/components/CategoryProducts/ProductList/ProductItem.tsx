@@ -3,11 +3,7 @@ import { HeadingMD } from "../../../styles";
 import { ProductType } from "../../../types";
 import ResponsiveImage from "../../ResponsiveImage";
 import Button from "../../UI/Button/Button";
-import {
-  StyledDescription,
-  StyledOverline,
-  StyledProductItem,
-} from "../styles";
+import { StyledDescription, StyledOverline, StyledProductItem } from "./styles";
 
 interface ProductItemProps {
   product: ProductType;

@@ -1,5 +1,5 @@
 import { MaxWidthContainer } from "../../../styles";
-import { HeaderText, StyledHeader } from "../styles";
+import { HeaderText, StyledHeader } from "./styles";
 
 interface HeaderProps {
   categoryName: "headphones" | "speakers" | "earphones";
