@@ -18,7 +18,7 @@ const ProductDetails: React.FunctionComponent<ProductDetailsProps> = ({
   return (
     <>
       <ProductDetailsMain>
-        <ProductPreview />
+        <ProductPreview product={product} />
         <ProductFeatures product={product} />
         <ProductImageGallery product={product} />
         <AlsoLikeProducts productList={productList} others={product.others} />
