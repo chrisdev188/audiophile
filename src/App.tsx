@@ -6,6 +6,7 @@ import { Footer, Navbar, ScrollToTop } from "./components";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
 import { MenuListType, ProductListType } from "./globalTypes";
 import myData from "./data.json";
+import { useState } from "react";
 
 const menuList: MenuListType = [
   { id: 1, path: "/", name: "home" },
@@ -17,10 +18,6 @@ const menuList: MenuListType = [
 const productList = myData as ProductListType;
 
 function App() {
-  // useEffect(() => {
-  //   console.log(productList);
-  // }, []);
-
   // sort new products to top of the page
   const headphonesList = productList
     .filter((item) => item.category === "headphones")
