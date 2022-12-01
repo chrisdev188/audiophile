@@ -27,6 +27,11 @@ export const StyledNavbar = styled(Container)`
     border-bottom-left-radius: 8px;
   }
 `;
+export const ToggleMenuButton = styled.button`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 export const InnerBox = styled(MaxWidthContainer)`
   height: 5.5rem;
   display: flex;
@@ -40,19 +45,5 @@ export const InnerBox = styled(MaxWidthContainer)`
   }
   @media (min-width: 768px) {
     justify-content: space-between;
-  }
-`;
-
-export const CartButton = styled.button`
-  @media (min-width: 450px) {
-    margin-left: auto;
-  }
-  @media (min-width: 768px) {
-    margin-left: 0;
-  }
-`;
-export const ToggleMenuButton = styled.button`
-  @media (min-width: 768px) {
-    display: none;
   }
 `;

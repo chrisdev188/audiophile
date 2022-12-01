@@ -1,15 +1,20 @@
-import { StyledNavbar, InnerBox, CartButton, ToggleMenuButton } from "./styles";
+import { StyledNavbar, InnerBox, ToggleMenuButton } from "./styles";
 import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
-import cart from "../../assets/shared/desktop/icon-cart.svg";
 import MenuList from "./MenuList";
 import Logo from "../Logo";
 import { NavbarProps } from "./types";
 import { useLocation } from "react-router-dom";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext } from "styled-components";
 import ProductCategoryList from "../ProductCategoryList";
+import CartButton from "../Cart/CartButton";
 
-const Navbar: React.FC<NavbarProps> = ({ menuList, showMenu, setShowMenu }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  menuList,
+  showMenu,
+  setShowMenu,
+  setShowCartModal,
+}) => {
   const { pathname } = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
   const theme = useContext(ThemeContext);
@@ -36,9 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuList, showMenu, setShowMenu }) => {
         </ToggleMenuButton>
         <Logo />
         <MenuList menuList={menuList} />
-        <CartButton aria-label="cart">
-          <img src={cart} alt="" aria-hidden />
-        </CartButton>
+        <CartButton setShowCartModal={setShowCartModal} />
       </InnerBox>
 
       {showMenu && (

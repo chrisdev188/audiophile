@@ -19,6 +19,7 @@ const productList = myData as ProductListType;
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
+  const [showCartModal, setShowCartModal] = useState(false);
   const [currentWindowSize, setCurrentWindowSize] = useState(window.innerWidth);
 
   // sort new products to top of the page
@@ -54,6 +55,10 @@ function App() {
     return () => window.removeEventListener("resize", handleHideMenu);
   }, [currentWindowSize]);
 
+  useEffect(() => {
+    console.log(showCartModal);
+  }, [showCartModal]);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -63,6 +68,7 @@ function App() {
           menuList={menuList}
           showMenu={showMenu as boolean}
           setShowMenu={setShowMenu}
+          setShowCartModal={setShowCartModal}
         />
         <Routes>
           <Route path="/" element={<Home />} />

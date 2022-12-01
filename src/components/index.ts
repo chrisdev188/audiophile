@@ -9,3 +9,6 @@ export { default as CategoryProducts } from "./CategoryProducts";
 export { default as Counter } from "./Counter";
 export { default as ResponsiveImage } from "./ResponsiveImage";
 export { default as ScrollToTop } from "./ScrollToTop";
+export { default as CartButton } from "./Cart/CartButton";
+export { default as CartBadge } from "./Cart/CartBadge";
+export { default as CartModal } from "./Cart/CartModal";
