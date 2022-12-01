@@ -4,19 +4,23 @@ interface CounterProps {
   number: number;
   handleIncrease: () => void;
   handleDecrease: () => void;
+  allowDecrementWhenNumberReachToOne: boolean;
 }
 
 const Counter: React.FunctionComponent<CounterProps> = ({
   number,
   handleIncrease,
   handleDecrease,
+  allowDecrementWhenNumberReachToOne = false,
 }) => {
   return (
     <StyledCounter>
       <button
         className="minus"
         onClick={handleDecrease}
-        disabled={number <= 1 ? true : false}
+        disabled={
+          number === 1 && !allowDecrementWhenNumberReachToOne ? true : false
+        }
       >
         {"\u002D"}
       </button>

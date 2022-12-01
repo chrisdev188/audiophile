@@ -7,27 +7,36 @@ import { StyledCartItem } from "../styles";
 interface CartItemProps {
   item: CartItemType;
   handleUpdateCartItemQuantity: (newItem: CartItemType) => void;
+  handleRemoveItemFromShoppingList: () => void;
 }
 
 const CartItem: React.FunctionComponent<CartItemProps> = ({
   item,
   handleUpdateCartItemQuantity,
+  handleRemoveItemFromShoppingList,
 }) => {
-  const [
-    quantity,
-    handleIncreaseQuantity,
-    handleDecreaseQuantity,
-    handleUpdateQuantity,
-  ] = useCounterCrement(item.quantity);
-  const product = useRef<CartItemType | null>(null);
+  const [quantity, handleIncreaseQuantity, handleDecreaseQuantity] =
+    useCounterCrement(item.quantity);
 
+  const product = useRef<CartItemType | null>(null);
   useEffect(() => {
     product.current = {
       ...item,
       quantity: quantity as number,
     };
+
     handleUpdateCartItemQuantity(product.current);
-  }, [quantity, handleUpdateCartItemQuantity]);
+  }, [
+    quantity,
+    handleUpdateCartItemQuantity,
+    handleRemoveItemFromShoppingList,
+  ]);
+
+  useEffect(() => {
+    if (quantity < 1) {
+      handleRemoveItemFromShoppingList();
+    }
+  }, [quantity]);
 
   return (
     <StyledCartItem>
@@ -39,6 +48,7 @@ const CartItem: React.FunctionComponent<CartItemProps> = ({
         number={quantity as number}
         handleIncrease={handleIncreaseQuantity as () => void}
         handleDecrease={handleDecreaseQuantity as () => void}
+        allowDecrementWhenNumberReachToOne
       />
     </StyledCartItem>
   );

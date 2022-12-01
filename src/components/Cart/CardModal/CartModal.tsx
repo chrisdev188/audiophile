@@ -5,11 +5,13 @@ import CartItem from "../CartItem/CartItem";
 import { StyledCartModal, CartModalMaxWidthContainer } from "../styles";
 interface CartModalProps {
   handleUpdateCartItemQuantity: (newItem: CartItemType) => void;
+  handleRemoveItemFromShoppingList: () => void;
   shoppingCartList: CartListType;
 }
 
 const CartModal: React.FunctionComponent<CartModalProps> = ({
   handleUpdateCartItemQuantity,
+  handleRemoveItemFromShoppingList,
   shoppingCartList,
 }) => {
   return (
@@ -23,6 +25,9 @@ const CartModal: React.FunctionComponent<CartModalProps> = ({
                   <CartItem
                     item={item}
                     handleUpdateCartItemQuantity={handleUpdateCartItemQuantity}
+                    handleRemoveItemFromShoppingList={
+                      handleRemoveItemFromShoppingList
+                    }
                   />
                 </li>
               ))

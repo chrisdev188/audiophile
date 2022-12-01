@@ -121,6 +121,12 @@ function App() {
     });
   }, []);
 
+  const handleRemoveItemFromShoppingList = useCallback(() => {
+    setShoppingCartList((prevList) => {
+      return prevList.filter((item) => item.quantity >= 1);
+    });
+  }, []);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -136,6 +142,7 @@ function App() {
         {showCartModal && (
           <CartModal
             handleUpdateCartItemQuantity={handleUpdateCartItemQuantity}
+            handleRemoveItemFromShoppingList={handleRemoveItemFromShoppingList}
             shoppingCartList={shoppingCartList}
           />
         )}
