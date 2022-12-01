@@ -69,7 +69,6 @@ function App() {
     }
     setCurrentTop(window.scrollY);
   }, [currentTop]);
-
   useEffect(() => {
     setCurrentTop(window.scrollY);
     window.addEventListener("scroll", handleChangeNavbarBackground);
@@ -141,7 +140,7 @@ function App() {
           />
         )}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setShowMenu={setShowMenu} />} />
           <Route
             path="/headphones"
             element={<Headphones headphonesList={headphonesList} />}
