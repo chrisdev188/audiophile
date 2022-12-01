@@ -9,6 +9,23 @@ export const StyledNavbar = styled(Container)`
   left: 0;
   right: 0;
   z-index: 999;
+
+  .overlay {
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 5.5rem);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+  .menu-wrapper {
+    background-color: white;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 `;
 export const InnerBox = styled(MaxWidthContainer)`
   height: 5.5rem;
@@ -16,6 +33,7 @@ export const InnerBox = styled(MaxWidthContainer)`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
+
   @media (min-width: 450px) {
     justify-content: start;
     gap: 2rem;

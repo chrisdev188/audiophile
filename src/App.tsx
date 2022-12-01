@@ -6,6 +6,8 @@ import { Footer, Navbar, ScrollToTop } from "./components";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
 import { MenuListType, ProductListType } from "./globalTypes";
 import myData from "./data.json";
+import { useToggle } from "./hooks";
+import { useEffect } from "react";
 
 const menuList: MenuListType = [
   { id: 1, path: "/", name: "home" },
@@ -17,6 +19,7 @@ const menuList: MenuListType = [
 const productList = myData as ProductListType;
 
 function App() {
+  const [showMenu, handleShowMenu] = useToggle(false);
   // sort new products to top of the page
   const headphonesList = productList
     .filter((item) => item.category === "headphones")
@@ -28,12 +31,24 @@ function App() {
     .filter((item) => item.category === "earphones")
     .sort((a, b) => Number(b.new) - Number(a.new));
 
+  useEffect(() => {
+    if (showMenu) {
+      document.body.className = "no-scroll";
+    } else {
+      document.body.className = "";
+    }
+  }, [showMenu]);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <ScrollToTop />
         <GlobalStyle />
-        <Navbar menuList={menuList} />
+        <Navbar
+          menuList={menuList}
+          showMenu={showMenu as boolean}
+          handleShowMenu={handleShowMenu as () => void}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

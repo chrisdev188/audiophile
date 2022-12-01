@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Manrope", sans-serif;
     min-height: 100vh;
     line-height:normal;
+    &.no-scroll{
+      overflow:hidden;
+    }
   }
   ul{ 
     list-style:none;

@@ -7,8 +7,13 @@ import { NavbarProps } from "./types";
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "styled-components";
+import ProductCategoryList from "../ProductCategoryList";
 
-const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  menuList,
+  showMenu,
+  handleShowMenu,
+}) => {
   const { pathname } = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
   const theme = useContext(ThemeContext);
@@ -27,7 +32,10 @@ const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
   return (
     <StyledNavbar as="nav" ref={navRef}>
       <InnerBox>
-        <ToggleMenuButton aria-label="toggle menu">
+        <ToggleMenuButton
+          onClick={handleShowMenu as () => void}
+          aria-label="toggle menu"
+        >
           <img src={hamburger} alt="" aria-hidden />
         </ToggleMenuButton>
         <Logo />
@@ -36,6 +44,14 @@ const Navbar: React.FC<NavbarProps> = ({ menuList }) => {
           <img src={cart} alt="" aria-hidden />
         </CartButton>
       </InnerBox>
+
+      {showMenu && (
+        <div className="overlay">
+          <div className="menu-wrapper">
+            <ProductCategoryList />
+          </div>
+        </div>
+      )}
     </StyledNavbar>
   );
 };

@@ -10,6 +10,7 @@ export const CategoryItem = styled.li`
   padding: 5rem 1rem 2.5rem 1rem;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.card};
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
