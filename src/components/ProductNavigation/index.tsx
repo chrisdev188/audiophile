@@ -12,13 +12,9 @@ const categoryList = [
   { id: 3, name: "earphones", path: "/earphones", imgSrc: earphoneImg },
 ];
 
-interface ProductCategoryListProps {}
-
-const ProductCategoryList: React.FunctionComponent<ProductCategoryListProps> = (
-  props
-) => {
+const ProductNavigation: React.FunctionComponent = () => {
   return (
-    <Container as="section">
+    <Container as="nav">
       <MaxWidthContainer>
         <CategoryList as="ul">
           {categoryList.map((category) => (
@@ -36,4 +32,4 @@ const ProductCategoryList: React.FunctionComponent<ProductCategoryListProps> = (
   );
 };
 
-export default ProductCategoryList;
+export default ProductNavigation;

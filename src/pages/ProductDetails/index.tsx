@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { About, ProductCategoryList } from "../../components";
+import { About, ProductNavigation } from "../../components";
 import { ProductType } from "../../globalTypes";
 import AlsoLikeProducts from "./AlsoLikeProducts";
 import ProductFeatures from "./ProductFeatures";
@@ -10,6 +10,7 @@ import { ProductDetailsProps } from "./types";
 
 const ProductDetails: React.FunctionComponent<ProductDetailsProps> = ({
   productList,
+  handleAddItemToShoppingList,
 }) => {
   const { productSlug } = useParams();
 
@@ -20,11 +21,14 @@ const ProductDetails: React.FunctionComponent<ProductDetailsProps> = ({
   return (
     <>
       <ProductDetailsMain>
-        <ProductPreview product={product} />
+        <ProductPreview
+          product={product}
+          handleAddItemToShoppingList={handleAddItemToShoppingList}
+        />
         <ProductFeatures product={product} />
         <ProductImageGallery product={product} />
         <AlsoLikeProducts productList={productList} others={product.others} />
-        <ProductCategoryList />
+        <ProductNavigation />
         <About />
       </ProductDetailsMain>
     </>

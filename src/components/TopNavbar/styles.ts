@@ -4,21 +4,21 @@ import { Container, MaxWidthContainer } from "../../globalStyles";
 export const StyledNavbar = styled(Container)`
   background-color: transparent;
   color: white;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+`;
+export const Overlay = styled(Container)`
+  position: fixed;
+  top: 5.5rem;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 5.5rem);
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
 
-  .overlay {
-    position: absolute;
-    top: 5.5rem;
-    left: 0;
-    right: 0;
-    height: calc(100vh - 5.5rem);
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: auto;
-  }
   .menu-wrapper {
     background-color: white;
     padding-top: 7rem;

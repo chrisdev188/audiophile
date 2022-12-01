@@ -1,13 +1,15 @@
-import cartIcon from "../../assets/shared/desktop/icon-cart.svg";
-import CartBadge from "./CartBadge";
-import { StyledCartButton } from "./styles";
+import cartIcon from "../../../assets/shared/desktop/icon-cart.svg";
+import CartBadge from "../CartBadge/CartBadge";
+import { StyledCartButton } from "../styles";
 
 interface CartButtonProps {
   setShowCartModal: React.Dispatch<React.SetStateAction<boolean>>;
+  numberOfShoppingItem: number;
 }
 
 const CartButton: React.FunctionComponent<CartButtonProps> = ({
   setShowCartModal,
+  numberOfShoppingItem,
 }) => {
   return (
     <StyledCartButton
@@ -15,7 +17,7 @@ const CartButton: React.FunctionComponent<CartButtonProps> = ({
       onClick={() => setShowCartModal((prevValue) => !prevValue)}
     >
       <img src={cartIcon} alt="" aria-hidden={true} />
-      <CartBadge number={1} />
+      <CartBadge number={numberOfShoppingItem} />
     </StyledCartButton>
   );
 };

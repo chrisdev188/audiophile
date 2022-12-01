@@ -1,4 +1,4 @@
-import { About, ProductCategoryList } from "../../components";
+import { About, ProductNavigation } from "../../components";
 import { Main } from "../../globalStyles";
 import HomeHero from "./HomeHero";
 import HomeProductGallery from "./HomeProductGallery";
@@ -10,7 +10,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
     <>
       <HomeHero />
       <Main>
-        <ProductCategoryList />
+        <ProductNavigation />
         <HomeProductGallery />
         <About />
       </Main>

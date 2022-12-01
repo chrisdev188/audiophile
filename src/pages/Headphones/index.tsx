@@ -1,4 +1,4 @@
-import { CategoryProducts } from "../../components";
+import { ProductCategory } from "../../pages";
 import { ProductListType } from "../../globalTypes";
 
 interface HeadphonesProps {
@@ -10,7 +10,7 @@ const Headphones: React.FunctionComponent<HeadphonesProps> = ({
 }) => {
   return (
     <div>
-      <CategoryProducts list={headphonesList} categoryName="headphones" />
+      <ProductCategory list={headphonesList} categoryName="headphones" />
     </div>
   );
 };

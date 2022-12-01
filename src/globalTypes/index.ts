@@ -30,3 +30,7 @@ export type ProductType = {
 };
 
 export type ProductListType = Array<ProductType>;
+
+export type CartItemType = ProductType & { deleted: boolean; quantity: number };
+
+export type CartListType = Array<CartItemType>;

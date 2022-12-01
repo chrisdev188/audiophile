@@ -1,4 +1,4 @@
-import { CategoryProducts } from "../../components";
+import { ProductCategory } from "../../pages";
 import { ProductListType } from "../../globalTypes";
 
 interface SpeakersProps {
@@ -8,7 +8,7 @@ interface SpeakersProps {
 const Speakers: React.FunctionComponent<SpeakersProps> = ({ speakersList }) => {
   return (
     <div>
-      <CategoryProducts list={speakersList} categoryName="speakers" />
+      <ProductCategory list={speakersList} categoryName="speakers" />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { StyledNavbar, InnerBox, ToggleMenuButton } from "./styles";
+import { StyledNavbar, InnerBox, ToggleMenuButton, Overlay } from "./styles";
 import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import MenuList from "./MenuList";
 import Logo from "../Logo";
@@ -6,14 +6,15 @@ import { NavbarProps } from "./types";
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext } from "styled-components";
-import ProductCategoryList from "../ProductCategoryList";
-import CartButton from "../Cart/CartButton";
+import ProductCategoryList from "../ProductNavigation";
+import CartButton from "../Cart/CartButton/CartButton";
 
 const Navbar: React.FC<NavbarProps> = ({
   menuList,
   showMenu,
   setShowMenu,
   setShowCartModal,
+  numberOfShoppingItem,
 }) => {
   const { pathname } = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
@@ -31,27 +32,31 @@ const Navbar: React.FC<NavbarProps> = ({
   }, [pathname]);
 
   return (
-    <StyledNavbar as="nav" ref={navRef}>
-      <InnerBox>
-        <ToggleMenuButton
-          onClick={() => setShowMenu((prevValue) => !prevValue)}
-          aria-label="toggle menu"
-        >
-          <img src={hamburger} alt="" aria-hidden />
-        </ToggleMenuButton>
-        <Logo />
-        <MenuList menuList={menuList} />
-        <CartButton setShowCartModal={setShowCartModal} />
-      </InnerBox>
-
+    <>
+      <StyledNavbar as="nav" ref={navRef} id="main-nav">
+        <InnerBox>
+          <ToggleMenuButton
+            onClick={() => setShowMenu((prevValue) => !prevValue)}
+            aria-label="toggle menu"
+          >
+            <img src={hamburger} alt="" aria-hidden />
+          </ToggleMenuButton>
+          <Logo />
+          <MenuList menuList={menuList} />
+          <CartButton
+            setShowCartModal={setShowCartModal}
+            numberOfShoppingItem={numberOfShoppingItem}
+          />
+        </InnerBox>
+      </StyledNavbar>
       {showMenu && (
-        <div className="overlay">
+        <Overlay>
           <div className="menu-wrapper">
             <ProductCategoryList />
           </div>
-        </div>
+        </Overlay>
       )}
-    </StyledNavbar>
+    </>
   );
 };
 

@@ -1,12 +1,11 @@
 import { Main } from "../../globalStyles";
-import { ProductListType } from "../../globalTypes";
-import About from "../About";
-import ProductCategoryList from "../ProductCategoryList";
+import About from "../../components/AboutSection";
+import ProductCategoryList from "../../components/ProductNavigation";
 import Header from "./Header";
 import ProductList from "./ProductList";
-import { CategoryProductsProps } from "./types";
+import { ProductCategoryProps } from "./types";
 
-const CategoryProducts: React.FunctionComponent<CategoryProductsProps> = ({
+const ProductCategory: React.FunctionComponent<ProductCategoryProps> = ({
   list,
   categoryName,
 }) => {
@@ -22,4 +21,4 @@ const CategoryProducts: React.FunctionComponent<CategoryProductsProps> = ({
   );
 };
 
-export default CategoryProducts;
+export default ProductCategory;

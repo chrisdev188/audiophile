@@ -1,4 +1,4 @@
-import { StyledCartBadge } from "./styles";
+import { StyledCartBadge } from "../styles";
 interface CartBadgeProps {
   number: number;
 }

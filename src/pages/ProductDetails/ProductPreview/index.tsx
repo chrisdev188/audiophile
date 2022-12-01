@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Button, Counter, ResponsiveImage } from "../../../components";
 import {
   Container,
@@ -6,20 +7,35 @@ import {
   MaxWidthContainer,
   Paragraph,
 } from "../../../globalStyles";
-import { ProductType } from "../../../globalTypes";
+import { CartItemType, ProductType } from "../../../globalTypes";
+import { useCounterCrement } from "../../../hooks";
 import { PreviewOverline, StyledProductPreview } from "./styles";
 
 interface ProductPreviewProps {
   product: ProductType;
+  handleAddItemToShoppingList: (newItem: CartItemType) => void;
 }
 
 const getImageUrl = (path: string) => {
   return new URL(`../../../${path}`, import.meta.url).href;
 };
 
-const ProductPreview: React.FunctionComponent<ProductPreviewProps> = ({
+const ProductPreview: React.FC<ProductPreviewProps> = ({
   product,
+  handleAddItemToShoppingList,
 }) => {
+  const [quantity, handleIncreaseQuantity, handleDecreaseQuantity] =
+    useCounterCrement(1);
+
+  const cartItem = useRef<CartItemType | null>(null);
+  useEffect(() => {
+    cartItem.current = {
+      ...product,
+      deleted: false,
+      quantity: quantity as number,
+    };
+  }, [quantity]);
+
   return (
     <Container as="section">
       <MaxWidthContainer>
@@ -38,8 +54,19 @@ const ProductPreview: React.FunctionComponent<ProductPreviewProps> = ({
             <Paragraph>{product.description}</Paragraph>
             <HeadingXS>${product.price}</HeadingXS>
             <div className="actions">
-              <Counter />
-              <Button variant="filled">add to cart</Button>
+              <Counter
+                number={quantity as number}
+                handleIncrease={handleIncreaseQuantity as () => void}
+                handleDecrease={handleDecreaseQuantity as () => void}
+              />
+              <Button
+                variant="filled"
+                onClick={() =>
+                  handleAddItemToShoppingList(cartItem.current as CartItemType)
+                }
+              >
+                add to cart
+              </Button>
             </div>
           </div>
         </StyledProductPreview>

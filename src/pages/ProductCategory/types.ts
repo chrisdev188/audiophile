@@ -1,6 +1,6 @@
 import { CategoryType, ProductListType } from "../../globalTypes";
 
-export interface CategoryProductsProps {
+export interface ProductCategoryProps {
   list: ProductListType;
   categoryName: CategoryType;
 }
