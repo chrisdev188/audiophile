@@ -9,11 +9,7 @@ import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "styled-components";
 import ProductCategoryList from "../ProductCategoryList";
 
-const Navbar: React.FC<NavbarProps> = ({
-  menuList,
-  showMenu,
-  handleShowMenu,
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ menuList, showMenu, setShowMenu }) => {
   const { pathname } = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
   const theme = useContext(ThemeContext);
@@ -33,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({
     <StyledNavbar as="nav" ref={navRef}>
       <InnerBox>
         <ToggleMenuButton
-          onClick={handleShowMenu as () => void}
+          onClick={() => setShowMenu((prevValue) => !prevValue)}
           aria-label="toggle menu"
         >
           <img src={hamburger} alt="" aria-hidden />

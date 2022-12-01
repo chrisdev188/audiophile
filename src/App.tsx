@@ -6,8 +6,7 @@ import { Footer, Navbar, ScrollToTop } from "./components";
 import { Home, Headphones, Speakers, Earphones, ProductDetails } from "./pages";
 import { MenuListType, ProductListType } from "./globalTypes";
 import myData from "./data.json";
-import { useToggle } from "./hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const menuList: MenuListType = [
   { id: 1, path: "/", name: "home" },
@@ -19,7 +18,9 @@ const menuList: MenuListType = [
 const productList = myData as ProductListType;
 
 function App() {
-  const [showMenu, handleShowMenu] = useToggle(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [currentWindowSize, setCurrentWindowSize] = useState(window.innerWidth);
+
   // sort new products to top of the page
   const headphonesList = productList
     .filter((item) => item.category === "headphones")
@@ -31,6 +32,7 @@ function App() {
     .filter((item) => item.category === "earphones")
     .sort((a, b) => Number(b.new) - Number(a.new));
 
+  // prevent scroll when menu is shown
   useEffect(() => {
     if (showMenu) {
       document.body.className = "no-scroll";
@@ -38,6 +40,19 @@ function App() {
       document.body.className = "";
     }
   }, [showMenu]);
+
+  useEffect(() => {
+    const breakpoint = 900;
+    const handleHideMenu = () => {
+      setCurrentWindowSize(window.innerWidth);
+      // hide menu on big screen sizes
+      if (currentWindowSize > breakpoint) {
+        setShowMenu(false);
+      }
+    };
+    window.addEventListener("resize", handleHideMenu);
+    return () => window.removeEventListener("resize", handleHideMenu);
+  }, [currentWindowSize]);
 
   return (
     <div className="App">
@@ -47,7 +62,7 @@ function App() {
         <Navbar
           menuList={menuList}
           showMenu={showMenu as boolean}
-          handleShowMenu={handleShowMenu as () => void}
+          setShowMenu={setShowMenu}
         />
         <Routes>
           <Route path="/" element={<Home />} />
