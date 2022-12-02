@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import GlobalStyle from "./globalStyles";
 import theme from "./theme";
 import { CartModal, Footer, Navbar, ScrollToTop } from "./components";
@@ -23,10 +23,10 @@ const menuList: MenuListType = [
 const productList = myData as ProductListType;
 
 function App() {
+  const { pathname } = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [currentWindowSize, setCurrentWindowSize] = useState(window.innerWidth);
-  const [currentTop, setCurrentTop] = useState(window.scrollY);
   const [shoppingCartList, setShoppingCartList] = useState<CartListType>([]);
   const numberOfShoppingItem = shoppingCartList.length;
 
@@ -54,36 +54,19 @@ function App() {
     return () => window.removeEventListener("resize", handleHideMenu);
   }, [currentWindowSize]);
 
-  // scroll down will change color of navbar, if at top, navbar background will be transparent
-  const handleChangeNavbarBackground = useCallback(() => {
-    if (currentTop > window.scrollY) {
-      if (window.scrollY === 0) {
-        (
-          document.getElementById("main-nav") as HTMLElement
-        ).style.backgroundColor = "black";
-      }
-    } else if (currentTop < window.scrollY) {
-      (
-        document.getElementById("main-nav") as HTMLElement
-      ).style.backgroundColor = theme.colors.main;
-    }
-    setCurrentTop(window.scrollY);
-  }, [currentTop]);
-  useEffect(() => {
-    setCurrentTop(window.scrollY);
-    window.addEventListener("scroll", handleChangeNavbarBackground);
-    return () =>
-      window.removeEventListener("scroll", handleChangeNavbarBackground);
-  }, [handleChangeNavbarBackground]);
-
   // prevent scroll when menu shown
   useEffect(() => {
-    if (showMenu) {
+    if (showMenu || showCartModal) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
-  }, [showMenu]);
+  }, [showMenu, showCartModal]);
+
+  // when url path change, hide menu
+  useEffect(() => {
+    setShowMenu(false);
+  }, [pathname]);
 
   const handleAddItemToShoppingList = useCallback((newItem: CartItemType) => {
     setShoppingCartList((prevList) => {

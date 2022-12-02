@@ -4,14 +4,14 @@ import { Container, MaxWidthContainer } from "../../globalStyles";
 export const StyledNavbar = styled(Container)`
   background-color: transparent;
   color: white;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
 `;
 export const Overlay = styled(Container)`
-  position: fixed;
+  position: absolute;
   top: 5.5rem;
   left: 0;
   right: 0;

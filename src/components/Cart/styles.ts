@@ -26,13 +26,13 @@ export const StyledCartBadge = styled.div`
 `;
 export const StyledCartModal = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: calc(100vh);
   padding: 7.5rem 0 0 0;
-  z-index: 998;
+  z-index: 999;
   .content {
     background: white;
     width: 25rem;

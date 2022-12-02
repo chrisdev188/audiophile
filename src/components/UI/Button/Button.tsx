@@ -1,8 +1,7 @@
-import * as React from "react";
 import { ButtonProps } from "./types";
 import { StyledButton } from "./styles";
 
-const Button: React.FunctionComponent<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   variant,
   inverted,

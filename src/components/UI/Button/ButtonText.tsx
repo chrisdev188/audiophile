@@ -1,25 +1,6 @@
-import styled from "styled-components";
 import arrowIcon from "../../../assets/shared/desktop/icon-arrow-right.svg";
-
-const StyledButtonText = styled.button`
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: hsla(0, 0%, 0%, 0.5);
-  transition: all 300ms ease;
-  &:hover {
-    color: ${({ theme }) => theme.colors.accent};
-  }
-`;
-
-interface ButtonTextProps {
-  children: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-}
+import { StyledButtonText } from "./styles";
+import { ButtonTextProps } from "./types";
 
 const ButtonText: React.FunctionComponent<ButtonTextProps> = ({
   children,

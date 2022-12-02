@@ -1,6 +1,4 @@
 import { CartItemType, CartListType } from "../../../globalTypes";
-import { useCounterCrement } from "../../../hooks";
-import Counter from "../../UI/Counter";
 import CartItem from "../CartItem/CartItem";
 import { StyledCartModal, CartModalMaxWidthContainer } from "../styles";
 interface CartModalProps {

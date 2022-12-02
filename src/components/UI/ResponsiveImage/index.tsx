@@ -1,6 +1,6 @@
 import { ResponsiveImageProps } from "./types";
 
-const ResponsiveImage: React.FunctionComponent<ResponsiveImageProps> = ({
+const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   name,
   mobileSrc,
   tabletSrc,

@@ -4,9 +4,9 @@ import MenuList from "./MenuList";
 import Logo from "../Logo";
 import { NavbarProps } from "./types";
 import { useLocation } from "react-router-dom";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "styled-components";
-import ProductCategoryList from "../ProductNavigation";
+import ProductNavigation from "../ProductNavigation";
 import CartButton from "../Cart/CartButton/CartButton";
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -32,31 +32,29 @@ const Navbar: React.FC<NavbarProps> = ({
   }, [pathname]);
 
   return (
-    <>
-      <StyledNavbar as="nav" ref={navRef} id="main-nav">
-        <InnerBox>
-          <ToggleMenuButton
-            onClick={() => setShowMenu((prevValue) => !prevValue)}
-            aria-label="toggle menu"
-          >
-            <img src={hamburger} alt="" aria-hidden />
-          </ToggleMenuButton>
-          <Logo />
-          <MenuList menuList={menuList} />
-          <CartButton
-            setShowCartModal={setShowCartModal}
-            numberOfShoppingItem={numberOfShoppingItem}
-          />
-        </InnerBox>
-      </StyledNavbar>
+    <StyledNavbar as="nav" ref={navRef} id="main-nav">
+      <InnerBox>
+        <ToggleMenuButton
+          onClick={() => setShowMenu((prevValue) => !prevValue)}
+          aria-label="toggle menu"
+        >
+          <img src={hamburger} alt="" aria-hidden />
+        </ToggleMenuButton>
+        <Logo />
+        <MenuList menuList={menuList} />
+        <CartButton
+          setShowCartModal={setShowCartModal}
+          numberOfShoppingItem={numberOfShoppingItem}
+        />
+      </InnerBox>
       {showMenu && (
         <Overlay>
           <div className="menu-wrapper">
-            <ProductCategoryList />
+            <ProductNavigation />
           </div>
         </Overlay>
       )}
-    </>
+    </StyledNavbar>
   );
 };
 

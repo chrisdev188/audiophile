@@ -12,9 +12,7 @@ const categoryList = [
   { id: 3, name: "earphones", path: "/earphones", imgSrc: earphoneImg },
 ];
 
-const ProductNavigation: React.FunctionComponent<{
-  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ setShowMenu }) => {
+const ProductNavigation: React.FC = () => {
   return (
     <Container as="nav">
       <MaxWidthContainer>
@@ -23,7 +21,7 @@ const ProductNavigation: React.FunctionComponent<{
             <CategoryItem key={category.id}>
               <ProductThumbnail src={category.imgSrc} alt={category.name} />
               <HeadingXS as="h3">{category.name}</HeadingXS>
-              <Link to={category.path} onClick={() => setShowMenu(false)}>
+              <Link to={category.path}>
                 <ButtonText>shop now</ButtonText>
               </Link>
             </CategoryItem>

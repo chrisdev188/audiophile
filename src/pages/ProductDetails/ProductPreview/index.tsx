@@ -8,7 +8,7 @@ import {
   Paragraph,
 } from "../../../globalStyles";
 import { CartItemType, ProductType } from "../../../globalTypes";
-import { useCounterCrement } from "../../../hooks";
+import { useCounter } from "../../../hooks";
 import { PreviewOverline, StyledProductPreview } from "./styles";
 
 interface ProductPreviewProps {
@@ -24,17 +24,18 @@ const ProductPreview: React.FC<ProductPreviewProps> = ({
   product,
   handleAddItemToShoppingList,
 }) => {
-  const [quantity, handleIncreaseQuantity, handleDecreaseQuantity] =
-    useCounterCrement(1);
+  const { count, handleIncrease, handleDecrease } = useCounter(1);
 
   const cartItem = useRef<CartItemType | null>(null);
   useEffect(() => {
-    cartItem.current = {
-      ...product,
-      deleted: false,
-      quantity: quantity as number,
-    };
-  }, [quantity]);
+    if (product) {
+      cartItem.current = {
+        ...product,
+        deleted: false,
+        quantity: count,
+      };
+    }
+  }, [count]);
 
   return (
     <Container as="section">
@@ -55,9 +56,10 @@ const ProductPreview: React.FC<ProductPreviewProps> = ({
             <HeadingXS>${product.price}</HeadingXS>
             <div className="actions">
               <Counter
-                number={quantity as number}
-                handleIncrease={handleIncreaseQuantity as () => void}
-                handleDecrease={handleDecreaseQuantity as () => void}
+                number={count}
+                handleIncrease={handleIncrease}
+                handleDecrease={handleDecrease}
+                allowDecrement={count > 1 ? true : false}
               />
               <Button
                 variant="filled"

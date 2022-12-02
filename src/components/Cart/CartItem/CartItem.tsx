@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { CartItemType } from "../../../globalTypes";
-import { useCounterCrement } from "../../../hooks";
+import { useCounter } from "../../../hooks";
 import Counter from "../../UI/Counter";
 import { StyledCartItem } from "../styles";
 
@@ -15,28 +15,23 @@ const CartItem: React.FunctionComponent<CartItemProps> = ({
   handleUpdateCartItemQuantity,
   handleRemoveItemFromShoppingList,
 }) => {
-  const [quantity, handleIncreaseQuantity, handleDecreaseQuantity] =
-    useCounterCrement(item.quantity);
+  const { count, handleIncrease, handleDecrease } = useCounter(item.quantity);
 
   const product = useRef<CartItemType | null>(null);
   useEffect(() => {
     product.current = {
       ...item,
-      quantity: quantity as number,
+      quantity: count,
     };
 
     handleUpdateCartItemQuantity(product.current);
-  }, [
-    quantity,
-    handleUpdateCartItemQuantity,
-    handleRemoveItemFromShoppingList,
-  ]);
+  }, [count, handleUpdateCartItemQuantity, handleRemoveItemFromShoppingList]);
 
   useEffect(() => {
-    if (quantity < 1) {
+    if (count < 1) {
       handleRemoveItemFromShoppingList();
     }
-  }, [quantity]);
+  }, [count]);
 
   return (
     <StyledCartItem>
@@ -45,10 +40,10 @@ const CartItem: React.FunctionComponent<CartItemProps> = ({
         <p>{item.price}</p>
       </div>
       <Counter
-        number={quantity as number}
-        handleIncrease={handleIncreaseQuantity as () => void}
-        handleDecrease={handleDecreaseQuantity as () => void}
-        allowDecrementWhenNumberReachToOne
+        number={count}
+        handleIncrease={handleIncrease}
+        handleDecrease={handleDecrease}
+        allowDecrement
       />
     </StyledCartItem>
   );

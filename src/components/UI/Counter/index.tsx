@@ -1,26 +1,18 @@
 import { StyledCounter } from "./styles";
+import { CounterProps } from "./types";
 
-interface CounterProps {
-  number: number;
-  handleIncrease: () => void;
-  handleDecrease: () => void;
-  allowDecrementWhenNumberReachToOne: boolean;
-}
-
-const Counter: React.FunctionComponent<CounterProps> = ({
+const Counter: React.FC<CounterProps> = ({
   number,
   handleIncrease,
   handleDecrease,
-  allowDecrementWhenNumberReachToOne = false,
+  allowDecrement = true,
 }) => {
   return (
     <StyledCounter>
       <button
         className="minus"
         onClick={handleDecrease}
-        disabled={
-          number === 1 && !allowDecrementWhenNumberReachToOne ? true : false
-        }
+        disabled={!allowDecrement}
       >
         {"\u002D"}
       </button>
