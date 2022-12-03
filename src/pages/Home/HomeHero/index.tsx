@@ -1,6 +1,6 @@
-import homeHeroMobile from "../../../assets/home/mobile/image-header.jpg";
-import homeHeroTablet from "../../../assets/home/tablet/image-header.jpg";
-import homeHeroDesktop from "../../../assets/home/desktop/image-hero.jpg";
+// import homeHeroMobile from "../../../assets/home/mobile/image-header.jpg";
+// import homeHeroTablet from "../../../assets/home/tablet/image-header.jpg";
+// import homeHeroDesktop from "../../../assets/home/desktop/image-hero.jpg";
 import { Button } from "../../../components";
 import {
   HeroContentContainer,
@@ -21,9 +21,18 @@ const Hero: React.FunctionComponent<HeroProps> = (props) => {
     <StyledHero as="header">
       <HeroImageContainer>
         <picture>
-          <source srcSet={homeHeroDesktop} media="(min-width:768px)" />
-          <source srcSet={homeHeroTablet} media="(min-width:450px)" />
-          <img src={homeHeroMobile} alt="XX99 Mark II Headphones" />
+          <source
+            srcSet="/assets/home/desktop/image-hero.jpg"
+            media="(min-width:768px)"
+          />
+          <source
+            srcSet="/assets/home/tablet/image-hero.jpg"
+            media="(min-width:450px)"
+          />
+          <img
+            src="/assets/home/mobile/image-hero.jpg"
+            alt="XX99 Mark II Headphones"
+          />
         </picture>
       </HeroImageContainer>
       <HeroContentContainer>

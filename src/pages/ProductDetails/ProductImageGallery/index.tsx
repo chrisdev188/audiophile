@@ -8,10 +8,6 @@ interface ProductImageGalleryProps {
   product: ProductType;
 }
 
-const getImageUrl = (path: string) => {
-  return new URL(`../../../${path}`, import.meta.url).href;
-};
-
 const ProductImageGallery: React.FunctionComponent<
   ProductImageGalleryProps
 > = ({ product }) => {
@@ -22,25 +18,25 @@ const ProductImageGallery: React.FunctionComponent<
           <div className="top">
             <ResponsiveImage
               name=""
-              mobileSrc={getImageUrl(product.gallery.first.mobile)}
-              tabletSrc={getImageUrl(product.gallery.first.tablet)}
-              desktopSrc={getImageUrl(product.gallery.first.desktop)}
+              mobileSrc={product.gallery.first.mobile}
+              tabletSrc={product.gallery.first.tablet}
+              desktopSrc={product.gallery.first.desktop}
             />
           </div>
           <div className="middle">
             <ResponsiveImage
               name=""
-              mobileSrc={getImageUrl(product.gallery.second.mobile)}
-              tabletSrc={getImageUrl(product.gallery.second.tablet)}
-              desktopSrc={getImageUrl(product.gallery.second.desktop)}
+              mobileSrc={product.gallery.second.mobile}
+              tabletSrc={product.gallery.second.tablet}
+              desktopSrc={product.gallery.second.desktop}
             />
           </div>
           <div className="bottom">
             <ResponsiveImage
               name=""
-              mobileSrc={getImageUrl(product.gallery.third.mobile)}
-              tabletSrc={getImageUrl(product.gallery.third.tablet)}
-              desktopSrc={getImageUrl(product.gallery.third.desktop)}
+              mobileSrc={product.gallery.third.mobile}
+              tabletSrc={product.gallery.third.tablet}
+              desktopSrc={product.gallery.third.desktop}
             />
           </div>
         </StyledProductGallery>

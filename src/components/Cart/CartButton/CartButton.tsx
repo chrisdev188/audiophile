@@ -1,4 +1,4 @@
-import cartIcon from "../../../assets/shared/desktop/icon-cart.svg";
+// import cartIcon from "../../../assets/shared/desktop/icon-cart.svg";
 import CartBadge from "../CartBadge/CartBadge";
 import { StyledCartButton } from "../styles";
 
@@ -16,7 +16,11 @@ const CartButton: React.FunctionComponent<CartButtonProps> = ({
       aria-label="cart"
       onClick={() => setShowCartModal((prevValue) => !prevValue)}
     >
-      <img src={cartIcon} alt="" aria-hidden={true} />
+      <img
+        src="/assets/shared/desktop/icon-cart.svg"
+        alt=""
+        aria-hidden={true}
+      />
       <CartBadge number={numberOfShoppingItem} />
     </StyledCartButton>
   );

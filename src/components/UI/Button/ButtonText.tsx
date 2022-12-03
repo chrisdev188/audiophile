@@ -1,4 +1,4 @@
-import arrowIcon from "../../../assets/shared/desktop/icon-arrow-right.svg";
+// import arrowIcon from "../../../assets/shared/desktop/icon-arrow-right.svg";
 import { StyledButtonText } from "./styles";
 import { ButtonTextProps } from "./types";
 
@@ -10,7 +10,11 @@ const ButtonText: React.FunctionComponent<ButtonTextProps> = ({
     <StyledButtonText onClick={onClick}>
       {children}
       <span>
-        <img src={arrowIcon} alt="" aria-hidden={true} />
+        <img
+          src="/assets/shared/desktop/icon-arrow-right.svg"
+          alt=""
+          aria-hidden={true}
+        />
       </span>
     </StyledButtonText>
   );

@@ -10,10 +10,6 @@ interface ProductItemProps {
   left: Boolean;
 }
 
-const getImageUrl = (path: string) => {
-  return new URL(`../../../${path}`, import.meta.url).href;
-};
-
 const ProductItem: React.FunctionComponent<ProductItemProps> = ({
   product,
   left,
@@ -23,9 +19,9 @@ const ProductItem: React.FunctionComponent<ProductItemProps> = ({
       <div className={`img-container ${left ? "odds" : ""}`}>
         <ResponsiveImage
           name={product.name}
-          mobileSrc={getImageUrl(product.categoryImage.mobile)}
-          tabletSrc={getImageUrl(product.categoryImage.tablet)}
-          desktopSrc={getImageUrl(product.categoryImage.desktop)}
+          mobileSrc={product.categoryImage.mobile}
+          tabletSrc={product.categoryImage.tablet}
+          desktopSrc={product.categoryImage.desktop}
         />
       </div>
       <div className={`text ${left ? "odds" : ""}`}>

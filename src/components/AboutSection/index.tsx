@@ -5,9 +5,9 @@ import {
   Paragraph,
   TwelveColumnsGrid,
 } from "../../globalStyles";
-import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
-import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
-import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";
+// import bestGearMobile from "../../assets/shared/mobile/image-best-gear.jpg";
+// import bestGearTablet from "../../assets/shared/tablet/image-best-gear.jpg";
+// import bestGearDesktop from "../../assets/shared/desktop/image-best-gear.jpg";
 import { AboutImage, AboutText } from "./styles";
 import ResponsiveImage from "../UI/ResponsiveImage";
 
@@ -21,9 +21,9 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
           <AboutImage>
             <ResponsiveImage
               name="A man a the headphone"
-              mobileSrc={bestGearMobile}
-              tabletSrc={bestGearTablet}
-              desktopSrc={bestGearDesktop}
+              mobileSrc="/assets/shared/mobile/image-best-gear.jpg"
+              tabletSrc="/assets/shared/tablet/image-best-gear.jpg"
+              desktopSrc="/assets/shared/desktop/image-best-gear.jpg"
             />
           </AboutImage>
           <AboutText>

@@ -16,10 +16,6 @@ interface ProductPreviewProps {
   handleAddItemToShoppingList: (newItem: CartItemType) => void;
 }
 
-const getImageUrl = (path: string) => {
-  return new URL(`../../../${path}`, import.meta.url).href;
-};
-
 const ProductPreview: React.FC<ProductPreviewProps> = ({
   product,
   handleAddItemToShoppingList,
@@ -44,9 +40,9 @@ const ProductPreview: React.FC<ProductPreviewProps> = ({
           <div className="image-container">
             <ResponsiveImage
               name={product.name}
-              mobileSrc={getImageUrl(product.image.mobile)}
-              tabletSrc={getImageUrl(product.image.tablet)}
-              desktopSrc={getImageUrl(product.image.desktop)}
+              mobileSrc={product.image.mobile}
+              tabletSrc={product.image.tablet}
+              desktopSrc={product.image.desktop}
             />
           </div>
           <div className="content">

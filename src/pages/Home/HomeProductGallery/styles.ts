@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import circlePatterns from "../../../assets/home/desktop/pattern-circles.svg";
+// import circlePatterns from "../../../assets/home/desktop/pattern-circles.svg";
 import { HeadingXXL, Paragraph } from "../../../globalStyles";
 
 export const ZX9Speaker = styled.div`
@@ -10,7 +10,7 @@ export const ZX9Speaker = styled.div`
   display: grid;
   place-items: center;
   padding: 3rem 1rem;
-  background-image: url(${circlePatterns});
+  background-image: url("/assets/home/desktop/pattern-circles.svg");
   background-size: cover;
   background-position: center -150px;
   background-repeat: no-repeat;

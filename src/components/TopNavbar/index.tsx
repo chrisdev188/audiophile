@@ -1,5 +1,5 @@
 import { StyledNavbar, InnerBox, ToggleMenuButton, Overlay } from "./styles";
-import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
+// import hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import MenuList from "./MenuList";
 import Logo from "../Logo";
 import { NavbarProps } from "./types";
@@ -38,7 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({
           onClick={() => setShowMenu((prevValue) => !prevValue)}
           aria-label="toggle menu"
         >
-          <img src={hamburger} alt="" aria-hidden />
+          <img
+            src="/assets/shared/tablet/icon-hamburger.svg"
+            alt=""
+            aria-hidden
+          />
         </ToggleMenuButton>
         <Logo />
         <MenuList menuList={menuList} />

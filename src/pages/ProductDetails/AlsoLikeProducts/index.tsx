@@ -18,10 +18,6 @@ interface AlsoLikeProductsProps {
   others: Array<{ name: string; slug: string; image: ResponsiveImageType }>;
 }
 
-const getImageUrl = (path: string) => {
-  return new URL(`../../../${path}`, import.meta.url).href;
-};
-
 const AlsoLikeProducts: React.FunctionComponent<AlsoLikeProductsProps> = ({
   productList,
   others,
@@ -36,9 +32,9 @@ const AlsoLikeProducts: React.FunctionComponent<AlsoLikeProductsProps> = ({
               <AlsoLikeCard>
                 <ResponsiveImage
                   name={product.name}
-                  mobileSrc={getImageUrl(product.image.mobile)}
-                  tabletSrc={getImageUrl(product.image.tablet)}
-                  desktopSrc={getImageUrl(product.image.desktop)}
+                  mobileSrc={product.image.mobile}
+                  tabletSrc={product.image.tablet}
+                  desktopSrc={product.image.desktop}
                 />
                 <HeadingSM as="h4">{product.name}</HeadingSM>
                 <Link
