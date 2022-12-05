@@ -1,9 +1,6 @@
 import { Container, HeadingXS, MaxWidthContainer } from "../../globalStyles";
 import { CategoryList, CategoryItem, ProductThumbnail } from "./styles";
-// import headphoneImg from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
-// import speakerImg from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
-// import earphoneImg from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import ButtonText from "../UI/Button/ButtonText";
+import ButtonText from "../Button/ButtonText";
 import { Link } from "react-router-dom";
 
 const categoryList = [

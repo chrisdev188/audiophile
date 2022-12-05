@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container, Paragraph, TwelveColumnsGrid } from "../../globalStyles";
 
 export const StyledFooter = styled(Container)`
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   color: white;
   padding-block: 3rem;
 `;
@@ -24,7 +24,7 @@ export const FooterNav = styled.nav`
 `;
 
 export const FooterDescription = styled(Paragraph)`
-  color: ${({ theme }) => theme.colors.textAlt};
+  color: ${({ theme }) => theme.palette.text.primary.alternate};
   text-align: center;
   @media (min-width: 768px) {
     grid-column: span 12;
@@ -50,5 +50,5 @@ export const FooterCopyright = styled.div`
 `;
 
 export const CopyrightText = styled.small`
-  color: ${({ theme }) => theme.colors.textAlt};
+  color: ${({ theme }) => theme.palette.text.primary.alternate};
 `;

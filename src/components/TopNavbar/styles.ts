@@ -37,7 +37,7 @@ export const InnerBox = styled(MaxWidthContainer)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
 
   @media (min-width: 450px) {
     justify-content: start;

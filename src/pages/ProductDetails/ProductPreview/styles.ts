@@ -32,5 +32,5 @@ export const StyledProductPreview = styled(TwelveColumnsGrid)`
 `;
 
 export const PreviewOverline = styled(Overline)`
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.palette.secondary.main};
 `;

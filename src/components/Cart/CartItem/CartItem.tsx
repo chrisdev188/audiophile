@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { CartItemType } from "../../../globalTypes";
 import { useCounter } from "../../../hooks";
-import Counter from "../../UI/Counter";
+import Counter from "../../Counter";
 import { StyledCartItem } from "../styles";
 
 interface CartItemProps {

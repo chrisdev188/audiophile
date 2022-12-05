@@ -9,7 +9,7 @@ export const AboutText = styled.div`
   h3 {
     margin-top: 1rem;
     span {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.palette.secondary.main};
     }
   }
   @media (min-width: 768px) {

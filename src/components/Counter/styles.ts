@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledCounter = styled.div`
-  background-color: ${({ theme }) => theme.colors.card};
-  border: 1px solid ${({ theme }) => theme.colors.card};
+  background-color: ${({ theme }) => theme.palette.card};
+  border: 1px solid ${({ theme }) => theme.palette.card};
   padding: 1rem;
   display: inline-flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@ export const StyledCounter = styled.div`
       pointer-events: none;
     }
     &:hover {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.palette.secondary.main};
     }
   }
 `;

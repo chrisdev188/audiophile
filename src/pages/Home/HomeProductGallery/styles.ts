@@ -4,7 +4,7 @@ import { HeadingXXL, Paragraph } from "../../../globalStyles";
 
 export const ZX9Speaker = styled.div`
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   grid-column: 1;
   grid-row: span 1;
   display: grid;
@@ -105,7 +105,7 @@ export const YX1EarphoneImg = styled.div`
 export const YX1Earphone = styled.div`
   min-height: 320px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.card};
+  background-color: ${({ theme }) => theme.palette.card};
   grid-column: 1;
   grid-row: span 1;
   padding: 3rem 2rem;
@@ -123,5 +123,5 @@ export const ZX9Heading = styled(HeadingXXL)`
   color: white;
 `;
 export const ZX9Paragraph = styled(Paragraph)`
-  color: ${({ theme }) => theme.colors.textAlt};
+  color: ${({ theme }) => theme.palette.text.primary.alternate};
 `;

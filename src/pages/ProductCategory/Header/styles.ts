@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container, HeadingXL } from "../../../globalStyles";
 
 export const StyledHeader = styled(Container)`
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   padding-top: 5.5rem;
   color: white;
 `;

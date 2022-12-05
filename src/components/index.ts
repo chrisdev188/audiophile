@@ -1,12 +1,12 @@
-export { default as Button } from "./UI/Button/Button";
-export { default as ButtonText } from "./UI/Button/ButtonText";
+export { default as Button } from "./Button/Button";
+export { default as ButtonText } from "./Button/ButtonText";
 export { default as Navbar } from "./TopNavbar";
 export { default as ProductNavigation } from "./ProductNavigation";
 export { default as About } from "./AboutSection";
 export { default as Footer } from "./Footer";
 export { default as Logo } from "./Logo";
-export { default as Counter } from "./UI/Counter";
-export { default as ResponsiveImage } from "./UI/ResponsiveImage";
+export { default as Counter } from "./Counter";
+export { default as ResponsiveImage } from "./ResponsiveImage";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as CartButton } from "./Cart/CartButton/CartButton";
 export { default as CartBadge } from "./Cart/CartBadge/CartBadge";

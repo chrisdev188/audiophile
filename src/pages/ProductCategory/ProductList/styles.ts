@@ -63,7 +63,7 @@ export const StyledProductItem = styled(TwelveColumnsGrid)`
 `;
 
 export const StyledOverline = styled(Overline)`
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
 export const StyledDescription = styled(Paragraph)`

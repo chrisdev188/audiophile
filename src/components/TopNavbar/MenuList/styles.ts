@@ -8,7 +8,7 @@ export const StyledMenuList = styled.ul`
     font-size: 13px;
     font-weight: bold;
     &.activeLink {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.palette.secondary.main};
     }
   }
   @media (min-width: 768px) {

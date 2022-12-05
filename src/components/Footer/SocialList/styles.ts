@@ -10,7 +10,7 @@ export const StyledSocialList = styled.ul`
     }
     &:hover {
       svg > path {
-        fill: ${({ theme }) => theme.colors.accent};
+        fill: ${({ theme }) => theme.palette.secondary.main};
       }
     }
   }

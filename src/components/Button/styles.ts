@@ -24,6 +24,6 @@ export const StyledButtonText = styled.button`
   color: hsla(0, 0%, 0%, 0.5);
   transition: all 300ms ease;
   &:hover {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.palette.secondary.main};
   }
 `;

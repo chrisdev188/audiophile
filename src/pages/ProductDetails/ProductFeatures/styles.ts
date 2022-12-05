@@ -33,7 +33,7 @@ export const StyledProductFeatures = styled(TwelveColumnsGrid)`
       display: flex;
       gap: 1rem;
       .quantity {
-        color: ${({ theme }) => theme.colors.accent};
+        color: ${({ theme }) => theme.palette.secondary.main};
       }
     }
   }

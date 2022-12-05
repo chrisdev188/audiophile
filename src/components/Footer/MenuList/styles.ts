@@ -14,7 +14,7 @@ export const StyledMenuList = styled.ul`
     font-weight: bold;
     transition: all 0.3s ease;
     &:hover {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.palette.secondary.main};
     }
   }
   @media (min-width: 768px) {

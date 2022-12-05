@@ -60,10 +60,10 @@ export const HeroHeading = styled(HeadingXXL)`
   color: white;
 `;
 export const HeroParagraph = styled(Paragraph)`
-  color: ${({ theme }) => theme.colors.textAlt};
+  color: ${({ theme }) => theme.palette.text.primary.alternate};
   margin-bottom: 1rem;
   max-width: 22rem;
 `;
 export const HeroOverline = styled(Overline)`
-  color: ${({ theme }) => theme.colors.textAlt};
+  color: ${({ theme }) => theme.palette.text.primary.alternate};
 `;

@@ -1,0 +1,74 @@
+import "styled-components";
+
+export interface IPalette {
+  main: string;
+  contrastText: string;
+}
+export interface ITypography {
+  fontFamily: string;
+  fontSize: string;
+  fontWeight: 300 | 400 | 500 | 700;
+  lineHeight: string;
+  letterSpacing: string;
+  textTransform?: string;
+}
+
+declare module "styled-components" {
+  export interface DefaultTheme {
+    shape: {
+      borderRadius: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
+    palette: {
+      primary: IPalette;
+      secondary: IPalette;
+      error: IPalette;
+      divider: string;
+      card: string;
+      text: {
+        primary: {
+          main: string;
+          alternate: string;
+        };
+        secondary: {
+          main: string;
+          alternate: string;
+        };
+      };
+    };
+    typography: {
+      h1: ITypography;
+      h2: ITypography;
+      h3: ITypography;
+      h4: ITypography;
+      h5: ITypography;
+      h6: ITypography;
+      body: ITypography;
+      overline: ITypography;
+      subtitle: ITypography;
+      button: ITypography;
+    };
+    // spacing between element in a component
+    spacing: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    // margin between components
+    gutters: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    mediaQueries: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+  }
+}
