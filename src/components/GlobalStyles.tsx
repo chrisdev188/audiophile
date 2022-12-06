@@ -28,6 +28,15 @@ const GlobalStyle = createGlobalStyle`
     outline:none;
     cursor:pointer;
   }
+  img{
+    min-width:100%;
+    display:block;
+    height:auto;
+  }
+  picture,video{
+    display:block;
+  }
+
   
 `;
 export default GlobalStyle;

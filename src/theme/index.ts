@@ -24,14 +24,12 @@ const theme: DefaultTheme = {
     divider: "rgba(255,255,255,.2)",
     card: "#F1F1F1",
     text: {
-      primary: {
-        main: "#FFFFFF",
-        alternate: "rgba(255,255,255,.75)",
-      },
-      secondary: {
-        main: "#000000",
-        alternate: "rgba(0,0,0,.5)",
-      },
+      dark: "#000000",
+      light: "#FFFFFF",
+      accent: "#D87D4A",
+      error: "#FFFFFF",
+      darkAlt: "rgba(0,0,0,.5)",
+      lightAlt: "rgba(255,255,255,.75)",
     },
   },
   typography: {
@@ -86,14 +84,14 @@ const theme: DefaultTheme = {
     body: {
       fontFamily: "Manrope, sans-serif",
       fontSize: "15px",
-      fontWeight: 700,
+      fontWeight: 500,
       letterSpacing: "0px",
       lineHeight: "25px",
     },
     overline: {
       fontFamily: "Manrope, sans-serif",
       fontSize: "14px",
-      fontWeight: 700,
+      fontWeight: 400,
       letterSpacing: "10px",
       lineHeight: "19px",
       textTransform: "uppercase",

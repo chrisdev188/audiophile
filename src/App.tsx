@@ -3,7 +3,7 @@ import { useTheme } from "styled-components";
 import { GlobalStyles, Layout } from "./components";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import ProductDetails from "./pages/ProductDetails";
 import Speakers from "./pages/Speakers";
 

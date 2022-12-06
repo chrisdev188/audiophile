@@ -23,7 +23,7 @@ export const getButtonStyles = (
   if (variant === "text") {
     return css`
       background-color: transparent;
-      color: ${theme.palette.text.secondary.alternate};
+      color: ${theme.palette.text.darkAlt};
       border: 2px solid transparent;
     `;
   }

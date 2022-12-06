@@ -29,14 +29,12 @@ declare module "styled-components" {
       divider: string;
       card: string;
       text: {
-        primary: {
-          main: string;
-          alternate: string;
-        };
-        secondary: {
-          main: string;
-          alternate: string;
-        };
+        dark: string;
+        darkAlt: string;
+        light: string;
+        lightAlt: string;
+        accent: string;
+        error: string;
       };
     };
     typography: {

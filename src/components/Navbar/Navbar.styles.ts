@@ -5,6 +5,9 @@ import media from "../../helpers/styles/mediaQueries";
 import { INavbarProps } from "./Navbar.types";
 
 export const NavStyled = styled.nav<INavbarProps>`
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
   ${(props) => {
     return css`
       color: ${props.theme.palette.primary.contrastText};
