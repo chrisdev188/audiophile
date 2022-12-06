@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  :root{
+    font-size: 16px;
+  }
   *,*::before, *::after{
     margin:0;
     padding:0;
@@ -8,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     min-height:100vh;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   ul{ 
     list-style-type: none;

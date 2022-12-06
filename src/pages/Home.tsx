@@ -1,5 +1,7 @@
+import { ArrowRightIcon, Button, CartIcon } from "../components";
+
 const Home = () => {
-  return <main>Home</main>;
+  return <main style={{ minHeight: "100vh" }}></main>;
 };
 
 export default Home;

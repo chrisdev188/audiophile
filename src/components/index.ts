@@ -6,3 +6,4 @@ export { default as GlobalStyles } from "./GlobalStyles";
 export { default as CartIcon } from "./icons/CartIcon";
 export { default as HamburgerIcon } from "./icons/HamburgerIcon";
 export { default as LogoIcon } from "./icons/LogoIcon";
+export { default as ArrowRightIcon } from "./icons/ArrowRightIcon";
