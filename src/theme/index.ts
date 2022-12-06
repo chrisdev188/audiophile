@@ -114,6 +114,14 @@ const theme: DefaultTheme = {
       lineHeight: "18px",
       textTransform: "uppercase",
     },
+    navLink: {
+      fontFamily: "Manrope, sans-serif",
+      fontSize: "13px",
+      fontWeight: 700,
+      letterSpacing: "2px",
+      lineHeight: "25px",
+      textTransform: "uppercase",
+    },
   },
   // spacing between element in a component
   spacing: {

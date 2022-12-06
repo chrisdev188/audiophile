@@ -50,6 +50,7 @@ declare module "styled-components" {
       overline: ITypography;
       subtitle: ITypography;
       button: ITypography;
+      navLink: ITypography;
     };
     // spacing between element in a component
     spacing: {
