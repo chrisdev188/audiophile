@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 import productList from "../data.json";
 
 export type ProductListType = typeof productList;
+export type ProductType = typeof productList[0];
 export type OtherProducts = typeof productList[0]["others"];
 export type ProductGalleryType = typeof productList[0]["gallery"];
 export type ProductFeaturesType = typeof productList[0]["features"];

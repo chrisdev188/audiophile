@@ -8,10 +8,10 @@ export const NavStyled = styled.nav<INavbarProps>`
   position: absolute;
   width: 100%;
   z-index: 1000;
-  ${(props) => {
+  background-color: transparent;
+  ${({ theme }) => {
     return css`
-      color: ${props.theme.palette.primary.contrastText};
-      background-color: ${props.theme.palette.primary.main};
+      color: ${theme.palette.primary.contrastText};
     `;
   }}
 `;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button, Container, Flex } from "../../components";
 import Typography from "../../components/Typography/Typography";
 import { HeroImage, StyledHomeHero } from "./HomeHero.styles";
@@ -51,13 +52,15 @@ const HomeTextContent = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            style={{ marginTop: "1rem" }}
-          >
-            see product
-          </Button>
+          <Link to="/headphones/xx99-mark-two-headphones">
+            <Button
+              variant="contained"
+              color="secondary"
+              style={{ marginTop: "1rem" }}
+            >
+              see product
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </Container>

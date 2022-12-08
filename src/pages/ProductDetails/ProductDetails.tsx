@@ -6,12 +6,14 @@ import {
   OtherProducts,
   ProductFeaturesType,
   ProductGalleryType,
+  ProductType,
   useProductList,
 } from "../../context/ProductListContext";
 import AlsoLikeProducts from "./AlsoLikeProducts";
 import Features from "./Features";
 import InTheBox from "./InTheBox";
 import ProductGallery from "./ProductGallery";
+import ProductPreview from "./ProductPreview";
 
 const ProductDetailsMain = styled.main`
   padding-block: 7rem;
@@ -24,7 +26,7 @@ const ProductDetails = () => {
   const productList = useProductList();
   const { slug } = useParams();
 
-  const product = productList.find((item) => item.slug === slug);
+  const product = productList.find((item) => item.slug === slug) as ProductType;
   const otherProducts = product?.others as OtherProducts;
   const gallery = product?.gallery as ProductGalleryType;
   const features = product?.features as ProductFeaturesType;
@@ -33,9 +35,7 @@ const ProductDetails = () => {
   return (
     <Container full fullVertical style={{ paddingTop: "5.5rem" }}>
       <ProductDetailsMain>
-        <Container style={{ backgroundColor: "lightblue" }}>
-          ProductPreview
-        </Container>
+        <ProductPreview product={product} />
         <Container>
           <Grid xs={{ rowGap: 7 }}>
             <Features features={features} />

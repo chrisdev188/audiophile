@@ -13,10 +13,10 @@ interface ProductsPageProps {
 }
 
 export const PageHeader = styled.header`
-  padding-block: ${({ theme }) => theme.gutters.md};
   background-color: ${({ theme }) => theme.palette.primary.main};
   color: ${({ theme }) => theme.palette.primary.contrastText};
   text-align: center;
+  padding-top: 5.5rem;
 `;
 
 const PageMain = styled.main`
@@ -28,9 +28,9 @@ const PageMain = styled.main`
 
 const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
   return (
-    <Container fullVertical full style={{ paddingTop: "5.5rem" }}>
+    <Container fullVertical full>
       <PageHeader>
-        <Container>
+        <Container style={{ paddingBlock: "4rem" }}>
           <Typography component="h1" variant="h2">
             {category}
           </Typography>
