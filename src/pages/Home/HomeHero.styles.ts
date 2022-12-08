@@ -23,3 +23,10 @@ export const HeroImage = styled.div`
     object-fit: cover;
   }
 `;
+
+export const HomeMain = styled.main`
+  padding-block: 7rem;
+  & > * + * {
+    margin-top: 7rem;
+  }
+`;

@@ -1,15 +1,18 @@
 import { About, CategoryCardList } from "../../components";
 import HomeHero from "./HomeHero";
+import { HomeMain } from "./HomeHero.styles";
 import HomeProductGallery from "./HomeProductGallery";
 
 const Home = () => {
   return (
-    <main>
+    <>
       <HomeHero />
-      <CategoryCardList />
-      <HomeProductGallery />
-      <About />
-    </main>
+      <HomeMain>
+        <CategoryCardList />
+        <HomeProductGallery />
+        <About />
+      </HomeMain>
+    </>
   );
 };
 

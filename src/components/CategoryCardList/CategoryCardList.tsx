@@ -60,7 +60,7 @@ const ProductCategories = [
 
 const ByProductNavigation = () => {
   return (
-    <Container>
+    <Container fullVertical>
       <Grid xs={{ rowGap: 5 }} sm={{ colGap: 1 }} md={{ colGap: 2 }}>
         {ProductCategories.map((category) => (
           <CategoryCard key={category.name}>
