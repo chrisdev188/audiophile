@@ -3,7 +3,6 @@ import media from "../../helpers/styles/mediaQueries";
 
 type GapByScreenSizes = {
   rowGap?: number;
-  colGap?: number;
 };
 interface IGridProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
@@ -18,13 +17,13 @@ const StyledGrid = styled.div<IGridProps>`
   display: grid;
   grid-template-columns: 1fr;
   row-gap: ${({ xs }) => `${xs?.rowGap}rem`};
-  column-gap: ${({ xs }) => `${xs?.colGap}rem`};
+  column-gap: 1rem;
 
   ${({ sm }) => {
     return media.up("sm")(`
       grid-template-columns: repeat(6, minmax(0, 1fr));
       row-gap: ${sm?.rowGap}rem;
-      column-gap: ${sm?.colGap}rem;
+      column-gap: 1.5rem;
     `);
   }}
 
@@ -32,21 +31,20 @@ const StyledGrid = styled.div<IGridProps>`
     return media.up("md")(`
       grid-template-columns: repeat(12, minmax(0, 1fr));
       row-gap: ${md?.rowGap}rem;
-      column-gap: ${md?.colGap}rem;
+      column-gap: 2rem;
     `);
   }}
 
   ${({ lg }) => {
     return media.up("lg")(`
       row-gap: ${lg?.rowGap}rem;
-      column-gap: ${lg?.colGap}rem;
+      column-gap: 2.5rem;
     `);
   }}
 
   ${({ xl }) => {
     return media.up("xl")(`
       row-gap: ${xl?.rowGap}rem;
-      column-gap: ${xl?.colGap}rem;
     `);
   }}
 `;
@@ -60,7 +58,6 @@ const Grid: React.FunctionComponent<IGridProps> = (props) => {
 Grid.defaultProps = {
   xs: {
     rowGap: 1,
-    colGap: 1,
   },
 };
 

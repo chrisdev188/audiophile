@@ -19,6 +19,13 @@ export const PageHeader = styled.header`
   text-align: center;
 `;
 
+const PageMain = styled.main`
+  padding-block: 7rem;
+  & > * + * {
+    margin-top: 7rem;
+  }
+`;
+
 const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
   return (
     <Container fullVertical full style={{ paddingTop: "5.5rem" }}>
@@ -29,11 +36,11 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
           </Typography>
         </Container>
       </PageHeader>
-      <main>
+      <PageMain>
         <ProductListByCategory category={category} />
         <CategoryCardList />
         <About />
-      </main>
+      </PageMain>
     </Container>
   );
 };
