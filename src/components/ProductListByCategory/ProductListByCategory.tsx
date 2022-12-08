@@ -1,4 +1,4 @@
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { Button, Grid, Typography } from "..";
 import { CategoryType, useProductList } from "../../context/ProductListContext";
 import media from "../../helpers/styles/mediaQueries";
@@ -26,13 +26,15 @@ const ProductCard = styled.article`
     align-items: center;
     gap: 2rem;
     ${media.up("sm")`
-      grid-column: span 3;
-      align-self: center;
-      align-items:flex-start;
-      text-align: left;
+      grid-column: span 6;
+      align-items:center;
+      text-align: center;
     `}
     ${media.up("md")`
       grid-column: span 6;
+      align-self: center;
+      align-items:flex-start;
+      text-align: left;
     `}
     ${media.up("lg")`
       grid-column: 8 / span 5;
@@ -47,7 +49,7 @@ const ProductCard = styled.article`
       object-fit: cover;
     }
     ${media.up("sm")`
-      grid-column: span 3;
+      grid-column: span 6;
       align-self: center;
     `}
     ${media.up("md")`
@@ -75,7 +77,6 @@ const ProductListByCategory: React.FunctionComponent<
   IProductListByCategoryProps
 > = (props) => {
   const { category } = props;
-  const theme = useTheme();
   const productList = useProductList();
   const listByCategory = productList.filter(
     (product) => product.category === category
@@ -89,6 +90,7 @@ const ProductListByCategory: React.FunctionComponent<
         <ProductList>
           {sortedProductListByNew.map((product, index) => (
             <li key={product.id}>
+              {/** if index is odd number, give card different styles */}
               <ProductCard className={`${index % 2 === 1 && "odds"}`}>
                 <Grid xs={{ rowGap: 3 }}>
                   <picture className="card-media">
@@ -110,7 +112,7 @@ const ProductListByCategory: React.FunctionComponent<
                       <Typography
                         variant="overline"
                         component="span"
-                        style={{ color: theme.palette.text.accent }}
+                        textColor="accent"
                       >
                         new product
                       </Typography>

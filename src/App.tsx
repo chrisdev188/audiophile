@@ -3,7 +3,7 @@ import { GlobalStyles, Layout } from "./components";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Home from "./pages/Home/Home";
-import ProductDetails from "./pages/ProductDetails";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Speakers from "./pages/Speakers";
 
 function App() {

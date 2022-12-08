@@ -22,19 +22,21 @@ const AboutImage = styled.div`
   grid-column: span 1;
   order: -1;
   height: 100%;
+  border-radius: ${({ theme }) => theme.shape.borderRadius.md};
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: inherit;
   }
   ${media.up("sm")`
     order:unset;
     grid-column: span 3;
-    align-self: center;
+    
   `}
   ${media.up("md")`
     grid-column: 7 / span 6;
-    align-self: center;
+   
   `}
 `;
 
@@ -42,10 +44,14 @@ const About = () => {
   return (
     <section>
       <Container>
-        <Grid xs={{ rowGap: 3 }} sm={{ rowGap: 2, colGap: 2 }}>
+        <Grid xs={{ rowGap: 3 }} sm={{ rowGap: 2 }}>
           <AboutText>
             <Typography component="h3" variant="h3">
-              Bringing you the best audio gear
+              Bringing you the{" "}
+              <Typography component="span" textColor="accent" variant="h3">
+                best
+              </Typography>{" "}
+              audio gear
             </Typography>
             <Typography component="p" variant="body">
               Located at the heart of New York City, Audiophile is the premier
@@ -58,9 +64,11 @@ const About = () => {
             </Typography>
           </AboutText>
           <AboutImage>
+            <source srcSet="/assets/shared/desktop/image-best-gear.jpg" />
+            <source srcSet="/assets/shared/tablet/image-best-gear.jpg" />
             <img
-              src="https://images.unsplash.com/photo-1497206365907-f5e630693df0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-              alt="animal"
+              src="/assets/shared/mobile/image-best-gear.jpg"
+              alt="a man wearing headphones"
             />
           </AboutImage>
         </Grid>
