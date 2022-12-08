@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useTheme } from "styled-components";
 import { GlobalStyles, Layout } from "./components";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
@@ -8,7 +7,6 @@ import ProductDetails from "./pages/ProductDetails";
 import Speakers from "./pages/Speakers";
 
 function App() {
-  const theme = useTheme();
   return (
     <div className="App">
       <GlobalStyles />

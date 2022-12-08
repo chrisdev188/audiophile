@@ -1,9 +1,7 @@
+import ProductsPage from "./ProductsPage";
+
 const Headphones = () => {
-  return (
-    <>
-      <main>Headphones</main>
-    </>
-  );
+  return <ProductsPage category="headphones" />;
 };
 
 export default Headphones;

@@ -1,21 +1,7 @@
-import { ProductListType, useProductList } from "../context/ProductListContext";
+import ProductsPage from "./ProductsPage";
 
 const Earphones = () => {
-  const productList = useProductList() as ProductListType;
-
-  const earphonesList = productList.filter(
-    (product) => product.category === "earphones"
-  );
-
-  return (
-    <main>
-      <div>
-        {earphonesList.map((item) => (
-          <div key={item.id}>{item.name}</div>
-        ))}
-      </div>
-    </main>
-  );
+  return <ProductsPage category="earphones" />;
 };
 
 export default Earphones;

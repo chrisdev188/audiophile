@@ -1,4 +1,3 @@
-import { AllHTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface ITypograpyProps extends React.HTMLAttributes<HTMLElement> {
@@ -30,7 +29,6 @@ const StyledTypography = styled.p<ITypograpyProps>`
     variant && theme.typography[variant].lineHeight};
   text-transform: ${({ theme, variant }) =>
     variant && theme.typography[variant].textTransform};
-
   color: ${({ textColor, theme }) => {
     if (textColor !== undefined) {
       return theme.palette.text[textColor];

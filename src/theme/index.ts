@@ -1,5 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
+export type TypographyNameType = keyof typeof theme["typography"];
+
 const theme: DefaultTheme = {
   shape: {
     borderRadius: {

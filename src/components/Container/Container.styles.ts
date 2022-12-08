@@ -8,7 +8,7 @@ export const StyledContainer = styled.div<IContainerProps>`
   ${(props) =>
     media.up("sm")(
       `padding-inline:${
-        props.full ? 0 : `max(2.5rem, calc((100vw - 1200px) / 2))`
+        props.full ? 0 : `max(2rem, calc((100vw - 1200px) / 2))`
       }`
     )}
   padding-block: ${(props) => (props.fullVertical ? 0 : "16px")};

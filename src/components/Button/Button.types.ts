@@ -4,5 +4,5 @@ export interface IButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: TButtonVariant;
   color?: TButtonColor;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }

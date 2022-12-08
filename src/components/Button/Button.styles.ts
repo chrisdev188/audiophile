@@ -13,4 +13,6 @@ export const StyledButton = styled.button<IButtonProps>`
   padding:.75rem 1rem;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  transition: all 300ms ease;
 `;

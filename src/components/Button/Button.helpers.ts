@@ -25,6 +25,9 @@ export const getButtonStyles = (
       background-color: transparent;
       color: ${theme.palette.text.darkAlt};
       border: 2px solid transparent;
+      &:hover {
+        color: ${({ theme }) => theme.palette.secondary.main};
+      }
     `;
   }
 };
