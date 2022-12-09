@@ -1,4 +1,3 @@
-import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { centerElement, getTypography } from "../../helpers/styles";
 import media from "../../helpers/styles/mediaQueries";
@@ -37,30 +36,6 @@ export const MenuToggler = styled.button`
   ${media.up("md")`
     display: none;
   `}
-`;
-
-export const LogoLink = styled(Link)`
-  ${centerElement};
-  background-color: transparent;
-`;
-
-export const NavList = styled.ul`
-  display: none;
-  ${media.up("md")`
-    display: flex;
-  `}
-`;
-
-export const NavListItem = styled.li`
-  padding: 0;
-`;
-
-export const NavLink = styled(RouterNavLink)`
-  ${(props) => getTypography("navLink", props.theme)}
-  padding: 0.75rem;
-  &.active {
-    color: ${(props) => props.theme.palette.secondary.main};
-  }
 `;
 
 export const CartToggler = styled.button`

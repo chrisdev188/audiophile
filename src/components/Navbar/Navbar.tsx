@@ -4,24 +4,22 @@ import { useTheme } from "styled-components";
 import Container from "../Container/Container";
 import CartIcon from "../icons/CartIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
-import LogoIcon from "../icons/LogoIcon";
+import Logo from "../Logo/Logo";
+import MenuList from "../MenuList/MenuList";
 import {
-  LogoLink,
   MenuToggler,
   NavInnerBox,
-  NavList,
-  NavListItem,
   NavStyled,
-  NavLink,
   CartToggler,
 } from "./Navbar.styles";
 import { INavbarProps } from "./Navbar.types";
 
 const Navbar: React.FC<INavbarProps> = (props) => {
-  const { pathname } = useLocation();
   const theme = useTheme();
+  const { pathname } = useLocation();
   const navRef = useRef<HTMLElement>(null);
 
+  // change nav background to main color when route is not home ("/")
   useEffect(() => {
     if (navRef.current) {
       if (pathname === "/") {
@@ -39,43 +37,8 @@ const Navbar: React.FC<INavbarProps> = (props) => {
           <MenuToggler>
             <HamburgerIcon />
           </MenuToggler>
-          <LogoLink to="/">
-            <LogoIcon />
-          </LogoLink>
-          <NavList>
-            <NavListItem>
-              <NavLink
-                className={(props) => (props.isActive ? "active" : "")}
-                to="/"
-              >
-                home
-              </NavLink>
-            </NavListItem>
-            <NavListItem>
-              <NavLink
-                className={(props) => (props.isActive ? "active" : "")}
-                to="/headphones"
-              >
-                headphones
-              </NavLink>
-            </NavListItem>
-            <NavListItem>
-              <NavLink
-                className={(props) => (props.isActive ? "active" : "")}
-                to="/speakers"
-              >
-                speakers
-              </NavLink>
-            </NavListItem>
-            <NavListItem>
-              <NavLink
-                className={(props) => (props.isActive ? "active" : "")}
-                to="/earphones"
-              >
-                earphones
-              </NavLink>
-            </NavListItem>
-          </NavList>
+          <Logo />
+          <MenuList />
           <CartToggler>
             <CartIcon />
           </CartToggler>
