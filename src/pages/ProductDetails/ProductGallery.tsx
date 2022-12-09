@@ -58,18 +58,18 @@ const ProductGallery: React.FunctionComponent<IProductGalleryProps> = ({
           lg={{ rowGap: 2.5 }}
         >
           <picture className="first">
-            <source srcSet={firstImage.desktop} />
-            <source srcSet={firstImage.tablet} />
+            <source srcSet={firstImage.desktop} media="(min-width:1200px)" />
+            <source srcSet={firstImage.tablet} media="(min-width:650px)" />
             <img src={firstImage.mobile} alt="first" />
           </picture>
           <picture className="second">
-            <source srcSet={secondImage.desktop} />
-            <source srcSet={secondImage.tablet} />
+            <source srcSet={secondImage.desktop} media="(min-width:1200px)" />
+            <source srcSet={secondImage.tablet} media="(min-width:650px)" />
             <img src={secondImage.mobile} alt="second" />
           </picture>
           <picture className="third">
-            <source srcSet={thirdImage.desktop} />
-            <source srcSet={thirdImage.tablet} />
+            <source srcSet={thirdImage.desktop} media="(min-width:1200px)" />
+            <source srcSet={thirdImage.tablet} media="(min-width:650px)" />
             <img src={thirdImage.mobile} alt="third" />
           </picture>
         </Grid>

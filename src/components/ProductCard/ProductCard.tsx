@@ -77,7 +77,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           />
           <source
             srcSet={product.categoryImage.tablet}
-            media="(min-width:600px)"
+            media="(min-width:650px)"
           />
           <img src={product.categoryImage.mobile} alt={product.name} />
         </picture>

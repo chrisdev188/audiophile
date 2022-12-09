@@ -137,7 +137,7 @@ const theme: DefaultTheme = {
   },
   mediaQueries: {
     xs: "0px",
-    sm: "600px",
+    sm: "650px",
     md: "900px",
     lg: "1200px",
     xl: "1440px",

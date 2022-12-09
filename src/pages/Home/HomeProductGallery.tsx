@@ -170,7 +170,7 @@ const ZX9Speaker = () => (
         />
         <source
           srcSet="/assets/home/tablet/image-speaker-zx9.png"
-          media="(min-width:600px)"
+          media="(min-width:650px)"
         />
         <img
           src="/assets/home/mobile/image-speaker-zx9.png"
@@ -214,7 +214,7 @@ const ZX7Speaker = () => (
         />
         <source
           srcSet="/assets/home/tablet/image-speaker-zx7.jpg"
-          media="(min-width:600px)"
+          media="(min-width:650px)"
         />
         <img
           src="/assets/home/mobile/image-speaker-zx7.jpg"
@@ -243,7 +243,7 @@ const YX1Earphones = () => (
         />
         <source
           srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
-          media="(min-width:600px)"
+          media="(min-width:650px)"
         />
         <img
           src="/assets/home/mobile/image-earphones-yx1.jpg"

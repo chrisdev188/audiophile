@@ -64,8 +64,14 @@ const About = () => {
             </Typography>
           </AboutText>
           <AboutImage>
-            <source srcSet="/assets/shared/desktop/image-best-gear.jpg" />
-            <source srcSet="/assets/shared/tablet/image-best-gear.jpg" />
+            <source
+              srcSet="/assets/shared/desktop/image-best-gear.jpg"
+              media="(min-width:1200px)"
+            />
+            <source
+              srcSet="/assets/shared/tablet/image-best-gear.jpg"
+              media="(min-width:650px)"
+            />
             <img
               src="/assets/shared/mobile/image-best-gear.jpg"
               alt="a man wearing headphones"

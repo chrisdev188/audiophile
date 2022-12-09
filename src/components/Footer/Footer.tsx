@@ -12,12 +12,26 @@ const StyledFooter = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
   padding-bottom: 2rem;
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      padding: 0.5rem;
+    }
+  }
   ${media.up("sm")`
     .logo-container,.footer-info, .links-container{
       grid-column: span 6;
     }
     .footer-info{
       text-align: left;
+    }
+    .footer-menu{
+      flex-direction:row;
+      a{
+        padding-block:0;
+      }
     }
   `}
   ${media.up("md")`
@@ -53,6 +67,7 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
               direction: "row",
               items: "flex-end",
               content: "space-between",
+              gap: 1,
             }}
             className="logo-container"
           >

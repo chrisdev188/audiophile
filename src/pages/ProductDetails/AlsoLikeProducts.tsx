@@ -40,7 +40,7 @@ const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
                 <Flex xs={{ direction: "column", items: "center", gap: 2 }}>
                   <picture>
                     <source srcSet={image.desktop} media="(min-width:1200px)" />
-                    <source srcSet={image.tablet} media="(min-width:600px)" />
+                    <source srcSet={image.tablet} media="(min-width:650px)" />
                     <img src={image.mobile} alt={name} />
                   </picture>
                   <Typography component="h4" variant="h6">
