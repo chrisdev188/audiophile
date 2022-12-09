@@ -30,7 +30,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
   return (
     <Container fullVertical full>
       <PageHeader>
-        <Container style={{ paddingBlock: "4rem" }}>
+        <Container style={{ paddingBlock: "5rem" }}>
           <Typography component="h1" variant="h2">
             {category}
           </Typography>

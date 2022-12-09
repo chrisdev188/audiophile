@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ArrowRightIcon, ButtonWithIcons, Grid, Typography } from "..";
 import media from "../../helpers/styles/mediaQueries";
@@ -5,6 +6,7 @@ import Container from "../Container/Container";
 
 const CategoryCard = styled.div`
   padding-top: 5rem;
+  padding-bottom: 2rem;
   grid-column: span 1;
   position: relative;
   ${media.up("sm")`
@@ -61,7 +63,7 @@ const ProductCategories = [
 const ByProductNavigation = () => {
   return (
     <Container fullVertical>
-      <Grid xs={{ rowGap: 5 }} sm={{ colGap: 1 }} md={{ colGap: 2 }}>
+      <Grid xs={{ rowGap: 5 }}>
         {ProductCategories.map((category) => (
           <CategoryCard key={category.name}>
             <CardMedia>
@@ -71,9 +73,11 @@ const ByProductNavigation = () => {
               <Typography component="h3" variant="h6">
                 {category.name}
               </Typography>
-              <ButtonWithIcons variant="text" iconEnd={<ArrowRightIcon />}>
-                shop
-              </ButtonWithIcons>
+              <Link to={`/${category.name}`}>
+                <ButtonWithIcons variant="text" iconEnd={<ArrowRightIcon />}>
+                  shop
+                </ButtonWithIcons>
+              </Link>
             </CardBody>
           </CategoryCard>
         ))}

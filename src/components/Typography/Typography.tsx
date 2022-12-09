@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../../helpers/styles/mediaQueries";
 
 interface ITypograpyProps extends React.HTMLAttributes<HTMLElement> {
   variant?:

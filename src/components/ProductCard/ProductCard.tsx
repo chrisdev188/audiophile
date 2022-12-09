@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Typography } from "..";
+import { Typography } from "..";
 import { ProductType } from "../../context/ProductListContext";
 import media from "../../helpers/styles/mediaQueries";
 import Grid from "../Grid/Grid";
@@ -24,7 +24,7 @@ const StyledProductCard = styled.article<ProductCardProps>`
       text-align: center;
     `}
     ${media.up("md")`
-      grid-column: span 6;
+      grid-column: 8 / span 5;
       align-self: center;
       align-items:flex-start;
       text-align: left;
@@ -50,13 +50,9 @@ const StyledProductCard = styled.article<ProductCardProps>`
     `}
   }
   &.odds {
-    ${media.up("sm")`
-      .card-body {
-        order: -1;
-      }
-    `}
     ${media.up("md")`
       .card-body {
+        order: -1;
         grid-column:1 / span 5;
       }
       .card-media {

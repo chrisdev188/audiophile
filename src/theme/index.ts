@@ -37,10 +37,10 @@ const theme: DefaultTheme = {
   typography: {
     h1: {
       fontFamily: "Manrope, sans-serif",
-      fontSize: "56px",
+      fontSize: "clamp(36px, 10vw, 56px)",
       fontWeight: 700,
       letterSpacing: "2px",
-      lineHeight: "58px",
+      lineHeight: "clamp(40px, 10vw, 58px)",
       textTransform: "uppercase",
     },
     h2: {

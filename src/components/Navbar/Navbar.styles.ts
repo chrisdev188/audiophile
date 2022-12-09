@@ -21,6 +21,7 @@ export const NavInnerBox = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 5.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
   ${media.up("sm")`
     justify-content:flex-start;
     gap:1rem;
