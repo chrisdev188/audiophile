@@ -1,10 +1,15 @@
 import { MenuItem, StyledMenuList, StyledNavLink } from "./MenuList.styles";
 
-interface IMenuListProps {}
+export interface IMenuListProps extends React.HTMLAttributes<HTMLElement> {
+  hideOnSmallScreen?: boolean;
+}
 
-const MenuList: React.FunctionComponent<IMenuListProps> = (props) => {
+const MenuList: React.FunctionComponent<IMenuListProps> = ({
+  hideOnSmallScreen,
+  ...otherProps
+}) => {
   return (
-    <StyledMenuList>
+    <StyledMenuList hideOnSmallScreen={hideOnSmallScreen} {...otherProps}>
       <MenuItem>
         <StyledNavLink
           className={(props) => (props.isActive ? "active" : "")}

@@ -38,7 +38,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
             <HamburgerIcon />
           </MenuToggler>
           <Logo />
-          <MenuList />
+          <MenuList hideOnSmallScreen />
           <CartToggler>
             <CartIcon />
           </CartToggler>

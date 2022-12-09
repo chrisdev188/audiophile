@@ -8,11 +8,6 @@ export const NavStyled = styled.nav<INavbarProps>`
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  ${({ theme }) => {
-    return css`
-      color: ${theme.palette.primary.contrastText};
-    `;
-  }}
 `;
 
 export const NavInnerBox = styled.div`
