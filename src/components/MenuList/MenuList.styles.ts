@@ -1,11 +1,15 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { getTypography } from "../../helpers/styles";
+import media from "../../helpers/styles/mediaQueries";
 import { IMenuListProps } from "./MenuList";
 
 export const StyledMenuList = styled.ul<IMenuListProps>`
   display: ${({ hideOnSmallScreen }) => (hideOnSmallScreen ? "none" : "flex")};
   color: ${({ theme }) => theme.palette.primary.contrastText};
+  ${media.up("md")`
+    display:flex;
+  `}
 `;
 
 export const MenuItem = styled.li`
