@@ -46,7 +46,7 @@ const StyledFooter = styled.div`
   ${media.up("lg")`
     .footer-social-list{
       position:relative;
-      top:-85px;
+      top:-7rem;
     }
   `}
 `;
@@ -88,7 +88,11 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
           </Typography>
           <Flex
             xs={{ direction: "column", gap: 2, items: "center" }}
-            sm={{ direction: "row", content: "space-between" }}
+            sm={{
+              direction: "row",
+              content: "space-between",
+              gutterTop: 2,
+            }}
             className="links-container"
           >
             <Typography component="small" textColor="lightAlt">

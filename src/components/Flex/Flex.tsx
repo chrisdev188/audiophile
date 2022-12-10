@@ -10,6 +10,8 @@ const StyledFlex = styled.div<IFlexProps>`
   align-content: ${({ xs }) => xs?.align};
   flex-direction: ${({ xs }) => xs?.direction};
   text-align: ${({ xs }) => xs?.textAlign};
+  margin-top: ${({ xs }) => `${xs?.gutterTop}rem`};
+  margin-bottom: ${({ xs }) => `${xs?.gutterBottom}rem`};
 
   ${({ sm }) =>
     media.up("sm")(`
@@ -19,6 +21,8 @@ const StyledFlex = styled.div<IFlexProps>`
         align-content:${sm?.align};
         flex-direction:${sm?.direction};
         text-align:${sm?.textAlign};
+        margin-top: ${`${sm?.gutterTop}rem`};
+        margin-bottom: ${`${sm?.gutterBottom}rem`};
     `)};
 
   ${({ md }) =>
@@ -29,6 +33,8 @@ const StyledFlex = styled.div<IFlexProps>`
         align-content:${md?.align};
         flex-direction:${md?.direction};
         text-align:${md?.textAlign};
+        margin-top: ${`${md?.gutterTop}rem`};
+        margin-bottom: ${`${md?.gutterBottom}rem`};
     `)};
 
   ${({ lg }) =>
@@ -39,6 +45,8 @@ const StyledFlex = styled.div<IFlexProps>`
         align-content:${lg?.align};
         flex-direction:${lg?.direction};
         text-align:${lg?.textAlign};
+        margin-top: ${`${lg?.gutterTop}rem`};
+        margin-bottom: ${`${lg?.gutterBottom}rem`};
     `)};
 
   ${({ xl }) =>
@@ -49,6 +57,8 @@ const StyledFlex = styled.div<IFlexProps>`
         align-content:${xl?.align};
         flex-direction:${xl?.direction};
         text-align:${xl?.textAlign};
+        margin-top: ${`${xl?.gutterTop}rem`};
+        margin-bottom: ${`${xl?.gutterBottom}rem`};
     `)};
 `;
 
@@ -69,6 +79,8 @@ Flex.defaultProps = {
     align: "stretch",
     direction: "row",
     textAlign: "unset",
+    gutterBottom: 0,
+    gutterTop: 0,
   },
 };
 

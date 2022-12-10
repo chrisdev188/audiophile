@@ -26,6 +26,8 @@ export interface IMediaQueriesStylesProps {
   direction?: "column" | "row";
   gap?: number;
   textAlign?: "center" | "left" | "right" | "unset";
+  gutterBottom?: number;
+  gutterTop?: number;
 }
 
 export interface IFlexProps extends React.HTMLAttributes<HTMLElement> {

@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button, Container, Flex, Grid, Typography } from "../../components";
-import { OtherProducts } from "../../context/ProductListContext";
+import {
+  OtherProducts,
+  useProductList,
+} from "../../context/ProductListContext";
 import media from "../../helpers/styles/mediaQueries";
 
 interface IAlsoLikeProductsProps {
@@ -30,26 +34,39 @@ const AlsoLikeList = styled.ul`
 const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
   list,
 }) => {
+  const productList = useProductList();
   return (
     <section>
       <Container>
         <AlsoLikeList>
           <Grid xs={{ rowGap: 3.5 }}>
-            {list.map(({ name, image, slug }) => (
-              <li key={name}>
-                <Flex xs={{ direction: "column", items: "center", gap: 2 }}>
-                  <picture>
-                    <source srcSet={image.desktop} media="(min-width:1200px)" />
-                    <source srcSet={image.tablet} media="(min-width:650px)" />
-                    <img src={image.mobile} alt={name} />
-                  </picture>
-                  <Typography component="h4" variant="h6">
-                    {name}
-                  </Typography>
-                  <Button color="secondary">see product</Button>
-                </Flex>
-              </li>
-            ))}
+            {list.map(({ name, image, slug }) => {
+              // find category of product
+              const category = productList.find(
+                (item) => item.slug === slug
+              )?.category;
+
+              return (
+                <li key={name}>
+                  <Flex xs={{ direction: "column", items: "center", gap: 2 }}>
+                    <picture>
+                      <source
+                        srcSet={image.desktop}
+                        media="(min-width:1200px)"
+                      />
+                      <source srcSet={image.tablet} media="(min-width:650px)" />
+                      <img src={image.mobile} alt={name} />
+                    </picture>
+                    <Typography component="h4" variant="h6">
+                      {name}
+                    </Typography>
+                    <Link to={`/${category}/${slug}`}>
+                      <Button color="secondary">see product</Button>
+                    </Link>
+                  </Flex>
+                </li>
+              );
+            })}
           </Grid>
         </AlsoLikeList>
       </Container>
