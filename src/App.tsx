@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { GlobalStyles, Layout } from "./components";
+import { GlobalStyles, Layout, ScrollToTop } from "./components";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Home from "./pages/Home/Home";
@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
