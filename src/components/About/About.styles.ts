@@ -5,10 +5,12 @@ export const AboutText = styled.div`
   & > * + * {
     margin-top: 2rem;
   }
+  text-align: center;
   grid-column: span 1;
   ${media.up("sm")`
     grid-column: span 3;
     align-self: center;
+    text-align:left;
   `}
   ${media.up("md")`
     grid-column: span 5;
