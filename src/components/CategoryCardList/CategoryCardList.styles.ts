@@ -3,7 +3,6 @@ import media from "../../helpers/styles/mediaQueries";
 
 export const CategoryCard = styled.div`
   padding-top: 5rem;
-  padding-bottom: 2rem;
   grid-column: span 1;
   position: relative;
   ${media.up("sm")`
@@ -30,11 +29,8 @@ export const CardBody = styled.div`
   background-color: ${({ theme }) => theme.palette.card};
   border-radius: ${({ theme }) => theme.shape.borderRadius.md};
   width: 100%;
-  padding: 5rem 0 1rem 0;
+  padding: 5rem 0 2rem 0;
   display: grid;
   justify-items: center;
   gap: 1rem;
-  ${media.up("md")`
-    padding-bottom:2rem;
-  `};
 `;

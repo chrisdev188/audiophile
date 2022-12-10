@@ -38,6 +38,9 @@ const MenuItem: React.FC<IMenuItemProps> = ({ name, path }) => {
       <StyledNavLink
         className={(props) => (props.isActive ? "active" : "")}
         to={path}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
       >
         {name}
       </StyledNavLink>

@@ -24,7 +24,7 @@ export const ProductCategories = [
 const ByProductNavigation = () => {
   return (
     <Container fullVertical>
-      <Grid xs={{ rowGap: 5 }}>
+      <Grid xs={{ rowGap: 2 }}>
         {ProductCategories.map((category) => (
           <CategoryCard key={category.name}>
             <CardMedia>
