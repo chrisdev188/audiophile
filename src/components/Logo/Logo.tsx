@@ -1,9 +1,7 @@
 import LogoIcon from "../icons/LogoIcon";
 import { LogoLink } from "./Logo.styles";
 
-interface ILogoProps {}
-
-const Logo: React.FunctionComponent<ILogoProps> = (props) => {
+const Logo = () => {
   return (
     <LogoLink to="/">
       <LogoIcon />

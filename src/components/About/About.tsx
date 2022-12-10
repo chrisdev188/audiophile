@@ -1,44 +1,7 @@
-import styled from "styled-components";
-import media from "../../helpers/styles/mediaQueries";
 import Container from "../Container/Container";
 import Grid from "../Grid/Grid";
 import Typography from "../Typography/Typography";
-
-const AboutText = styled.div`
-  & > * + * {
-    margin-top: 2rem;
-  }
-  grid-column: span 1;
-  ${media.up("sm")`
-    grid-column: span 3;
-    align-self: center;
-  `}
-  ${media.up("md")`
-    grid-column: span 5;
-    align-self: center;
-  `}
-`;
-const AboutImage = styled.div`
-  grid-column: span 1;
-  order: -1;
-  height: 100%;
-  border-radius: ${({ theme }) => theme.shape.borderRadius.md};
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-  }
-  ${media.up("sm")`
-    order:unset;
-    grid-column: span 3;
-    
-  `}
-  ${media.up("md")`
-    grid-column: 7 / span 6;
-   
-  `}
-`;
+import { AboutImage, AboutText } from "./About.styles";
 
 const About = () => {
   return (

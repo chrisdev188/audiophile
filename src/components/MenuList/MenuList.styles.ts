@@ -12,7 +12,7 @@ export const StyledMenuList = styled.ul<IMenuListProps>`
   `}
 `;
 
-export const MenuItem = styled.li`
+export const StyledMenuItem = styled.li`
   padding: 0;
 `;
 

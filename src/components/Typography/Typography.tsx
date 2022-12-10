@@ -1,41 +1,5 @@
-import styled from "styled-components";
-import media from "../../helpers/styles/mediaQueries";
-
-interface ITypograpyProps extends React.HTMLAttributes<HTMLElement> {
-  variant?:
-    | "h1"
-    | "h2"
-    | "h3"
-    | "h4"
-    | "h5"
-    | "h6"
-    | "body"
-    | "overline"
-    | "subtitle";
-  component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "small" | "p" | "span";
-  textColor?: "dark" | "light" | "accent" | "error" | "darkAlt" | "lightAlt";
-  children?: React.ReactNode;
-}
-
-const StyledTypography = styled.p<ITypograpyProps>`
-  font-family: ${({ theme, variant }) =>
-    variant && theme.typography[variant].fontFamily};
-  font-size: ${({ theme, variant }) =>
-    variant && theme.typography[variant].fontSize};
-  font-weight: ${({ theme, variant }) =>
-    variant && theme.typography[variant].fontWeight};
-  letter-spacing: ${({ theme, variant }) =>
-    variant && theme.typography[variant].letterSpacing};
-  line-height: ${({ theme, variant }) =>
-    variant && theme.typography[variant].lineHeight};
-  text-transform: ${({ theme, variant }) =>
-    variant && theme.typography[variant].textTransform};
-  color: ${({ textColor, theme }) => {
-    if (textColor !== undefined) {
-      return theme.palette.text[textColor];
-    }
-  }};
-`;
+import { StyledTypography } from "./Typography.styles";
+import { ITypograpyProps } from "./Typography.types";
 
 const Typograpy: React.FunctionComponent<ITypograpyProps> = (props) => {
   const { variant, component, children, ...otherProps } = props;

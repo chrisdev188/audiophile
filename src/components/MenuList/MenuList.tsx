@@ -1,8 +1,49 @@
-import { MenuItem, StyledMenuList, StyledNavLink } from "./MenuList.styles";
+import React, { ReactFragment } from "react";
+import {
+  StyledMenuItem,
+  StyledMenuList,
+  StyledNavLink,
+} from "./MenuList.styles";
 
 export interface IMenuListProps extends React.HTMLAttributes<HTMLElement> {
   hideOnSmallScreen?: boolean;
+  children?: React.ReactNode;
 }
+export type IMenuItemProps = typeof menuList[0] & {
+  children?: React.ReactNode;
+};
+
+const menuList = [
+  {
+    name: "home",
+    path: "/",
+  },
+  {
+    name: "headphones",
+    path: "/headphones",
+  },
+  {
+    name: "speakers",
+    path: "/speakers",
+  },
+  {
+    name: "earphones",
+    path: "/earphones",
+  },
+];
+
+const MenuItem: React.FC<IMenuItemProps> = ({ name, path }) => {
+  return (
+    <StyledMenuItem>
+      <StyledNavLink
+        className={(props) => (props.isActive ? "active" : "")}
+        to={path}
+      >
+        {name}
+      </StyledNavLink>
+    </StyledMenuItem>
+  );
+};
 
 const MenuList: React.FunctionComponent<IMenuListProps> = ({
   hideOnSmallScreen,
@@ -10,38 +51,15 @@ const MenuList: React.FunctionComponent<IMenuListProps> = ({
 }) => {
   return (
     <StyledMenuList hideOnSmallScreen={hideOnSmallScreen} {...otherProps}>
-      <MenuItem>
-        <StyledNavLink
-          className={(props) => (props.isActive ? "active" : "")}
-          to="/"
-        >
-          home
-        </StyledNavLink>
-      </MenuItem>
-      <MenuItem>
-        <StyledNavLink
-          className={(props) => (props.isActive ? "active" : "")}
-          to="/headphones"
-        >
-          headphones
-        </StyledNavLink>
-      </MenuItem>
-      <MenuItem>
-        <StyledNavLink
-          className={(props) => (props.isActive ? "active" : "")}
-          to="/speakers"
-        >
-          speakers
-        </StyledNavLink>
-      </MenuItem>
-      <MenuItem>
-        <StyledNavLink
-          className={(props) => (props.isActive ? "active" : "")}
-          to="/earphones"
-        >
-          earphones
-        </StyledNavLink>
-      </MenuItem>
+      {menuList.map((item) => {
+        return (
+          <MenuItem
+            key={item.name}
+            name={item.name}
+            path={item.path}
+          ></MenuItem>
+        );
+      })}
     </StyledMenuList>
   );
 };
