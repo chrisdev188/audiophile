@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../../helpers/styles/mediaQueries";
 
 export const StyledHomeHero = styled.header`
   padding-top: 5.5rem;
@@ -10,6 +11,7 @@ export const StyledHomeHero = styled.header`
 `;
 
 export const HeroImage = styled.div`
+  background-color: #1a1a1a;
   z-index: -1;
   height: 100%;
   width: 100%;
@@ -21,7 +23,14 @@ export const HeroImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mix-blend-mode: lighten;
+    z-index: 1;
   }
+  ${media.up("md")`
+  img{
+    object-fit:contain;
+    }
+  `}
 `;
 
 export const HomeMain = styled.main`
