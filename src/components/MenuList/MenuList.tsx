@@ -1,4 +1,3 @@
-import React, { ReactFragment } from "react";
 import {
   StyledMenuItem,
   StyledMenuList,

@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { CategoryCardList } from "..";
-import { useClickOutside } from "../../hooks";
+import { useClickOutside, useNavigationActions } from "../../hooks";
 import Container from "../Container/Container";
 import CartIcon from "../icons/CartIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
 import Logo from "../Logo/Logo";
 import MenuList from "../MenuList/MenuList";
-import { useNavBackgroundChange, useNavigationActions } from "./Navbar.hooks";
+import { useNavBackgroundChange } from "./Navbar.hooks";
 import {
   MenuToggler,
   NavInnerBox,
@@ -17,10 +17,14 @@ import {
 import { INavbarProps } from "./Navbar.types";
 
 const Navbar: React.FC<INavbarProps> = (props) => {
-  const { isMenuOpen, closeMenu, toggleMenu } = useNavigationActions(false);
+  const { isMenuOpen, closeMenu, toggleMenu } = useNavigationActions();
 
   const navRef = useRef<HTMLElement>(null);
   const menuModalRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    console.log("state of modal " + isMenuOpen);
+  }, [isMenuOpen]);
 
   // handle close modal when click outside
   useClickOutside(menuModalRef, closeMenu);
@@ -51,7 +55,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
             className="content"
             refObject={menuModalRef}
           >
-            <CategoryCardList />
+            <CategoryCardList onClickOnLink={closeMenu} />
           </Container>
           <Container className="overlay" full fullVertical />
         </StyledMenuModal>
