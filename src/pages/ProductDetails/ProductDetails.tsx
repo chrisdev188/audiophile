@@ -23,10 +23,12 @@ const ProductDetailsMain = styled.main`
 `;
 
 const ProductDetails = () => {
-  const productList = useProductList();
+  const { getProductList } = useProductList();
   const { slug } = useParams();
 
-  const product = productList.find((item) => item.slug === slug) as ProductType;
+  const product = getProductList().find(
+    (item) => item.slug === slug
+  ) as ProductType;
   const otherProducts = product?.others as OtherProducts;
   const gallery = product?.gallery as ProductGalleryType;
   const features = product?.features as ProductFeaturesType;

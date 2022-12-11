@@ -1,3 +1,5 @@
+import { NavContextProvider } from "../../context/NavigationContext";
+import { ShoppingCartProvider } from "../../context/ShoppingCartContext";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
@@ -9,9 +11,13 @@ const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
   const { children } = props;
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+      <NavContextProvider>
+        <ShoppingCartProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ShoppingCartProvider>
+      </NavContextProvider>
     </>
   );
 };

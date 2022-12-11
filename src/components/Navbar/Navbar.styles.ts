@@ -60,9 +60,24 @@ export const MenuToggler = styled.button`
 export const CartToggler = styled.button`
   ${centerElement}
   padding: 0.5rem;
+  position: relative;
+  .badge {
+    ${centerElement}
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: ${({ theme }) => theme.palette.error.main};
+    color: ${({ theme }) => theme.palette.error.contrastText};
+    font-size: 13px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+
   ${media.up("sm")`
     margin-left:auto;
   `}
+
   ${media.up("md")`
     margin:0;
   `}

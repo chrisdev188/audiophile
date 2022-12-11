@@ -9,6 +9,7 @@ export const StyledFlex = styled.div<IFlexProps>`
   justify-content: ${({ xs }) => xs?.content};
   align-content: ${({ xs }) => xs?.align};
   flex-direction: ${({ xs }) => xs?.direction};
+  flex-wrap: ${({ xs }) => xs?.wrap};
   text-align: ${({ xs }) => xs?.textAlign};
   margin-top: ${({ xs }) => `${xs?.gutterTop}rem`};
   margin-bottom: ${({ xs }) => `${xs?.gutterBottom}rem`};
@@ -20,6 +21,7 @@ export const StyledFlex = styled.div<IFlexProps>`
         justify-content:${sm?.content};
         align-content:${sm?.align};
         flex-direction:${sm?.direction};
+        flex-wrap:${sm?.wrap};
         text-align:${sm?.textAlign};
         margin-top: ${`${sm?.gutterTop}rem`};
         margin-bottom: ${`${sm?.gutterBottom}rem`};
@@ -32,6 +34,7 @@ export const StyledFlex = styled.div<IFlexProps>`
         justify-content:${md?.content};
         align-content:${md?.align};
         flex-direction:${md?.direction};
+        flex-wrap:${md?.wrap};
         text-align:${md?.textAlign};
         margin-top: ${`${md?.gutterTop}rem`};
         margin-bottom: ${`${md?.gutterBottom}rem`};
@@ -44,6 +47,7 @@ export const StyledFlex = styled.div<IFlexProps>`
         justify-content:${lg?.content};
         align-content:${lg?.align};
         flex-direction:${lg?.direction};
+        flex-wrap:${lg?.wrap};
         text-align:${lg?.textAlign};
         margin-top: ${`${lg?.gutterTop}rem`};
         margin-bottom: ${`${lg?.gutterBottom}rem`};
@@ -56,6 +60,7 @@ export const StyledFlex = styled.div<IFlexProps>`
         justify-content:${xl?.content};
         align-content:${xl?.align};
         flex-direction:${xl?.direction};
+        flex-wrap:${xl?.wrap};
         text-align:${xl?.textAlign};
         margin-top: ${`${xl?.gutterTop}rem`};
         margin-bottom: ${`${xl?.gutterBottom}rem`};

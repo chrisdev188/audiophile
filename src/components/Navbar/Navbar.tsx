@@ -1,6 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { CategoryCardList } from "..";
-import { useClickOutside, useNavigationActions } from "../../hooks";
+import { useNavigationContext } from "../../context/NavigationContext";
+import { useShoppingCartContext } from "../../context/ShoppingCartContext";
+import { useClickOutside } from "../../hooks";
 import Container from "../Container/Container";
 import CartIcon from "../icons/CartIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
@@ -17,14 +19,11 @@ import {
 import { INavbarProps } from "./Navbar.types";
 
 const Navbar: React.FC<INavbarProps> = (props) => {
-  const { isMenuOpen, closeMenu, toggleMenu } = useNavigationActions();
+  const { getNumberOfItems } = useShoppingCartContext();
+  const { isOpen, closeMenu, toggleMenu } = useNavigationContext();
 
   const navRef = useRef<HTMLElement>(null);
   const menuModalRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    console.log("state of modal " + isMenuOpen);
-  }, [isMenuOpen]);
 
   // handle close modal when click outside
   useClickOutside(menuModalRef, closeMenu);
@@ -36,21 +35,22 @@ const Navbar: React.FC<INavbarProps> = (props) => {
       <NavStyled {...props} ref={navRef}>
         <Container fullVertical>
           <NavInnerBox>
-            <MenuToggler onClick={toggleMenu}>
+            <MenuToggler onClick={(e) => toggleMenu(e)}>
               <HamburgerIcon />
             </MenuToggler>
             <Logo />
             <MenuList hideOnSmallScreen />
             <CartToggler>
               <CartIcon />
+              <span className="badge">{getNumberOfItems()}</span>
             </CartToggler>
           </NavInnerBox>
         </Container>
       </NavStyled>
-      {isMenuOpen && (
+      {isOpen && (
         <StyledMenuModal>
           <nav className="content" ref={menuModalRef}>
-            <CategoryCardList onClickOnLink={closeMenu} />
+            <CategoryCardList />
           </nav>
           <div className="overlay" />
         </StyledMenuModal>

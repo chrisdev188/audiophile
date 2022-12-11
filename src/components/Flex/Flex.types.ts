@@ -28,6 +28,7 @@ export interface IMediaQueriesStylesProps {
   textAlign?: "center" | "left" | "right" | "unset";
   gutterBottom?: number;
   gutterTop?: number;
+  wrap?: "nowrap" | "wrap" | "wrap-reverse";
 }
 
 export interface IFlexProps extends React.HTMLAttributes<HTMLElement> {

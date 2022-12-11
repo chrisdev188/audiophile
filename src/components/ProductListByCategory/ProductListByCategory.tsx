@@ -23,8 +23,8 @@ const ProductListByCategory: React.FunctionComponent<
   IProductListByCategoryProps
 > = (props) => {
   const { category } = props;
-  const productList = useProductList();
-  const listByCategory = productList.filter(
+  const { getProductList } = useProductList();
+  const listByCategory = getProductList().filter(
     (product) => product.category === category
   );
   // sort product by property new, if new === true, product will be on the top

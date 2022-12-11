@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 type UseCounterOutput = {
   count: number;
@@ -19,6 +19,12 @@ const useCounterCrement = (initialValue?: number): UseCounterOutput => {
   const handleReset = () => {
     setCount(initialValue || 0);
   };
-  return { count, handleIncrease, handleDecrease, setCount, handleReset };
+  return {
+    count,
+    handleIncrease,
+    handleDecrease,
+    handleReset,
+    setCount,
+  };
 };
 export default useCounterCrement;

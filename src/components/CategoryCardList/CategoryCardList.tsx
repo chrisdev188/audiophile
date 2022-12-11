@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRightIcon, ButtonWithIcons, Grid, Typography } from "..";
+import { useNavigationContext } from "../../context/NavigationContext";
 import Container from "../Container/Container";
 import { CardBody, CardMedia, CategoryCard } from "./CategoryCardList.styles";
 
@@ -21,13 +22,10 @@ export const ProductCategories = [
   },
 ];
 
-export interface ICategoryCardListProps {
-  onClickOnLink?: () => void;
-}
+export interface ICategoryCardListProps {}
 
-const CategoryCardList: React.FC<ICategoryCardListProps> = ({
-  onClickOnLink,
-}) => {
+const CategoryCardList: React.FC<ICategoryCardListProps> = ({}) => {
+  const { closeMenu } = useNavigationContext();
   return (
     <Container fullVertical>
       <Grid xs={{ rowGap: 2 }}>
@@ -40,7 +38,7 @@ const CategoryCardList: React.FC<ICategoryCardListProps> = ({
               <Typography component="h3" variant="h6">
                 {category.name}
               </Typography>
-              <Link to={`/${category.name}`} onClick={onClickOnLink}>
+              <Link to={`/${category.name}`} onClick={closeMenu}>
                 <ButtonWithIcons variant="text" iconEnd={<ArrowRightIcon />}>
                   shop
                 </ButtonWithIcons>

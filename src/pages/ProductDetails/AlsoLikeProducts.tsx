@@ -34,15 +34,15 @@ const AlsoLikeList = styled.ul`
 const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
   list,
 }) => {
-  const productList = useProductList();
+  const { getProductList } = useProductList();
+
   return (
     <section>
       <Container>
         <AlsoLikeList>
           <Grid xs={{ rowGap: 3.5 }}>
             {list.map(({ name, image, slug }) => {
-              // find category of product
-              const category = productList.find(
+              const category = getProductList().find(
                 (item) => item.slug === slug
               )?.category;
 

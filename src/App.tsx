@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { GlobalStyles, Layout, ScrollToTop } from "./components";
+import { Counter, GlobalStyles, Layout, ScrollToTop } from "./components";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Home from "./pages/Home/Home";

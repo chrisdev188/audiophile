@@ -16,3 +16,4 @@ export { default as CategoryCardList } from "./CategoryCardList/CategoryCardList
 export { default as About } from "./About/About";
 export { default as ProductListByCategory } from "./ProductListByCategory/ProductListByCategory";
 export { default as ScrollToTop } from "./ScrollToTop";
+export { default as Counter } from "./Counter/Counter";
