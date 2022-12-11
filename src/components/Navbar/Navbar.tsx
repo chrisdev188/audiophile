@@ -24,6 +24,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
 
   const navRef = useRef<HTMLElement>(null);
   const menuModalRef = useRef<HTMLElement>(null);
+  const cartQuantity = getNumberOfItems();
 
   // handle close modal when click outside
   useClickOutside(menuModalRef, closeMenu);
@@ -42,7 +43,9 @@ const Navbar: React.FC<INavbarProps> = (props) => {
             <MenuList hideOnSmallScreen />
             <CartToggler>
               <CartIcon />
-              <span className="badge">{getNumberOfItems()}</span>
+              {cartQuantity > 0 && (
+                <span className="badge">{cartQuantity}</span>
+              )}
             </CartToggler>
           </NavInnerBox>
         </Container>
