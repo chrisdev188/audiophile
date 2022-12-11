@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Typography component="h3" variant="h3">
             {product.name}
           </Typography>
-          <Typography>{product.description}</Typography>
+          <Typography textColor="darkAlt">{product.description}</Typography>
           {children}
         </div>
       </Grid>

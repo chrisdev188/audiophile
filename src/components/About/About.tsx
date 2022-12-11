@@ -16,7 +16,7 @@ const About = () => {
               </Typography>{" "}
               audio gear
             </Typography>
-            <Typography component="p" variant="body">
+            <Typography component="p" variant="body" textColor="darkAlt">
               Located at the heart of New York City, Audiophile is the premier
               store for high end headphones, earphones, speakers, and audio
               accessories. We have a large showroom and luxury demonstration

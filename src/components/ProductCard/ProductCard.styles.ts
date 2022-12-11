@@ -29,10 +29,12 @@ export const StyledProductCard = styled.article<ProductCardProps>`
   .card-media {
     width: 100%;
     height: 100%;
+    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: inherit;
     }
     ${media.up("sm")`
       grid-column: span 6;
