@@ -1,6 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { useTheme } from "styled-components";
+import { useRef } from "react";
 import { CategoryCardList } from "..";
 import { useClickOutside } from "../../hooks";
 import Container from "../Container/Container";
@@ -8,6 +6,7 @@ import CartIcon from "../icons/CartIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
 import Logo from "../Logo/Logo";
 import MenuList from "../MenuList/MenuList";
+import { useNavBackgroundChange, useNavigationActions } from "./Navbar.hooks";
 import {
   MenuToggler,
   NavInnerBox,
@@ -18,40 +17,22 @@ import {
 import { INavbarProps } from "./Navbar.types";
 
 const Navbar: React.FC<INavbarProps> = (props) => {
-  const theme = useTheme();
-  const { pathname } = useLocation();
-  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
+  const { isMenuOpen, closeMenu, toggleMenu } = useNavigationActions(false);
+
   const navRef = useRef<HTMLElement>(null);
   const menuModalRef = useRef<HTMLElement>(null);
 
-  const handleClose = useCallback(() => {
-    setIsMenuOpened(false);
-  }, []);
-  useClickOutside(menuModalRef, handleClose);
-
-  // change nav background to main color when route is not home ("/")
-  useEffect(() => {
-    if (navRef.current) {
-      if (pathname === "/") {
-        navRef.current.style.backgroundColor = "transparent";
-      } else {
-        navRef.current.style.backgroundColor = theme.palette.primary.main;
-      }
-    }
-  }, [pathname]);
-
-  // we have to prevent event bubbling up when click on button
-  const handleClick = (event: React.MouseEvent) => {
-    event.stopPropagation();
-    setIsMenuOpened((prevValue) => !prevValue);
-  };
+  // handle close modal when click outside
+  useClickOutside(menuModalRef, closeMenu);
+  // change nav background when current page is not home ("/")
+  useNavBackgroundChange(navRef);
 
   return (
     <>
       <NavStyled {...props} ref={navRef}>
         <Container fullVertical>
           <NavInnerBox>
-            <MenuToggler onClick={handleClick}>
+            <MenuToggler onClick={toggleMenu}>
               <HamburgerIcon />
             </MenuToggler>
             <Logo />
@@ -62,7 +43,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
           </NavInnerBox>
         </Container>
       </NavStyled>
-      {isMenuOpened && (
+      {isMenuOpen && (
         <StyledMenuModal>
           <Container
             fullVertical
