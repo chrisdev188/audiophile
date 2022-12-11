@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "styled-components";
 import { CategoryCardList } from "..";
+import { useClickOutside } from "../../hooks";
 import Container from "../Container/Container";
 import CartIcon from "../icons/CartIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
@@ -21,7 +22,12 @@ const Navbar: React.FC<INavbarProps> = (props) => {
   const { pathname } = useLocation();
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const navRef = useRef<HTMLElement>(null);
-  const menuModalRef = useRef<HTMLDivElement>(null);
+  const menuModalRef = useRef<HTMLElement>(null);
+
+  const handleClose = useCallback(() => {
+    setIsMenuOpened(false);
+  }, []);
+  useClickOutside(menuModalRef, handleClose);
 
   // change nav background to main color when route is not home ("/")
   useEffect(() => {
@@ -34,20 +40,18 @@ const Navbar: React.FC<INavbarProps> = (props) => {
     }
   }, [pathname]);
 
-  const toggleMenu = (): void => {
+  // we have to prevent event bubbling up when click on button
+  const handleClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setIsMenuOpened((prevValue) => !prevValue);
   };
-
-  useEffect(() => {
-    console.log(isMenuOpened);
-  }, [isMenuOpened]);
 
   return (
     <>
       <NavStyled {...props} ref={navRef}>
         <Container fullVertical>
           <NavInnerBox>
-            <MenuToggler onClick={toggleMenu}>
+            <MenuToggler onClick={handleClick}>
               <HamburgerIcon />
             </MenuToggler>
             <Logo />
@@ -60,7 +64,12 @@ const Navbar: React.FC<INavbarProps> = (props) => {
       </NavStyled>
       {isMenuOpened && (
         <StyledMenuModal>
-          <Container fullVertical full className="content">
+          <Container
+            fullVertical
+            full
+            className="content"
+            refObject={menuModalRef}
+          >
             <CategoryCardList />
           </Container>
           <Container className="overlay" full fullVertical />
