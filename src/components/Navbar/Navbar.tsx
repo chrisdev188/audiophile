@@ -49,15 +49,10 @@ const Navbar: React.FC<INavbarProps> = (props) => {
       </NavStyled>
       {isMenuOpen && (
         <StyledMenuModal>
-          <Container
-            fullVertical
-            full
-            className="content"
-            refObject={menuModalRef}
-          >
+          <nav className="content" ref={menuModalRef}>
             <CategoryCardList onClickOnLink={closeMenu} />
-          </Container>
-          <Container className="overlay" full fullVertical />
+          </nav>
+          <div className="overlay" />
         </StyledMenuModal>
       )}
     </>

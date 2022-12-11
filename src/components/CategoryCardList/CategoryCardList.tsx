@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon, ButtonWithIcons, Grid, Typography } from "..";
-import { useNavigationActions } from "../../hooks";
 import Container from "../Container/Container";
 import { CardBody, CardMedia, CategoryCard } from "./CategoryCardList.styles";
 
