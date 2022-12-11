@@ -29,7 +29,7 @@ const theme: DefaultTheme = {
       dark: "#000000",
       light: "#FFFFFF",
       accent: "#D87D4A",
-      error: "#FFFFFF",
+      error: "#CD2C2C",
       darkAlt: "rgba(0,0,0,.5)",
       lightAlt: "rgba(255,255,255,.75)",
     },
