@@ -10,6 +10,10 @@ interface IShoppingCartContext {
   increaseItemQuantity: (id: number, quantity: number) => void;
   decreaseItemQuantity: (id: number) => void;
   clearCart: () => void;
+  closeCartModal: () => void;
+  openCartModal: () => void;
+  toggleCartModal: (e: React.MouseEvent) => void;
+  isCartModalOpen: boolean;
 }
 interface ICartItem {
   id: number;
@@ -22,6 +26,7 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
   children,
 }) => {
   const [cart, setCart] = useState([] as ICartItem[]);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   const getNumberOfItems = () => {
     return cart.length;
@@ -59,19 +64,35 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
       });
     });
   };
+
   const clearCart = () => {
     setCart([]);
+  };
+
+  const openCartModal = () => {
+    setIsCartModalOpen(true);
+  };
+  const closeCartModal = () => {
+    setIsCartModalOpen(false);
+  };
+  const toggleCartModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsCartModalOpen((prev) => !prev);
   };
 
   return (
     <ShoppingCartContext.Provider
       value={{
         cart,
+        isCartModalOpen,
         getNumberOfItems,
         getItemQuantity,
         increaseItemQuantity,
         decreaseItemQuantity,
         clearCart,
+        closeCartModal,
+        openCartModal,
+        toggleCartModal,
       }}
     >
       {children}

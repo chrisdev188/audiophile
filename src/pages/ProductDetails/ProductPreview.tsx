@@ -1,20 +1,13 @@
-import { useEffect } from "react";
 import { Button, Container, Counter, Flex } from "../../components";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { ProductType } from "../../context/ProductListContext";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
+import usdCurrencyFormatter from "../../helpers/usdCurrencyFormatter";
 import { useCounter } from "../../hooks";
 
 interface IProductPreviewProps {
   product: ProductType;
 }
-
-const usCurrencyFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  currencyDisplay: "narrowSymbol",
-  maximumFractionDigits: 0,
-});
 
 const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
   product,
@@ -31,7 +24,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
       <Container>
         <ProductCard product={product}>
           <div className="price">
-            {usCurrencyFormatter.format(product.price)}
+            {usdCurrencyFormatter.format(product.price)}
           </div>
           <Flex
             xs={{ gap: 1, items: "center", content: "center", wrap: "wrap" }}

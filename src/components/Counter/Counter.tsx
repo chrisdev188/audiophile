@@ -4,8 +4,8 @@ import StyledCounter from "./Counter.styles";
 
 interface ICounterProps {
   start?: number;
-  handleIncrease?: () => void;
-  handleDecrease?: () => void;
+  handleIncrease?: (e: React.MouseEvent) => void;
+  handleDecrease?: (e: React.MouseEvent) => void;
 }
 
 const Counter: React.FunctionComponent<ICounterProps> = ({
