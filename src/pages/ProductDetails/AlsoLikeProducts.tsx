@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button, Container, Flex, Grid, Typography } from "../../components";
 import {
   OtherProducts,
-  useProductList,
+  useProductListContext,
 } from "../../context/ProductListContext";
 import media from "../../helpers/styles/mediaQueries";
 
@@ -34,7 +34,7 @@ const AlsoLikeList = styled.ul`
 const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
   list,
 }) => {
-  const { getProductList } = useProductList();
+  const { getProductList } = useProductListContext();
 
   return (
     <section>

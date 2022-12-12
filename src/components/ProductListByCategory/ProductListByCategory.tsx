@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Button, Grid, Typography } from "..";
-import { CategoryType, useProductList } from "../../context/ProductListContext";
-import media from "../../helpers/styles/mediaQueries";
+import { Button } from "..";
+import {
+  CategoryType,
+  useProductListContext,
+} from "../../context/ProductListContext";
 import Container from "../Container/Container";
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -23,7 +25,7 @@ const ProductListByCategory: React.FunctionComponent<
   IProductListByCategoryProps
 > = (props) => {
   const { category } = props;
-  const { getProductList } = useProductList();
+  const { getProductList } = useProductListContext();
   const listByCategory = getProductList().filter(
     (product) => product.category === category
   );

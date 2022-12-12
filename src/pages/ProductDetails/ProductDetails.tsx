@@ -7,7 +7,7 @@ import {
   ProductFeaturesType,
   ProductGalleryType,
   ProductType,
-  useProductList,
+  useProductListContext,
 } from "../../context/ProductListContext";
 import AlsoLikeProducts from "./AlsoLikeProducts";
 import Features from "./Features";
@@ -23,7 +23,7 @@ const ProductDetailsMain = styled.main`
 `;
 
 const ProductDetails = () => {
-  const { getProductList } = useProductList();
+  const { getProductList } = useProductListContext();
   const { slug } = useParams();
 
   const product = getProductList().find(

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Button, CategoryCardList, Counter, Flex } from "..";
 import { useNavigationContext } from "../../context/NavigationContext";
-import { useProductList } from "../../context/ProductListContext";
+import { useProductListContext } from "../../context/ProductListContext";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import usdCurrencyFormatter from "../../helpers/usdCurrencyFormatter";
 import { useClickOutside } from "../../hooks";
@@ -40,7 +40,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
     decreaseItemQuantity,
   } = useShoppingCartContext();
   const { isOpen, closeMenu, toggleMenu } = useNavigationContext();
-  const { getProductList } = useProductList();
+  const { getProductList } = useProductListContext();
 
   const navRef = useRef<HTMLElement>(null);
   const menuModalRef = useRef<HTMLElement>(null);
@@ -85,6 +85,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
       </NavStyled>
 
       {isOpen && (
+        // show hide Menu modal
         <StyledMenuModal>
           <nav className="content" ref={menuModalRef}>
             <CategoryCardList />
@@ -94,6 +95,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
       )}
 
       {isCartModalOpen && (
+        // show hide Cart modal
         <StyledCartModal>
           <Container fullVertical className="content-container">
             <Flex xs={{ content: "flex-end" }}>

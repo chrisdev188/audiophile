@@ -8,6 +8,7 @@ export type ProductGalleryType = typeof data[0]["gallery"];
 export type ProductFeaturesType = typeof data[0]["features"];
 export type IncludesType = typeof data[0]["includes"];
 export type CategoryType = "headphones" | "earphones" | "speakers";
+
 type ProductListContext = {
   getProductList: () => ProductListType;
 };
@@ -29,6 +30,6 @@ export const ProductListProvider: React.FC<ProductListProviderProps> = (
   );
 };
 
-export const useProductList = () => {
+export const useProductListContext = () => {
   return useContext(ProductListContext);
 };
