@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigationContext } from "../../context/NavigationContext";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useClickOutside } from "../../hooks";
 import CategoryCardList from "../CategoryCardList/CategoryCardList";
@@ -7,10 +8,10 @@ import { StyledMenuModal } from "./MenuModal.styles";
 export interface IMenuModalProps {}
 
 const MenuModal: React.FunctionComponent<IMenuModalProps> = (props) => {
-  const { closeCartModal } = useShoppingCartContext();
+  const { closeMenu } = useNavigationContext();
   const menuModalRef = useRef<HTMLElement>(null);
 
-  useClickOutside(menuModalRef, closeCartModal);
+  useClickOutside(menuModalRef, closeMenu);
 
   return (
     <StyledMenuModal {...props}>

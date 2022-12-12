@@ -6,7 +6,7 @@ import { INavbarProps } from "./Navbar.types";
 export const NavStyled = styled.nav<INavbarProps>`
   position: absolute;
   width: 100%;
-  z-index: 1000;
+  z-index: 990;
   background-color: transparent;
 `;
 
