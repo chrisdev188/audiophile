@@ -12,7 +12,7 @@ interface IProductPreviewProps {
 const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
   product,
 }) => {
-  const { count, handleIncrease, handleDecrease } = useCounter(1);
+  const { count, handleIncrease, handleDecrease, handleReset } = useCounter(1);
   const { increaseItemQuantity } = useShoppingCartContext();
 
   const handleAddToCart = () => {
@@ -27,14 +27,20 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
             {usdCurrencyFormatter.format(product.price)}
           </div>
           <Flex
-            xs={{ gap: 1, items: "center", content: "center", wrap: "wrap" }}
+            xs={{ gap: 1, items: "stretch", content: "center", wrap: "wrap" }}
           >
             <Counter
               start={count}
               handleIncrease={handleIncrease}
               handleDecrease={handleDecrease}
             />
-            <Button color="secondary" onClick={handleAddToCart}>
+            <Button
+              color="secondary"
+              onClick={() => {
+                handleReset();
+                handleAddToCart();
+              }}
+            >
               add to cart
             </Button>
           </Flex>

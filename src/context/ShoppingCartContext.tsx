@@ -64,19 +64,16 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
       });
     });
   };
-
   const clearCart = () => {
     setCart([]);
   };
-
   const openCartModal = () => {
     setIsCartModalOpen(true);
   };
   const closeCartModal = () => {
     setIsCartModalOpen(false);
   };
-  const toggleCartModal = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const toggleCartModal = () => {
     setIsCartModalOpen((prev) => !prev);
   };
 

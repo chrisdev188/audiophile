@@ -3,8 +3,8 @@ import { centerElement } from "../../helpers/styles";
 
 const StyledCounter = styled.div`
   background-color: ${({ theme }) => theme.palette.card};
-  width: 8rem;
-  padding: 0.75rem 1rem;
+  width: 7rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

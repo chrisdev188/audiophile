@@ -8,7 +8,7 @@ type UseCounterOutput = {
   setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const useCounterCrement = (initialValue?: number): UseCounterOutput => {
+const useCounter = (initialValue?: number): UseCounterOutput => {
   const [count, setCount] = useState(initialValue || 0);
   const handleIncrease = () => {
     setCount((prev) => prev + 1);
@@ -27,4 +27,4 @@ const useCounterCrement = (initialValue?: number): UseCounterOutput => {
     setCount,
   };
 };
-export default useCounterCrement;
+export default useCounter;
