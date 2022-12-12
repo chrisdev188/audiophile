@@ -44,7 +44,9 @@ const ProductListByCategory: React.FunctionComponent<
                 className={`${index % 2 === 1 && "odds"}`}
               >
                 <Link to={`/${category}/${product.slug}`}>
-                  <Button color="secondary">see product</Button>
+                  <Button color="secondary" style={{ marginTop: "1rem" }}>
+                    see product
+                  </Button>
                 </Link>
               </ProductCard>
             </li>
