@@ -17,7 +17,6 @@ Flex.defaultProps = {
     content: "flex-start",
     align: "stretch",
     direction: "row",
-    textAlign: "unset",
     gutterBottom: 0,
     gutterTop: 0,
   },

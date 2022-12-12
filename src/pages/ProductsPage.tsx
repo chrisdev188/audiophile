@@ -17,6 +17,9 @@ export const PageHeader = styled.header`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   text-align: center;
   padding-top: 5.5rem;
+  .content {
+    padding-block: 5rem;
+  }
 `;
 
 const PageMain = styled.main`
@@ -30,7 +33,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category }) => {
   return (
     <Container fullVertical full>
       <PageHeader>
-        <Container style={{ paddingBlock: "5rem" }}>
+        <Container className="content">
           <Typography component="h1" variant="h2">
             {category}
           </Typography>

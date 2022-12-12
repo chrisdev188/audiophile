@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useNavigationContext } from "../../context/NavigationContext";
-import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useClickOutside } from "../../hooks";
 import CategoryCardList from "../CategoryCardList/CategoryCardList";
 import { StyledMenuModal } from "./MenuModal.styles";

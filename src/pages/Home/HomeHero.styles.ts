@@ -8,6 +8,15 @@ export const StyledHomeHero = styled.header`
   display: grid;
   justify-content: stretch;
   align-items: center;
+  .text-content {
+    max-width: 25rem;
+    text-align: center;
+  }
+  ${media.up("lg")`
+    .text-content {
+      text-align: left;
+    }
+  `}
 `;
 
 export const HeroImage = styled.div`

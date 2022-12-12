@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import { centerElement } from "../../helpers/styles";
+import media from "../../helpers/styles/mediaQueries";
 
 const StyledCounter = styled.div`
   background-color: ${({ theme }) => theme.palette.card};
-  width: 7rem;
-  padding: 0.5rem;
+  width: 6rem;
+  padding: 0.5rem 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
+  ${media.up("sm")`
+    width:7rem;
+  `}
   .increment-btn,
   .decrement-btn {
     ${centerElement}

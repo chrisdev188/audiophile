@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root{
+    --nav-height:6rem;
     font-size: 16px;
   }
   *,*::before, *::after{

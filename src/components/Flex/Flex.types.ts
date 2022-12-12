@@ -25,7 +25,6 @@ export interface IMediaQueriesStylesProps {
   content?: JusifyContentType;
   direction?: "column" | "row";
   gap?: number;
-  textAlign?: "center" | "left" | "right" | "unset";
   gutterBottom?: number;
   gutterTop?: number;
   wrap?: "nowrap" | "wrap" | "wrap-reverse";

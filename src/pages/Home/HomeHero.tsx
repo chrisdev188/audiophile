@@ -26,21 +26,19 @@ const HomeHeroImage = () => {
 
 const HomeTextContent = () => {
   return (
-    <Container fullVertical style={{ height: "100%" }}>
+    <Container fullVertical>
       <Flex
         xs={{ items: "center", content: "center" }}
         lg={{ content: "flex-start" }}
-        style={{ height: "100%" }}
       >
         <Flex
           xs={{
             direction: "column",
             gap: 2,
             items: "center",
-            textAlign: "center",
           }}
-          lg={{ items: "flex-start", textAlign: "left" }}
-          style={{ maxWidth: "25rem" }}
+          lg={{ items: "flex-start" }}
+          className="text-content"
         >
           <Typography variant="overline" component="span" textColor="lightAlt">
             new product
@@ -53,11 +51,7 @@ const HomeTextContent = () => {
             made for the passionate music enthusiast.
           </Typography>
           <Link to="/headphones/xx99-mark-two-headphones">
-            <Button
-              variant="contained"
-              color="secondary"
-              style={{ marginTop: "1rem" }}
-            >
+            <Button variant="contained" color="secondary">
               see product
             </Button>
           </Link>

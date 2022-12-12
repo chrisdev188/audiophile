@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../../helpers/styles/mediaQueries";
 
 export const StyledCartModal = styled.div`
   position: relative;
@@ -18,9 +19,10 @@ export const StyledCartModal = styled.div`
     padding-top: 7.5rem;
   }
   .content {
-    width: 25rem;
+    width: 100%;
+    max-width: 22rem;
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: ${({ theme }) => theme.shape.borderRadius.md};
     & > * + * {
       margin-top: 2rem;
@@ -28,6 +30,19 @@ export const StyledCartModal = styled.div`
     .btn-full {
       width: 100%;
       justify-content: center;
+    }
+    ${media.up("sm")`
+      padding:1.5rem;
+    `}
+  }
+  .thumbnail {
+    width: 4rem;
+    height: 4rem;
+    border-radius: ${({ theme }) => theme.shape.borderRadius.sm};
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
     }
   }
 `;

@@ -195,9 +195,7 @@ const ZX9Speaker = () => (
           truly remarkable sound.
         </Typography>
         <Link to="/speakers/zx9-speaker">
-          <Button color="primary" style={{ marginTop: "1rem" }}>
-            see product
-          </Button>
+          <Button color="primary">see product</Button>
         </Link>
       </Flex>
     </Grid>
