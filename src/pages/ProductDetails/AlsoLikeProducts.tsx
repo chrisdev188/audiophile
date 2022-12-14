@@ -23,7 +23,7 @@ const AlsoLikeList = styled.ul`
   }
   picture {
     width: 100%;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     img {
       width: 100%;
       border-radius: inherit;

@@ -2,9 +2,9 @@ import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
 
 export const CategoryCard = styled.div`
+  position: relative;
   padding-top: 5rem;
   grid-column: span 1;
-  position: relative;
   ${media.up("sm")`
     grid-column: span 2;
   `}
@@ -27,7 +27,7 @@ export const CardMedia = styled.div`
 `;
 export const CardBody = styled.div`
   background-color: ${({ theme }) => theme.palette.card};
-  border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+  border-radius: var(--round-md);
   width: 100%;
   padding: 5rem 0 2rem 0;
   display: grid;

@@ -3,10 +3,10 @@ import media from "../../helpers/styles/mediaQueries";
 
 const StyledAbout = styled.section`
   .image {
+    border-radius: var(--round-md);
     grid-column: span 1;
     order: -1;
     height: 100%;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
     img {
       width: 100%;
       height: 100%;
@@ -14,14 +14,12 @@ const StyledAbout = styled.section`
       border-radius: inherit;
     }
     ${media.up("sm")`
-    order:unset;
-    grid-column: span 3;
-    
-  `}
+      order:unset;
+      grid-column: span 3;
+    `}
     ${media.up("md")`
-    grid-column: 7 / span 6;
-   
-  `}
+      grid-column: 7 / span 6;
+    `}
   }
   .content {
     & > * + * {
@@ -29,14 +27,15 @@ const StyledAbout = styled.section`
     }
     text-align: center;
     grid-column: span 1;
+
     ${media.up("sm")`
-    grid-column: span 3;
-    align-self: center;
-    text-align:left;
+      grid-column: span 3;
+      align-self: center;
+      text-align:left;
   `}
     ${media.up("md")`
-    grid-column: span 5;
-    align-self: center;
+      grid-column: span 5;
+      align-self: center;
   `}
   }
 `;

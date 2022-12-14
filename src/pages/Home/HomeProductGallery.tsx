@@ -10,7 +10,7 @@ const StyledZX9Speaker = styled.div`
   background-size: cover;
   background-position: center -130px;
   background-repeat: no-repeat;
-  border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+  border-radius: var(--round-md);
   text-align: center;
   display: grid;
   align-items: center;
@@ -86,7 +86,7 @@ const StyledZX7Speaker = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     img {
       width: 100%;
       height: 100%;
@@ -118,9 +118,8 @@ const StyledYX1Earphone = styled.div`
   .image,
   .content {
     height: 12.5rem;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     grid-column: span 1;
-    border-radius: ${({ theme }) => theme.shape.borderRadius};
   }
   .image {
     width: 100%;

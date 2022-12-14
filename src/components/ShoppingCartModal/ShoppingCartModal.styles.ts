@@ -23,7 +23,7 @@ export const StyledCartModal = styled.div`
     max-width: 22rem;
     background-color: #ffffff;
     padding: 1rem;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     & > * + * {
       margin-top: 2rem;
     }
@@ -38,7 +38,7 @@ export const StyledCartModal = styled.div`
   .thumbnail {
     width: 4rem;
     height: 4rem;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.sm};
+    border-radius: var(--round-sm);
     img {
       width: 100%;
       height: 100%;

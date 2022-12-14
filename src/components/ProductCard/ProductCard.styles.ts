@@ -28,7 +28,7 @@ export const StyledProductCard = styled.article<ProductCardProps>`
   }
   .card-media {
     width: 100%;
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     img {
       width: 100%;
       height: 100%;

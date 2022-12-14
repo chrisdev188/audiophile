@@ -4,7 +4,7 @@ import { useNavigationContext } from "../../context/NavigationContext";
 import Container from "../Container/Container";
 import { CardBody, CardMedia, CategoryCard } from "./CategoryCardList.styles";
 
-export const ProductCategories = [
+export const productCategories = [
   {
     name: "headphones",
     imgSrc: "/assets/shared/desktop/image-category-thumbnail-headphones.png",
@@ -29,7 +29,7 @@ const CategoryCardList: React.FC<ICategoryCardListProps> = ({}) => {
   return (
     <Container fullVertical>
       <Grid xs={{ rowGap: 2 }}>
-        {ProductCategories.map((category) => (
+        {productCategories.map((category) => (
           <CategoryCard key={category.name}>
             <CardMedia>
               <img src={category.imgSrc} alt={category.name} />

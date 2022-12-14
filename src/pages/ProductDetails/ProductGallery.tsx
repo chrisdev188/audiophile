@@ -11,7 +11,7 @@ const StyledGallery = styled.section`
   .first,
   .second,
   .third {
-    border-radius: ${({ theme }) => theme.shape.borderRadius.md};
+    border-radius: var(--round-md);
     grid-column: span 1;
     img {
       width: 100%;
