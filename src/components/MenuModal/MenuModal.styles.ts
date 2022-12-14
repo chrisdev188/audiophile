@@ -14,7 +14,7 @@ export const StyledMenuModal = styled.div`
   }
   .content {
     position: absolute;
-    top: 5.5rem;
+    top: var(--nav-height);
     left: 0;
     width: 100%;
     background-color: #ffffff;

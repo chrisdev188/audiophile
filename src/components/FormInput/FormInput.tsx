@@ -13,10 +13,11 @@ const StyledFormInput = styled.div<IFormInputProps>`
     padding: 1rem;
     border-radius: 8px;
     outline: none;
-    font-size: 12px;
+    font-size: 14px;
+    caret-color: var(--clr-secondary);
   }
   & > input::placeholder {
-    font-size: 12px;
+    font-size: 14px;
   }
   & > label {
     position: absolute;
@@ -25,6 +26,7 @@ const StyledFormInput = styled.div<IFormInputProps>`
     font-weight: bold;
     font-size: 13px;
     text-transform: capitalize;
+    color: black;
   }
   & > .error-message {
     font: inherit;
@@ -40,8 +42,7 @@ const StyledFormInput = styled.div<IFormInputProps>`
   & > input ~ .error-message {
     display: none;
   }
-  & > input:focus,
-  & > input.invalid:focus {
+  & > input:focus {
     border-color: ${({ theme }) => theme.palette.secondary.main};
   }
   & > input.invalid {

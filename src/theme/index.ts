@@ -3,13 +3,6 @@ import { DefaultTheme } from "styled-components";
 export type TypographyNameType = keyof typeof theme["typography"];
 
 const theme: DefaultTheme = {
-  shape: {
-    borderRadius: {
-      sm: "4px",
-      md: "8px",
-      lg: "16px",
-    },
-  },
   palette: {
     primary: {
       main: "#101010",
@@ -122,18 +115,6 @@ const theme: DefaultTheme = {
       lineHeight: "25px",
       textTransform: "uppercase",
     },
-  },
-  // spacing between element in a component
-  spacing: {
-    sm: "1rem",
-    md: "2rem",
-    lg: "3rem",
-  },
-  // margin between components
-  gutters: {
-    sm: "3rem",
-    md: "5rem",
-    lg: "7rem",
   },
   mediaQueries: {
     xs: "0px",

@@ -15,13 +15,6 @@ export interface ITypography {
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    shape: {
-      borderRadius: {
-        sm: string;
-        md: string;
-        lg: string;
-      };
-    };
     palette: {
       primary: IPalette;
       secondary: IPalette;
@@ -49,18 +42,6 @@ declare module "styled-components" {
       subtitle: ITypography;
       button: ITypography;
       navLink: ITypography;
-    };
-    // spacing between element in a component
-    spacing: {
-      sm: string;
-      md: string;
-      lg: string;
-    };
-    // margin between components
-    gutters: {
-      sm: string;
-      md: string;
-      lg: string;
     };
     mediaQueries: {
       xs: string;

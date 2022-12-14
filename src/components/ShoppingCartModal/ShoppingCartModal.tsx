@@ -10,48 +10,28 @@ import Container from "../Container/Container";
 import Counter from "../Counter/Counter";
 import Flex from "../Flex/Flex";
 import { StyledCartModal } from "./ShoppingCartModal.styles";
+import ShoppingItem from "./ShoppingItem";
 
 interface IShoppingCartModalProps {
   cartModalRef?: React.RefObject<HTMLDivElement>;
 }
-type FullDetailsCart = Array<{
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}>;
 
 const ShoppingCartModal: React.FunctionComponent<IShoppingCartModalProps> = (
   props
 ) => {
   const {
-    cart,
+    fullDetailsCart,
     closeCartModal,
     clearCart,
     increaseItemQuantity,
     decreaseItemQuantity,
     getNumberOfItems,
   } = useShoppingCartContext();
-  const { getProductList } = useProductListContext();
 
   const cartModalRef = useRef<HTMLDivElement>(null);
 
   // handle close modals when click outside
   useClickOutside(cartModalRef, closeCartModal);
-
-  const fullDetailsCart = cart.map((item) => {
-    const product = getProductList().find((p) => p.id === item.id);
-    if (product) {
-      return {
-        ...item,
-        name: product.shortenName,
-        price: product.price,
-        image: product.image.mobile,
-      };
-    }
-    return item;
-  }) as FullDetailsCart;
 
   return (
     <StyledCartModal>
@@ -77,23 +57,7 @@ const ShoppingCartModal: React.FunctionComponent<IShoppingCartModalProps> = (
               >
                 {fullDetailsCart.map((item) => (
                   <li key={item.id}>
-                    <Flex
-                      xs={{
-                        direction: "row",
-                        content: "space-between",
-                        items: "center",
-                        gap: 1,
-                      }}
-                    >
-                      <Flex xs={{ items: "center", gap: 1 }}>
-                        <div className="thumbnail">
-                          <img src={item.image} alt={item.name} />
-                        </div>
-                        <Flex xs={{ direction: "column", gap: 0.5 }}>
-                          <p>{item.name}</p>
-                          <p>{usdCurrencyFormatter.format(item.price)}</p>
-                        </Flex>
-                      </Flex>
+                    <ShoppingItem item={item}>
                       <Counter
                         start={item.quantity}
                         handleIncrease={(e) => {
@@ -105,12 +69,12 @@ const ShoppingCartModal: React.FunctionComponent<IShoppingCartModalProps> = (
                           decreaseItemQuantity(item.id);
                         }}
                       />
-                    </Flex>
+                    </ShoppingItem>
                   </li>
                 ))}
               </Flex>
             ) : (
-              <Typography textColor="darkAlt">
+              <Typography textColor="darkAlt" style={{ textAlign: "center" }}>
                 😅 Sorry, no items added yet!
               </Typography>
             )}

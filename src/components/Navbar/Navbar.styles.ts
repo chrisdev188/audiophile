@@ -14,7 +14,7 @@ export const NavInnerBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5.5rem;
+  height: var(--nav-height);
   border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
   ${media.up("sm")`
     justify-content:flex-start;

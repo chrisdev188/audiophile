@@ -20,7 +20,7 @@ export const StyledCartModal = styled.div`
   }
   .content {
     width: 100%;
-    max-width: 22rem;
+    max-width: 25rem;
     background-color: #ffffff;
     padding: 1rem;
     border-radius: var(--round-md);
@@ -35,6 +35,9 @@ export const StyledCartModal = styled.div`
       padding:1.5rem;
     `}
   }
+`;
+
+export const ShoppingItemWrapper = styled.div`
   .thumbnail {
     width: 4rem;
     height: 4rem;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
 
 export const StyledHomeHero = styled.header`
-  padding-top: 5.5rem;
+  padding-top: var(--nav-height);
   height: 95vh;
   position: relative;
   display: grid;

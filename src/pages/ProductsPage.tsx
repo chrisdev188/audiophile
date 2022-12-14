@@ -16,13 +16,12 @@ export const PageHeader = styled.header`
   background-color: ${({ theme }) => theme.palette.primary.main};
   color: ${({ theme }) => theme.palette.primary.contrastText};
   text-align: center;
-  padding-top: 5.5rem;
+  padding-top: var(--nav-height);
   .content {
-    padding-block: 5rem;
+    padding-block: 7rem;
   }
 `;
-
-const PageMain = styled.main`
+export const PageMain = styled.main`
   padding-block: 7rem;
   & > * + * {
     margin-top: 7rem;

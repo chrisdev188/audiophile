@@ -1,16 +1,8 @@
 import { useState } from "react";
 import { FormObject } from "./Checkout";
 
-const useCheckoutFormLogic = () => {
-  const [formObject, setFormObject] = useState<FormObject>({
-    name: { value: "", errorMessage: "", invalid: false },
-    email: { value: "", errorMessage: "", invalid: false },
-    phone: { value: "", errorMessage: "", invalid: false },
-    address: { value: "", errorMessage: "", invalid: false },
-    zipcode: { value: "", errorMessage: "", invalid: false },
-    city: { value: "", errorMessage: "", invalid: false },
-    country: { value: "", errorMessage: "", invalid: false },
-  });
+const useCheckoutFormLogic = (initalFormObject: FormObject) => {
+  const [formObject, setFormObject] = useState(initalFormObject);
 
   const billingInfo = [
     {
@@ -20,7 +12,7 @@ const useCheckoutFormLogic = () => {
       placeholder: "Alexei Ward",
       label: "name",
       errorMessage: formObject.name.errorMessage,
-      invalid: formObject.email.invalid,
+      invalid: formObject.name.invalid,
     },
     {
       id: "email",
@@ -81,17 +73,63 @@ const useCheckoutFormLogic = () => {
     },
   ];
 
+  const paymentOptions = [
+    {
+      id: "e-money",
+      name: "paymentOption",
+      value: "e-money",
+      label: "e-Money",
+      checked: formObject.paymentOption.value === "e-money",
+    },
+    {
+      id: "cash",
+      name: "paymentOption",
+      value: "cash",
+      label: "Cash on Delivery",
+      checked: formObject.paymentOption.value === "cash",
+    },
+  ];
+
+  const paymentInfo = [
+    {
+      id: "e-money",
+      name: "eMoney",
+      value: formObject.eMoney.value,
+      placeholder: "238521993",
+      label: "e-Money Number",
+      errorMessage: formObject.eMoney.errorMessage,
+      invalid: formObject.eMoney.invalid,
+    },
+    {
+      id: "cash",
+      name: "cash",
+      value: formObject.cash.value,
+      placeholder: "6891",
+      label: "Cash Number",
+      errorMessage: formObject.cash.errorMessage,
+      invalid: formObject.cash.invalid,
+    },
+  ];
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
 
-    const errorMessage = validate(name, value);
-
-    setFormObject((currentFormObject) => {
-      return Object.assign({}, currentFormObject, {
-        ...currentFormObject,
-        [name]: { value, errorMessage, invalid: errorMessage ? true : false },
+    if (e.currentTarget.type !== "radio") {
+      const errorMessage = validate(name, value);
+      setFormObject((currentFormObject) => {
+        return Object.assign({}, currentFormObject, {
+          ...currentFormObject,
+          [name]: { value, errorMessage, invalid: errorMessage ? true : false },
+        });
       });
-    });
+    } else if (e.currentTarget.type === "radio") {
+      setFormObject((currentFormObject) => {
+        return Object.assign({}, currentFormObject, {
+          ...currentFormObject,
+          [name]: { value },
+        });
+      });
+    }
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -122,6 +160,7 @@ const useCheckoutFormLogic = () => {
     if (booleans.find((b) => b === true)) return;
     else {
       console.log(formObj);
+      // show result modal
     }
   };
 
@@ -162,7 +201,25 @@ const useCheckoutFormLogic = () => {
       if (!countryRegExp.test(value)) return "Wrong format";
       else return "";
     }
+    if (name === "eMoney") {
+      const eMoneyRegExp = /^[0-9]{9}$/;
+      if (!eMoneyRegExp.test(value)) return "Wrong format";
+      else return "";
+    }
+    if (name === "cash") {
+      const cashRegExp = /^[0-9]{4}$/;
+      if (!cashRegExp.test(value)) return "Wrong format";
+      else return "";
+    }
   };
-  return { formObject, handleChange, handleSubmit, billingInfo, shippingInfo };
+  return {
+    formObject,
+    handleChange,
+    handleSubmit,
+    billingInfo,
+    shippingInfo,
+    paymentOptions,
+    paymentInfo,
+  };
 };
 export default useCheckoutFormLogic;

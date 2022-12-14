@@ -35,7 +35,7 @@ const ProductDetails = () => {
   const includes = product?.includes as IncludesType;
 
   return (
-    <Container full fullVertical style={{ paddingTop: "5.5rem" }}>
+    <Container full fullVertical style={{ paddingTop: "var(--nav-height)" }}>
       <ProductDetailsMain>
         <ProductPreview product={product} />
         <Container>

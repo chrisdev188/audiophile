@@ -1,10 +1,12 @@
 import { createContext, useCallback, useContext, useState } from "react";
+import { useProductListContext } from "./ProductListContext";
 
 interface IShoppingCartProviderProps {
   children?: React.ReactNode;
 }
 interface IShoppingCartContext {
   cart: ICartItem[];
+  fullDetailsCart: IDetailCartItem[];
   getNumberOfItems: () => number;
   getItemQuantity: (id: number) => number;
   increaseItemQuantity: (id: number, quantity: number) => void;
@@ -20,6 +22,12 @@ interface ICartItem {
   quantity: number;
 }
 
+export interface IDetailCartItem extends ICartItem {
+  name: string;
+  price: number;
+  image: string;
+}
+
 const ShoppingCartContext = createContext({} as IShoppingCartContext);
 
 export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
@@ -27,6 +35,7 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
 }) => {
   const [cart, setCart] = useState([] as ICartItem[]);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const { getProductList } = useProductListContext();
 
   const getNumberOfItems = () => {
     return cart.length;
@@ -64,6 +73,18 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
       });
     });
   };
+  const fullDetailsCart = cart.map((item) => {
+    const product = getProductList().find((p) => p.id === item.id);
+    if (product) {
+      return {
+        ...item,
+        name: product.shortenName,
+        price: product.price,
+        image: product.image.mobile,
+      };
+    }
+    return item;
+  }) as IDetailCartItem[];
   const clearCart = () => {
     setCart([]);
   };
@@ -81,6 +102,7 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
     <ShoppingCartContext.Provider
       value={{
         cart,
+        fullDetailsCart,
         isCartModalOpen,
         getNumberOfItems,
         getItemQuantity,

@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
     --round-md:0.5rem;
     --round-lg:1rem;
 
+    /* NAVBAR HEIGHT */
+    --nav-height:6rem;
+
     font-size: 16px;
   }
   *,*::before, *::after{
