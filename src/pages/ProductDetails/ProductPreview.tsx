@@ -50,10 +50,10 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
             <Button
               color="secondary"
               onClick={() => {
-                handleReset();
-                handleAddToCart();
                 if (!isToastShowing) {
                   showToast();
+                  handleReset();
+                  handleAddToCart();
                 }
               }}
             >
