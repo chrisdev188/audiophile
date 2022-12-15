@@ -15,4 +15,9 @@ export const StyledButton = styled.button<IButtonProps>`
   align-items: center;
   gap: 0.75rem;
   transition: all 300ms ease;
+  &:disabled {
+    cursor: not-allowed;
+    background-color: lightgray;
+    border-color: lightgray;
+  }
 `;

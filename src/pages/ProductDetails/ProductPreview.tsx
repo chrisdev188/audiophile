@@ -1,4 +1,4 @@
-import { Button, Container, Counter, Flex } from "../../components";
+import { Button, Container, Counter, Flex, Money } from "../../components";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { ProductType } from "../../context/ProductListContext";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
@@ -23,9 +23,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
     <section>
       <Container>
         <ProductCard product={product}>
-          <div className="price">
-            {usdCurrencyFormatter.format(product.price)}
-          </div>
+          <Money number={product.price} />
           <Flex
             xs={{ gap: 1, items: "stretch", content: "center", wrap: "wrap" }}
           >
@@ -33,6 +31,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
               start={count}
               handleIncrease={handleIncrease}
               handleDecrease={handleDecrease}
+              notAllowedLessThanOne
             />
             <Button
               color="secondary"

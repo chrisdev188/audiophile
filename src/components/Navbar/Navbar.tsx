@@ -15,7 +15,7 @@ import HamburgerIcon from "../icons/HamburgerIcon";
 import Logo from "../Logo/Logo";
 import MenuList from "../MenuList/MenuList";
 import MenuModal from "../MenuModal/MenuModal";
-import ShoppingCartModal from "../ShoppingCartModal/ShoppingCartModal";
+import ShoppingCartModal from "../ShoppingCart/ShoppingCartModal";
 
 const Navbar: React.FC<INavbarProps> = (props) => {
   const { isCartModalOpen, getNumberOfItems, toggleCartModal } =

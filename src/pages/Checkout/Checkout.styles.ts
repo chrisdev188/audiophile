@@ -103,6 +103,7 @@ export const SummarySection = styled.section`
   background-color: white;
   border-radius: var(--round-md);
   padding: 1.5rem;
+  align-self: flex-start;
   & > * + * {
     margin-top: 2rem;
   }

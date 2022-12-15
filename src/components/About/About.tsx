@@ -11,10 +11,8 @@ const About = () => {
           <div className="content">
             <Typography component="h3" variant="h3">
               Bringing you the{" "}
-              <Typography component="span" textColor="accent" variant="h3">
-                best
-              </Typography>{" "}
-              audio gear
+              <span style={{ color: "var(--clr-txt-accent)" }}>best</span> audio
+              gear
             </Typography>
             <Typography component="p" variant="body" textColor="darkAlt">
               Located at the heart of New York City, Audiophile is the premier

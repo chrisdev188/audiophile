@@ -3,11 +3,13 @@ import {
   Flex,
   FormInput,
   Grid,
+  Money,
   RadioInput,
   Typography,
 } from "../../components";
 import CashIcon from "../../components/icons/CashIcon";
-import ShoppingItem from "../../components/ShoppingCartModal/ShoppingItem";
+import { CartMoneyLabel } from "../../components/ShoppingCart/ShoppingCartModal.styles";
+import ShoppingList from "../../components/ShoppingCart/ShoppingList";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import usdCurrencyFormatter from "../../helpers/usdCurrencyFormatter";
 import {
@@ -60,6 +62,18 @@ const Checkout: React.FunctionComponent<ICheckoutProps> = (props) => {
   });
 
   const { fullDetailsCart } = useShoppingCartContext();
+  const total = fullDetailsCart.reduce(
+    (sum, item) => sum + item.quantity * item.price,
+    0
+  );
+  const shipping = 50;
+  const vat = total * 0.2;
+  let grandTotal = 0;
+  if (total > 0) {
+    grandTotal = total + shipping + vat;
+  } else {
+    grandTotal = 0;
+  }
 
   return (
     <StyledCheckout>
@@ -178,34 +192,37 @@ const Checkout: React.FunctionComponent<ICheckoutProps> = (props) => {
               </Typography>
 
               {fullDetailsCart.length > 0 && (
-                <Flex
-                  component="ul"
-                  xs={{ direction: "column", gap: 1 }}
-                  sm={{ items: "stretch" }}
-                >
-                  {fullDetailsCart.map((item) => (
-                    <li key={item.id}>
-                      <ShoppingItem item={item}>
-                        <span>x{item.quantity}</span>
-                      </ShoppingItem>
-                    </li>
-                  ))}
-                </Flex>
+                <ShoppingList list={fullDetailsCart} />
               )}
 
-              <Flex xs={{ content: "space-between" }} className="cart-total">
-                <span>total</span>
-                <span>
-                  {usdCurrencyFormatter.format(
-                    fullDetailsCart.reduce(
-                      (acc, item) => acc + item.price * item.quantity,
-                      0
-                    )
-                  )}
-                </span>
+              <Flex xs={{ direction: "column", gap: 0.5 }}>
+                <Flex xs={{ content: "space-between", items: "center" }}>
+                  <CartMoneyLabel>total</CartMoneyLabel>
+                  <Money number={total} />
+                </Flex>
+                <Flex xs={{ content: "space-between", items: "center" }}>
+                  <CartMoneyLabel>shipping</CartMoneyLabel>
+                  <Money number={shipping} />
+                </Flex>
+                <Flex xs={{ content: "space-between", items: "center" }}>
+                  <CartMoneyLabel>vat (included)</CartMoneyLabel>
+                  <Money number={vat} />
+                </Flex>
               </Flex>
 
-              <CheckoutButton type="submit" color="secondary">
+              <Flex xs={{ content: "space-between", items: "center" }}>
+                <CartMoneyLabel>GRAND TOTAL</CartMoneyLabel>
+                <Money
+                  number={grandTotal}
+                  style={{ color: "var(--clr-txt-accent)" }}
+                />
+              </Flex>
+
+              <CheckoutButton
+                type="submit"
+                color="secondary"
+                disabled={total > 0 ? false : true}
+              >
                 checkout
               </CheckoutButton>
             </SummarySection>

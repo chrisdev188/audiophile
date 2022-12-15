@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --clr-txt-light-alt: ${({ theme }) => theme.palette.text.lightAlt};
     --clr-txt-dark: ${({ theme }) => theme.palette.text.dark};
     --clr-txt-dark-alt: ${({ theme }) => theme.palette.text.darkAlt};
+    --clr-txt-accent: ${({ theme }) => theme.palette.text.accent};
     --clr-txt-error: ${({ theme }) => theme.palette.text.error};
 
     /* SHAPES */

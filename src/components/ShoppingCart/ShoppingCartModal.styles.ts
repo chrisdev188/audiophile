@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
+import { IMoneyProps, MoneyWrapper } from "../Money/Money";
 
 export const StyledCartModal = styled.div`
   position: relative;
@@ -27,25 +28,29 @@ export const StyledCartModal = styled.div`
     & > * + * {
       margin-top: 2rem;
     }
-    .btn-full {
-      width: 100%;
-      justify-content: center;
-    }
     ${media.up("sm")`
       padding:1.5rem;
     `}
   }
 `;
 
-export const ShoppingItemWrapper = styled.div`
-  .thumbnail {
-    width: 4rem;
-    height: 4rem;
-    border-radius: var(--round-sm);
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-    }
+export const CartRemoveAllButton = styled.button`
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: medium;
+  text-decoration: underline;
+  color: ${({ theme }) => theme.palette.text.darkAlt};
+  &:disabled {
+    display: none;
   }
+`;
+
+export const CartMoneyLabel = styled.span`
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: medium;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.palette.text.darkAlt};
 `;
