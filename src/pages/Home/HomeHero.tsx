@@ -50,11 +50,15 @@ const HomeTextContent = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </Typography>
-          <Link to="/headphones/xx99-mark-two-headphones">
-            <Button variant="contained" color="secondary">
-              see product
-            </Button>
-          </Link>
+
+          <Button
+            variant="contained"
+            color="secondary"
+            as={Link}
+            to="/headphones/xx99-mark-two-headphones"
+          >
+            see product
+          </Button>
         </Flex>
       </Flex>
     </Container>

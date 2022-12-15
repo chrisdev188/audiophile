@@ -193,9 +193,9 @@ const ZX9Speaker = () => (
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </Typography>
-        <Link to="/speakers/zx9-speaker">
-          <Button color="primary">see product</Button>
-        </Link>
+        <Button color="primary" to="/speakers/zx9-speaker" as={Link}>
+          see product
+        </Button>
       </Flex>
     </Grid>
   </StyledZX9Speaker>
@@ -221,11 +221,15 @@ const ZX7Speaker = () => (
       <Typography component="h3" variant="h4" className="heading">
         ZX7 SPEAKER
       </Typography>
-      <Link to="/speakers/zx7-speaker">
-        <Button variant="outlined" className="action">
-          see product
-        </Button>
-      </Link>
+
+      <Button
+        variant="outlined"
+        className="action"
+        as={Link}
+        to="/speakers/zx7-speaker"
+      >
+        see product
+      </Button>
     </Flex>
   </StyledZX7Speaker>
 );
@@ -252,11 +256,14 @@ const YX1Earphones = () => (
           <Typography className="heading" component="h3" variant="h4">
             YX1 EARPHONES
           </Typography>
-          <Link to="/earphones/yx1-earphones">
-            <Button variant="outlined" className="action">
-              see product
-            </Button>
-          </Link>
+          <Button
+            variant="outlined"
+            className="action"
+            as={Link}
+            to="/earphones/yx1-earphones"
+          >
+            see product
+          </Button>
         </Flex>
       </div>
     </Grid>

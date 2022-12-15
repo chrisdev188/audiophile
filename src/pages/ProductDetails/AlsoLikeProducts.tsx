@@ -60,9 +60,14 @@ const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
                     <Typography component="h4" variant="h6">
                       {name}
                     </Typography>
-                    <Link to={`/${category}/${slug}`}>
-                      <Button color="secondary">see product</Button>
-                    </Link>
+
+                    <Button
+                      color="secondary"
+                      to={`/${category}/${slug}`}
+                      as={Link}
+                    >
+                      see product
+                    </Button>
                   </Flex>
                 </li>
               );

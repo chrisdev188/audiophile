@@ -43,9 +43,13 @@ const ProductListByCategory: React.FunctionComponent<
                 product={product}
                 className={`${index % 2 === 1 && "odds"}`}
               >
-                <Link to={`/${category}/${product.slug}`}>
-                  <Button color="secondary">see product</Button>
-                </Link>
+                <Button
+                  color="secondary"
+                  to={`/${category}/${product.slug}`}
+                  as={Link}
+                >
+                  see product
+                </Button>
               </ProductCard>
             </li>
           ))}

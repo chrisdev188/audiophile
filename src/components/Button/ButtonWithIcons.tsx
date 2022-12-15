@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import { centerElement } from "../../helpers/styles";
 import Button from "./Button";
-import { IButtonProps } from "./Button.types";
+import { ButtonProps } from "./Button.types";
 
-interface IButtonWithIconsProps extends IButtonProps {
-  children?: React.ReactNode;
+type ButtonWithIconsProps = ButtonProps & {
   iconStart?: React.ReactNode;
   iconEnd?: React.ReactNode;
-}
+};
 
 const Icon = styled.span`
   ${centerElement}
 `;
 
-const ButtonWithIcons: React.FunctionComponent<IButtonWithIconsProps> = ({
+const ButtonWithIcons: React.FunctionComponent<ButtonWithIconsProps> = ({
   children,
   iconStart,
   iconEnd,

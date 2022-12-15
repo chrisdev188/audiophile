@@ -38,17 +38,18 @@ const CategoryCardList: React.FC<ICategoryCardListProps> = ({}) => {
               <Typography component="h3" variant="h6">
                 {category.name}
               </Typography>
-              <Link
+              <ButtonWithIcons
+                as={Link}
                 to={`/${category.name}`}
+                variant="text"
+                iconEnd={<ArrowRightIcon />}
                 onClick={() => {
                   closeMenu();
                   window.scrollTo(0, 0);
                 }}
               >
-                <ButtonWithIcons variant="text" iconEnd={<ArrowRightIcon />}>
-                  shop
-                </ButtonWithIcons>
-              </Link>
+                shop
+              </ButtonWithIcons>
             </CardBody>
           </CategoryCard>
         ))}

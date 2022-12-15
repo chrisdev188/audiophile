@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { getTypography } from "../../helpers/styles";
 import { getButtonStyles } from "./Button.helpers";
-import { IButtonProps } from "./Button.types";
+import { ButtonProps } from "./Button.types";
 
-export const StyledButton = styled.button<IButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   ${({ color, variant, theme }) => {
     if (color !== undefined && variant !== undefined) {
       return getButtonStyles(color, theme, variant);

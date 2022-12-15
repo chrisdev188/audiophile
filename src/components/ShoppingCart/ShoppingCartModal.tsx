@@ -69,14 +69,15 @@ const ShoppingCartModal: React.FunctionComponent<IShoppingCartModalProps> = (
                 <Money number={total} />
               </Flex>
               {fullDetailsCart.length > 0 && (
-                <Link to="/checkout" onClick={closeCartModal}>
-                  <Button
-                    color="secondary"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    checkout
-                  </Button>
-                </Link>
+                <Button
+                  color="secondary"
+                  style={{ width: "100%", justifyContent: "center" }}
+                  to="/checkout"
+                  onClick={closeCartModal}
+                  as={Link}
+                >
+                  checkout
+                </Button>
               )}
             </Flex>
           </article>
