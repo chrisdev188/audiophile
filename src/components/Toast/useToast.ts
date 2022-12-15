@@ -19,10 +19,15 @@ const useToast = (
   }, [setIsToastShowing]);
 
   useEffect(() => {
+    if (!isToastShowing) return;
+
     if (isToastShowing) {
-      setTimeout(() => {
+      const timerID = setTimeout(() => {
         hideToast();
       }, toastTimer);
+      return () => {
+        clearTimeout(timerID);
+      };
     }
   }, [isToastShowing, hideToast]);
 
