@@ -1,5 +1,13 @@
-import { Button, Container, Counter, Flex, Money } from "../../components";
+import {
+  Button,
+  Container,
+  Counter,
+  Flex,
+  Money,
+  Toast,
+} from "../../components";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import useToast from "../../components/Toast/useToast";
 import { ProductType } from "../../context/ProductListContext";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import usdCurrencyFormatter from "../../helpers/usdCurrencyFormatter";
@@ -14,6 +22,11 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
 }) => {
   const { count, handleIncrease, handleDecrease, handleReset } = useCounter(1);
   const { increaseItemQuantity } = useShoppingCartContext();
+  const { isToastShowing, showToast, toastMessage } = useToast(
+    "success",
+    "Item added successfully!",
+    3000
+  );
 
   const handleAddToCart = () => {
     increaseItemQuantity(product.id, count);
@@ -21,6 +34,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
 
   return (
     <section>
+      <Toast message={toastMessage} show={isToastShowing} />
       <Container>
         <ProductCard product={product}>
           <Money number={product.price} />
@@ -38,6 +52,9 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
               onClick={() => {
                 handleReset();
                 handleAddToCart();
+                if (!isToastShowing) {
+                  showToast();
+                }
               }}
             >
               add to cart

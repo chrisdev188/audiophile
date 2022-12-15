@@ -4,11 +4,10 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
 interface ILayoutProps {
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
-const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
-  const { children } = props;
+const Layout: React.FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
     <>
       <NavContextProvider>
