@@ -2,8 +2,9 @@ import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
 
 export const StyledHomeHero = styled.header`
-  padding-top: var(--nav-height);
-  height: 95vh;
+  --padding-block: clamp(8rem, 20vw, 15rem);
+  padding-top: calc(var(--nav-height) + var(--padding-block));
+  padding-bottom: var(--padding-block);
   position: relative;
   display: grid;
   justify-content: stretch;
@@ -12,7 +13,9 @@ export const StyledHomeHero = styled.header`
     max-width: 25rem;
     text-align: center;
   }
+
   ${media.up("lg")`
+
     .text-content {
       text-align: left;
     }
@@ -31,7 +34,7 @@ export const HeroImage = styled.div`
   picture {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     mix-blend-mode: lighten;
     z-index: 1;
   }
