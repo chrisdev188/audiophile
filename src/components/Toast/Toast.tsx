@@ -38,7 +38,7 @@ const Toast: React.FunctionComponent<IToastProps> = ({
 }) => {
   return (
     <ToastWrapper type={type} show={show}>
-      💯 {message}
+      {message}
     </ToastWrapper>
   );
 };
