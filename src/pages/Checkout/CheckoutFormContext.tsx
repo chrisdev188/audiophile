@@ -1,7 +1,56 @@
-import React, { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 
-const useCheckoutFormLogic = () => {
+interface FormInfo {
+  value: string;
+  errorMessage?: string;
+  invalid: boolean;
+}
+interface FormInputAttributes extends FormInfo {
+  id: string;
+  name: string;
+  placeholder: string;
+  label: string;
+}
+interface RadioAttributes
+  extends Omit<
+    FormInputAttributes,
+    "placeholder" | "errorMessage" | "invalid"
+  > {
+  checked: boolean;
+}
+
+interface CheckoutFormContext {
+  formObject: {
+    name: FormInfo;
+    email: FormInfo;
+    phone: FormInfo;
+    address: FormInfo;
+    zipcode: FormInfo;
+    city: FormInfo;
+    country: FormInfo;
+    eMoney: FormInfo;
+    cash: FormInfo;
+    paymentOption: { value: string };
+  };
+  billingInfo: FormInputAttributes[];
+  shippingInfo: FormInputAttributes[];
+  paymentInfo: FormInputAttributes[];
+  paymentOptions: RadioAttributes[];
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  closeConfirmCheckoutModal: () => void;
+  showConfirmCheckoutModal: boolean;
+}
+
+export const CheckoutFormContext = createContext({} as CheckoutFormContext);
+
+interface CheckoutFormContextProps {
+  children: React.ReactNode;
+}
+export const CheckoutFormContextProvider = ({
+  children,
+}: CheckoutFormContextProps) => {
   const { clearCart } = useShoppingCartContext();
   const [formObject, setFormObject] = useState({
     name: { value: "", errorMessage: "", invalid: false },
@@ -248,16 +297,25 @@ const useCheckoutFormLogic = () => {
     });
   };
 
-  return {
-    formObject,
-    handleChange,
-    handleSubmit,
-    billingInfo,
-    shippingInfo,
-    paymentOptions,
-    paymentInfo,
-    closeConfirmCheckoutModal,
-    showConfirmCheckoutModal,
-  };
+  return (
+    <CheckoutFormContext.Provider
+      value={{
+        formObject,
+        handleChange,
+        handleSubmit,
+        billingInfo,
+        shippingInfo,
+        paymentOptions,
+        paymentInfo,
+        closeConfirmCheckoutModal,
+        showConfirmCheckoutModal,
+      }}
+    >
+      {children}
+    </CheckoutFormContext.Provider>
+  );
 };
-export default useCheckoutFormLogic;
+
+export const useCheckoutFormContext = () => {
+  return useContext(CheckoutFormContext);
+};

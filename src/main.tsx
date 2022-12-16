@@ -5,13 +5,16 @@ import { ThemeProvider } from "styled-components";
 import { ProductListProvider } from "./context/ProductListContext";
 import theme from "./theme";
 import App from "./App";
+import { CheckoutFormContextProvider } from "./pages/Checkout/CheckoutFormContext";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Router>
       <ThemeProvider theme={theme}>
         <ProductListProvider>
-          <App />
+          <CheckoutFormContextProvider>
+            <App />
+          </CheckoutFormContextProvider>
         </ProductListProvider>
       </ThemeProvider>
     </Router>

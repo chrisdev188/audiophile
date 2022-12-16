@@ -3,10 +3,10 @@ import { Container } from "../../components";
 import { useClickOutside } from "../../hooks";
 import { StyledCheckout } from "./Checkout.styles";
 import CheckoutForm from "./CheckoutForm";
+import { useCheckoutFormContext } from "./CheckoutFormContext";
 import CheckoutSection from "./CheckoutSection";
 import ConfirmCheckoutModal from "./ConfirmCheckoutModal";
 import SummarySection from "./SummarySection";
-import useCheckoutFormLogic from "./useCheckoutFormLogic";
 
 export type Input = {
   value: string;
@@ -28,7 +28,7 @@ export interface FormObject {
 
 const Checkout = () => {
   const { closeConfirmCheckoutModal, showConfirmCheckoutModal } =
-    useCheckoutFormLogic();
+    useCheckoutFormContext();
 
   // handle click outside confirmation checkout modal
   const ConfirmCheckoutModalRef = useRef(null);

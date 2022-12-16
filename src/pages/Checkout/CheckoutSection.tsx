@@ -1,7 +1,7 @@
-import useCheckoutFormLogic from "./useCheckoutFormLogic";
 import { Flex, FormInput, RadioInput, Typography } from "../../components";
 import CashIcon from "../../components/icons/CashIcon";
 import { CheckoutSectionStyled } from "./Checkout.styles";
+import { useCheckoutFormContext } from "./CheckoutFormContext";
 
 const CheckoutSection = () => {
   const {
@@ -11,7 +11,7 @@ const CheckoutSection = () => {
     paymentOptions,
     paymentInfo,
     handleChange,
-  } = useCheckoutFormLogic();
+  } = useCheckoutFormContext();
   return (
     <CheckoutSectionStyled>
       <Typography component="h2" variant="h3" style={{ marginBottom: "3rem" }}>
@@ -25,9 +25,10 @@ const CheckoutSection = () => {
             Billing Details
           </Typography>
           <div className="field-grid">
-            {billingInfo.map((info) => (
-              <FormInput key={info.id} {...info} onChange={handleChange} />
-            ))}
+            {billingInfo &&
+              billingInfo.map((info) => (
+                <FormInput key={info.id} {...info} onChange={handleChange} />
+              ))}
           </div>
         </fieldset>
 
@@ -38,9 +39,10 @@ const CheckoutSection = () => {
             Shipping Info
           </Typography>
           <div className="field-grid">
-            {shippingInfo.map((info) => (
-              <FormInput key={info.id} {...info} onChange={handleChange} />
-            ))}
+            {shippingInfo &&
+              shippingInfo.map((info) => (
+                <FormInput key={info.id} {...info} onChange={handleChange} />
+              ))}
           </div>
         </fieldset>
 
@@ -54,23 +56,24 @@ const CheckoutSection = () => {
             <div className="payment-methods">
               <h4 className="payment-heading">Payment methods</h4>
               <div className="inputs">
-                {paymentOptions.map((option) => (
-                  <RadioInput
-                    key={option.id}
-                    {...option}
-                    onChange={handleChange}
-                  />
-                ))}
+                {paymentOptions &&
+                  paymentOptions.map((option) => (
+                    <RadioInput
+                      key={option.id}
+                      {...option}
+                      onChange={handleChange}
+                    />
+                  ))}
               </div>
             </div>
-            {formObject.paymentOption.value === "e-money" && (
+            {formObject && formObject.paymentOption.value === "e-money" && (
               <>
                 {paymentInfo.map((info) => (
                   <FormInput key={info.id} {...info} onChange={handleChange} />
                 ))}
               </>
             )}
-            {formObject.paymentOption.value === "cash" && (
+            {formObject && formObject.paymentOption.value === "cash" && (
               <Flex
                 xs={{ gap: 1, direction: "column", items: "center" }}
                 sm={{ gap: 3, direction: "row", items: "center" }}
