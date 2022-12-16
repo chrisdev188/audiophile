@@ -2,7 +2,7 @@ import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
 
 export const StyledHomeHero = styled.header`
-  --padding-block: clamp(8rem, 20vw, 15rem);
+  --padding-block: 20vmin;
   padding-top: calc(var(--nav-height) + var(--padding-block));
   padding-bottom: var(--padding-block);
   position: relative;

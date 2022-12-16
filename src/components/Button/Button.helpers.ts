@@ -11,6 +11,9 @@ export const getButtonStyles = (
       background-color: ${theme.palette[color].main};
       color: ${theme.palette[color].contrastText};
       border: 2px solid ${theme.palette[color].main};
+      &:hover {
+        filter: brightness(130%);
+      }
     `;
   }
   if (variant === "outlined") {
@@ -18,6 +21,10 @@ export const getButtonStyles = (
       background-color: transparent;
       color: ${theme.palette[color].main};
       border: 2px solid ${theme.palette[color].main};
+      &:hover {
+        background-color: ${theme.palette[color].main};
+        color: white;
+      }
     `;
   }
   if (variant === "text") {

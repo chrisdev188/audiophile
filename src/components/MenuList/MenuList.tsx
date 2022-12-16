@@ -40,6 +40,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ name, path }) => {
         onClick={() => {
           window.scrollTo(0, 0);
         }}
+        tabIndex={0}
       >
         {name}
       </StyledNavLink>

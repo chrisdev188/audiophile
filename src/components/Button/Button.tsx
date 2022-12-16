@@ -7,7 +7,7 @@ const Button: React.FC<ButtonProps> = ({
   ...otherProps
 }) => {
   return (
-    <StyledButton as={as} {...otherProps}>
+    <StyledButton as={as} {...otherProps} tabIndex={0}>
       {children}
     </StyledButton>
   );
