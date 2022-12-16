@@ -22,7 +22,4 @@ export const StyledNavLink = styled(NavLink)`
   &.active {
     color: ${(props) => props.theme.palette.secondary.main};
   }
-  &:focus {
-    outline: 1px solid red;
-  }
 `;

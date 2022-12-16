@@ -9,9 +9,6 @@ export const StyledCheckout = styled.main`
     display: grid;
     grid-row-gap: 5rem;
   }
-  .container {
-    padding-block: 7rem;
-  }
   fieldset {
     border: none;
   }
@@ -84,7 +81,7 @@ export const StyledCheckout = styled.main`
   }
 `;
 
-export const CheckoutSection = styled.section`
+export const CheckoutSectionStyled = styled.section`
   grid-column: span 1;
   background-color: white;
   border-radius: var(--round-md);
@@ -98,7 +95,7 @@ export const CheckoutSection = styled.section`
   `}
 `;
 
-export const SummarySection = styled.section`
+export const SummarySectionStyled = styled.section`
   grid-column: span 1;
   background-color: white;
   border-radius: var(--round-md);

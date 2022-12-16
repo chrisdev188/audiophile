@@ -34,6 +34,11 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
   }
+  *:focus{
+    outline:none;
+    outline:2px dotted blue;
+    outline-offset: 2px;
+  }
   body{
     min-height:100vh;
     overflow-x: hidden;

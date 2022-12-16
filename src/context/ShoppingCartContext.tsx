@@ -7,6 +7,10 @@ interface IShoppingCartProviderProps {
 interface IShoppingCartContext {
   cart: ICartItem[];
   fullDetailsCart: IDetailCartItem[];
+  total: number;
+  vat: number;
+  grandTotal: number;
+  shipping: number;
   getNumberOfItems: () => number;
   getItemQuantity: (id: number) => number;
   increaseItemQuantity: (id: number, quantity: number) => void;
@@ -98,11 +102,28 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
     setIsCartModalOpen((prev) => !prev);
   };
 
+  const total = fullDetailsCart.reduce(
+    (sum, item) => sum + item.quantity * item.price,
+    0
+  );
+  const shipping = 50;
+  const vat = total * 0.2;
+  let grandTotal = 0;
+  if (total > 0) {
+    grandTotal = total + shipping + vat;
+  } else {
+    grandTotal = 0;
+  }
+
   return (
     <ShoppingCartContext.Provider
       value={{
         cart,
         fullDetailsCart,
+        shipping,
+        total,
+        vat,
+        grandTotal,
         isCartModalOpen,
         getNumberOfItems,
         getItemQuantity,

@@ -1,8 +1,22 @@
-import { useState } from "react";
-import { FormObject } from "./Checkout";
+import React, { useState } from "react";
+import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 
-const useCheckoutFormLogic = (initalFormObject: FormObject) => {
-  const [formObject, setFormObject] = useState(initalFormObject);
+const useCheckoutFormLogic = () => {
+  const { clearCart } = useShoppingCartContext();
+  const [formObject, setFormObject] = useState({
+    name: { value: "", errorMessage: "", invalid: false },
+    email: { value: "", errorMessage: "", invalid: false },
+    phone: { value: "", errorMessage: "", invalid: false },
+    address: { value: "", errorMessage: "", invalid: false },
+    zipcode: { value: "", errorMessage: "", invalid: false },
+    city: { value: "", errorMessage: "", invalid: false },
+    country: { value: "", errorMessage: "", invalid: false },
+    eMoney: { value: "", errorMessage: "", invalid: false },
+    cash: { value: "", errorMessage: "", invalid: false },
+    paymentOption: { value: "e-money" },
+  });
+  const [showConfirmCheckoutModal, setShowConfirmCheckoutModal] =
+    useState(false);
 
   const billingInfo = [
     {
@@ -134,6 +148,7 @@ const useCheckoutFormLogic = (initalFormObject: FormObject) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const formObj = Object.fromEntries(new FormData(e.currentTarget));
 
     const names = Object.keys(formObj) as Array<string>;
@@ -159,8 +174,8 @@ const useCheckoutFormLogic = (initalFormObject: FormObject) => {
 
     if (booleans.find((b) => b === true)) return;
     else {
-      console.log(formObj);
-      // show result modal
+      setShowConfirmCheckoutModal(true);
+      resetFormObject();
     }
   };
 
@@ -212,6 +227,27 @@ const useCheckoutFormLogic = (initalFormObject: FormObject) => {
       else return "";
     }
   };
+
+  const closeConfirmCheckoutModal = () => {
+    setShowConfirmCheckoutModal(false);
+    clearCart();
+  };
+
+  const resetFormObject = () => {
+    setFormObject({
+      name: { value: "", errorMessage: "", invalid: false },
+      email: { value: "", errorMessage: "", invalid: false },
+      phone: { value: "", errorMessage: "", invalid: false },
+      address: { value: "", errorMessage: "", invalid: false },
+      zipcode: { value: "", errorMessage: "", invalid: false },
+      city: { value: "", errorMessage: "", invalid: false },
+      country: { value: "", errorMessage: "", invalid: false },
+      eMoney: { value: "", errorMessage: "", invalid: false },
+      cash: { value: "", errorMessage: "", invalid: false },
+      paymentOption: { value: "e-money" },
+    });
+  };
+
   return {
     formObject,
     handleChange,
@@ -220,6 +256,8 @@ const useCheckoutFormLogic = (initalFormObject: FormObject) => {
     shippingInfo,
     paymentOptions,
     paymentInfo,
+    closeConfirmCheckoutModal,
+    showConfirmCheckoutModal,
   };
 };
 export default useCheckoutFormLogic;

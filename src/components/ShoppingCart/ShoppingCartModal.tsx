@@ -11,7 +11,6 @@ import {
   CartRemoveAllButton,
   StyledCartModal,
 } from "./ShoppingCartModal.styles";
-import ShoppingItem from "./ShoppingItem";
 import ShoppingList from "./ShoppingList";
 
 interface IShoppingCartModalProps {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon, ButtonWithIcons, Grid, Typography } from "..";
 import { useNavigationContext } from "../../context/NavigationContext";
@@ -22,9 +23,7 @@ export const productCategories = [
   },
 ];
 
-export interface ICategoryCardListProps {}
-
-const CategoryCardList: React.FC<ICategoryCardListProps> = ({}) => {
+const CategoryCardList = () => {
   const { closeMenu } = useNavigationContext();
   return (
     <Container fullVertical>
@@ -58,4 +57,4 @@ const CategoryCardList: React.FC<ICategoryCardListProps> = ({}) => {
   );
 };
 
-export default CategoryCardList;
+export default React.memo(CategoryCardList);

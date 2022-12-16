@@ -1,14 +1,14 @@
 import Container from "../Container/Container";
 import Grid from "../Grid/Grid";
 import Typography from "../Typography/Typography";
-import StyledAbout from "./About.styles";
+import StyledAbout, { AboutImage, AboutText } from "./About.styles";
 
 const About = () => {
   return (
     <StyledAbout>
       <Container>
         <Grid xs={{ rowGap: 3 }} sm={{ rowGap: 2 }}>
-          <div className="content">
+          <AboutText>
             <Typography component="h3" variant="h3">
               Bringing you the{" "}
               <span style={{ color: "var(--clr-txt-accent)" }}>best</span> audio
@@ -23,8 +23,8 @@ const About = () => {
               people who make Audiophile the best place to buy your portable
               audio equipment.
             </Typography>
-          </div>
-          <picture className="image">
+          </AboutText>
+          <AboutImage>
             <source
               srcSet="/assets/shared/desktop/image-best-gear.jpg"
               media="(min-width:1200px)"
@@ -37,7 +37,7 @@ const About = () => {
               src="/assets/shared/mobile/image-best-gear.jpg"
               alt="a man wearing headphones"
             />
-          </picture>
+          </AboutImage>
         </Grid>
       </Container>
     </StyledAbout>
