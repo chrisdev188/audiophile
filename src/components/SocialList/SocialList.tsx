@@ -28,7 +28,7 @@ const SocialList: React.FunctionComponent<ISocialListProps> = (props) => {
     <StyledSocialList {...props}>
       {socialList.map(({ name, url, icon }) => (
         <li key={name}>
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" aria-label={name}>
             {icon}
           </a>
         </li>
