@@ -40,7 +40,7 @@ const CategoryCardList = () => {
               <ButtonWithIcons
                 as={Link}
                 to={`/${category.name}`}
-                variant="text"
+                $variant="text"
                 iconEnd={<ArrowRightIcon />}
                 onClick={() => {
                   closeMenu();

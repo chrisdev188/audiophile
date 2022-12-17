@@ -193,7 +193,7 @@ const ZX9Speaker = () => (
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </Typography>
-        <Button color="primary" to="/speakers/zx9-speaker" as={Link}>
+        <Button $color="primary" to="/speakers/zx9-speaker" as={Link}>
           see product
         </Button>
       </Flex>
@@ -223,7 +223,7 @@ const ZX7Speaker = () => (
       </Typography>
 
       <Button
-        variant="outlined"
+        $variant="outlined"
         className="action"
         as={Link}
         to="/speakers/zx7-speaker"
@@ -257,7 +257,7 @@ const YX1Earphones = () => (
             YX1 EARPHONES
           </Typography>
           <Button
-            variant="outlined"
+            $variant="outlined"
             className="action"
             as={Link}
             to="/earphones/yx1-earphones"

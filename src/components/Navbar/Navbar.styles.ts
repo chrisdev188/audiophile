@@ -1,9 +1,8 @@
-import styled, { css } from "styled-components";
-import { centerElement, getTypography } from "../../helpers/styles";
+import styled from "styled-components";
+import { centerElement } from "../../helpers/styles";
 import media from "../../helpers/styles/mediaQueries";
-import { INavbarProps } from "./Navbar.types";
 
-export const NavStyled = styled.nav<INavbarProps>`
+export const NavStyled = styled.nav`
   position: absolute;
   width: 100%;
   z-index: 990;

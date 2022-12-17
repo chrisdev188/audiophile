@@ -17,7 +17,7 @@ import MenuList from "../MenuList/MenuList";
 import MenuModal from "../MenuModal/MenuModal";
 import ShoppingCartModal from "../ShoppingCart/ShoppingCartModal";
 
-const Navbar: React.FC<INavbarProps> = (props) => {
+const Navbar = () => {
   const { isCartModalOpen, getNumberOfItems, toggleCartModal } =
     useShoppingCartContext();
   const { isOpen, toggleMenu } = useNavigationContext();
@@ -31,7 +31,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
 
   return (
     <>
-      <NavStyled {...props} ref={navRef}>
+      <NavStyled ref={navRef}>
         <Container fullVertical>
           <NavInnerBox>
             <MenuToggler onClick={(e) => toggleMenu(e)}>

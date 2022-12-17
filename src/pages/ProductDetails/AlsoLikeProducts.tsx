@@ -62,7 +62,7 @@ const AlsoLikeProducts: React.FunctionComponent<IAlsoLikeProductsProps> = ({
                     </Typography>
 
                     <Button
-                      color="secondary"
+                      $color="secondary"
                       to={`/${category}/${slug}`}
                       as={Link}
                     >

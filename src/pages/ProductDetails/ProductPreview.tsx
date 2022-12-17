@@ -48,7 +48,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
               notAllowedLessThanOne
             />
             <Button
-              color="secondary"
+              $color="secondary"
               onClick={() => {
                 if (!isToastShowing) {
                   showToast();

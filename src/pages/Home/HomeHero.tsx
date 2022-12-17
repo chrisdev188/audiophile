@@ -52,8 +52,7 @@ const HomeTextContent = () => {
           </Typography>
 
           <Button
-            variant="contained"
-            color="secondary"
+            $color="secondary"
             as={Link}
             to="/headphones/xx99-mark-two-headphones"
           >

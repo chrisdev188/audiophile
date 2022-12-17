@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { getTypography } from "../../helpers/styles";
 import { getButtonStyles } from "./Button.helpers";
-import { ButtonProps } from "./Button.types";
+import { BaseProps } from "./Button.types";
 
-export const StyledButton = styled.button<ButtonProps>`
-  ${({ color, variant, theme }) => {
-    if (color !== undefined && variant !== undefined) {
-      return getButtonStyles(color, theme, variant);
+export const StyledButton = styled.button<BaseProps>`
+  ${({ $color, $variant, theme }) => {
+    if ($color !== undefined && $variant !== undefined) {
+      return getButtonStyles($color, theme, $variant);
     }
   }}
   ${({ theme }) => getTypography("button", theme)}

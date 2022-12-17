@@ -4,18 +4,20 @@ import { ButtonProps } from "./Button.types";
 const Button: React.FC<ButtonProps> = ({
   children,
   as = "button",
+  $variant,
+  $color,
   ...otherProps
 }) => {
   return (
-    <StyledButton as={as} {...otherProps} tabIndex={0}>
+    <StyledButton as={as} $variant={$variant} $color={$color} {...otherProps}>
       {children}
     </StyledButton>
   );
 };
 
 Button.defaultProps = {
-  variant: "contained",
-  color: "primary",
+  $variant: "contained",
+  $color: "primary",
 };
 
 export default Button;

@@ -69,7 +69,7 @@ const ShoppingCartModal: React.FunctionComponent<IShoppingCartModalProps> = (
               </Flex>
               {fullDetailsCart.length > 0 && (
                 <Button
-                  color="secondary"
+                  $color="secondary"
                   style={{ width: "100%", justifyContent: "center" }}
                   to="/checkout"
                   onClick={closeCartModal}
