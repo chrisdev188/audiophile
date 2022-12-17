@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
       theme.palette.secondary.contrastText};
     --clr-contrast-txt-error: ${({ theme }) =>
       theme.palette.error.contrastText};
+    --clr-card: ${({ theme }) => theme.palette.card};
     --clr-txt-light: ${({ theme }) => theme.palette.text.light};
     --clr-txt-light-alt: ${({ theme }) => theme.palette.text.lightAlt};
     --clr-txt-dark: ${({ theme }) => theme.palette.text.dark};

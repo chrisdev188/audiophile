@@ -77,18 +77,7 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
       });
     });
   };
-  const fullDetailsCart = cart.map((item) => {
-    const product = getProductList().find((p) => p.id === item.id);
-    if (product) {
-      return {
-        ...item,
-        name: product.shortenName,
-        price: product.price,
-        image: product.image.mobile,
-      };
-    }
-    return item;
-  }) as IDetailCartItem[];
+
   const clearCart = () => {
     setCart([]);
   };
@@ -102,18 +91,28 @@ export const ShoppingCartProvider: React.FC<IShoppingCartProviderProps> = ({
     setIsCartModalOpen((prev) => !prev);
   };
 
+  const fullDetailsCart = cart.map((item) => {
+    const product = getProductList().find((p) => p.id === item.id);
+    if (product) {
+      return {
+        ...item,
+        name: product.shortenName,
+        price: product.price,
+        image: product.image.mobile,
+      };
+    }
+    return item;
+  }) as IDetailCartItem[];
+
   const total = fullDetailsCart.reduce(
     (sum, item) => sum + item.quantity * item.price,
     0
   );
   const shipping = 50;
+
   const vat = total * 0.2;
-  let grandTotal = 0;
-  if (total > 0) {
-    grandTotal = total + shipping + vat;
-  } else {
-    grandTotal = 0;
-  }
+
+  let grandTotal = total > 0 ? total + vat + shipping : 0;
 
   return (
     <ShoppingCartContext.Provider

@@ -223,7 +223,7 @@ export const CheckoutFormContextProvider = ({
 
     if (booleans.find((b) => b === true)) return;
     else {
-      setShowConfirmCheckoutModal(true);
+      openConfirmCheckoutModal();
       resetFormObject();
     }
   };
@@ -279,7 +279,9 @@ export const CheckoutFormContextProvider = ({
 
   const closeConfirmCheckoutModal = () => {
     setShowConfirmCheckoutModal(false);
-    clearCart();
+  };
+  const openConfirmCheckoutModal = () => {
+    setShowConfirmCheckoutModal(true);
   };
 
   const resetFormObject = () => {

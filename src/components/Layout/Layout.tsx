@@ -9,15 +9,11 @@ interface ILayoutProps {
 
 const Layout: React.FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
-    <>
-      <NavContextProvider>
-        <ShoppingCartProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </ShoppingCartProvider>
-      </NavContextProvider>
-    </>
+    <NavContextProvider>
+      <Navbar />
+      {children}
+      <Footer />
+    </NavContextProvider>
   );
 };
 

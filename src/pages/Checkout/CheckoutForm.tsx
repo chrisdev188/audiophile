@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Grid } from "../../components";
+import { useShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useCheckoutFormContext } from "./CheckoutFormContext";
 
 interface ICheckoutFormProps {
@@ -12,6 +13,7 @@ const CheckoutForm: React.FunctionComponent<ICheckoutFormProps> = ({
   right,
 }) => {
   const { handleSubmit } = useCheckoutFormContext();
+
   return (
     <form onSubmit={handleSubmit}>
       <Grid>

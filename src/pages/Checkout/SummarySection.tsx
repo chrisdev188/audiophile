@@ -12,13 +12,14 @@ const SummarySection: React.FunctionComponent<ISummarySectionProps> = (
 ) => {
   const { fullDetailsCart, total, shipping, vat, grandTotal } =
     useShoppingCartContext();
+
   return (
     <SummarySectionStyled>
       <Typography component="h3" variant="h6">
         summary
       </Typography>
 
-      {fullDetailsCart.length > 0 && <ShoppingList list={fullDetailsCart} />}
+      <ShoppingList list={fullDetailsCart} />
 
       <Flex xs={{ direction: "column", gap: 0.5 }}>
         <Flex xs={{ content: "space-between", items: "center" }}>
