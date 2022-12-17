@@ -3,7 +3,7 @@ import { LogoLink } from "./Logo.styles";
 
 const Logo = () => {
   return (
-    <LogoLink to="/">
+    <LogoLink to="/" aria-label="brand logo">
       <LogoIcon />
     </LogoLink>
   );

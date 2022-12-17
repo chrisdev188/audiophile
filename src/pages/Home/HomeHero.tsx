@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button, Container, Flex } from "../../components";
+import { VisuallyHidden } from "../../components/GlobalStyles";
 import Typography from "../../components/Typography/Typography";
 import { HeroImage, StyledHomeHero } from "./HomeHero.styles";
 
@@ -67,6 +68,9 @@ const HomeTextContent = () => {
 const HomeHero = () => {
   return (
     <StyledHomeHero>
+      <VisuallyHidden>
+        <h1>Home page</h1>
+      </VisuallyHidden>
       <HomeHeroImage />
       <HomeTextContent />
     </StyledHomeHero>

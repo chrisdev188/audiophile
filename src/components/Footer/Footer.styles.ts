@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "../../helpers/styles/mediaQueries";
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
   padding-bottom: 2rem;

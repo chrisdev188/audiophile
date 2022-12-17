@@ -34,7 +34,10 @@ const Navbar = () => {
       <NavStyled ref={navRef}>
         <Container fullVertical>
           <NavInnerBox>
-            <MenuToggler onClick={(e) => toggleMenu(e)}>
+            <MenuToggler
+              onClick={(e) => toggleMenu(e)}
+              aria-label="toggle menu"
+            >
               <HamburgerIcon />
             </MenuToggler>
             <Logo />
@@ -44,6 +47,7 @@ const Navbar = () => {
                 e.stopPropagation();
                 toggleCartModal(e);
               }}
+              aria-label="show shopping cart"
             >
               <CartIcon />
               {cartQuantity > 0 && (

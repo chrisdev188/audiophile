@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root{
@@ -76,5 +76,14 @@ const GlobalStyle = createGlobalStyle`
     font:inherit;
   }
   
+`;
+
+export const VisuallyHidden = styled.div`
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 `;
 export default GlobalStyle;
