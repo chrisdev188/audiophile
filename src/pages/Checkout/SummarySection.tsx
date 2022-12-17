@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Flex, Money, Typography } from "../../components";
+import { Button, Flex, Money, Typography } from "../../components";
 import { CartMoneyLabel } from "../../components/ShoppingCart/ShoppingCartModal.styles";
 import ShoppingList from "../../components/ShoppingCart/ShoppingList";
 import { useShoppingCartContext } from "../../context/ShoppingCartContext";
@@ -41,13 +41,14 @@ const SummarySection: React.FunctionComponent<ISummarySectionProps> = (
         <Money number={grandTotal} style={{ color: "var(--clr-txt-accent)" }} />
       </Flex>
 
-      <CheckoutButton
+      <Button
         type="submit"
-        color="secondary"
         disabled={total > 0 ? false : true}
+        $color="secondary"
+        style={{ width: "100%", justifyContent: "center" }}
       >
         checkout
-      </CheckoutButton>
+      </Button>
     </SummarySectionStyled>
   );
 };

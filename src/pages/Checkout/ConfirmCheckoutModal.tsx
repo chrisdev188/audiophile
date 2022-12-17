@@ -111,7 +111,7 @@ const ConfirmCheckoutModal: React.FunctionComponent<
           <Button
             as={Link}
             to="/"
-            color="secondary"
+            $color="secondary"
             style={{ justifyContent: "center" }}
             onClick={clearCart}
           >
