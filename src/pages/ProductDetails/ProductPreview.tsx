@@ -24,7 +24,7 @@ const ProductPreview: React.FunctionComponent<IProductPreviewProps> = ({
   const { increaseItemQuantity } = useShoppingCartContext();
   const { isToastShowing, showToast, toastMessage } = useToast(
     "success",
-    "Item added successfully!",
+    "Item added to cart successfully!",
     3000
   );
 
